@@ -1,0 +1,12 @@
+.about {
+    &__subtitle {
+        font-size: toRem(18);
+        line-height: toRem(26);
+        margin-bottom: toRem(20);
+    }
+
+    &__description {
+        font-size: toRem(14);
+        line-height: toRem(20);
+    }
+}

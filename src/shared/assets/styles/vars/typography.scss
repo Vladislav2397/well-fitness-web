@@ -1,0 +1,23 @@
+$mainFontFamily: 'Inter';
+$icon: 'icon', sans-serif;
+$fontFamily: $mainFontFamily, -apple-system, blinkmacsystemfont, 'Helvetica', 'Arial', sans-serif;
+
+$tags: (
+    //        mobile     tablet     desktop
+    h1: (
+            (toRem(24), toRem(30), toRem(38)), // font-size
+            (toRem(28), toRem(34), toRem(42))  // line-height
+    ),
+    h2: (
+            (toRem(22), toRem(26), toRem(33)),
+            (toRem(26), toRem(30), toRem(36))
+    ),
+    h3: (
+            (toRem(16), toRem(16), toRem(20)),
+            (toRem(20), toRem(20), toRem(24))
+    ),
+    p2    : ( toRem(16), toRem(20) ),
+    p3    : ( toRem(14), toRem(18) ),
+    p4    : ( toRem(12), toRem(16) ),
+    p5    : ( toRem(10), toRem(12) ),
+);

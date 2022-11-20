@@ -1,0 +1,44 @@
+.translate-bottom {
+    &-leave-to,
+    &-enter {
+        transform: translateY(-100%);
+    }
+
+    &-enter-active {
+        transition: transform 0.2s ease;
+    }
+
+    &-leave-active {
+        transition: transform 0.1s ease;
+    }
+}
+
+.translate-right {
+    &-leave-to,
+    &-enter {
+        transform: translateX(100%);
+    }
+
+    &-enter-active {
+        transition: transform 0.2s ease;
+    }
+
+    &-leave-active {
+        transition: transform 0.1s ease;
+    }
+}
+
+.fade {
+    &-leave-to,
+    &-enter {
+        opacity: 0;
+    }
+
+    &-enter-active {
+        transition: opacity 0.2s ease;
+    }
+
+    &-leave-active {
+        transition: opacity 0.1s ease;
+    }
+}

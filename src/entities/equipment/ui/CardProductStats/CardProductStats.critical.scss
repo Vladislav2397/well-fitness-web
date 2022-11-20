@@ -1,0 +1,60 @@
+.card-product-stats {
+    &__quantity {
+        display: inline-block;
+        margin-right: toRem(12);
+        vertical-align: middle;
+    }
+
+    &__link {
+        vertical-align: middle;
+    }
+
+    &__top {
+        @include fontSize(p4, medium);
+        margin-bottom: toRem(8);
+    }
+
+    &__title {
+        @include fontSize(p3);
+
+        margin-bottom: toRem(8);
+    }
+
+    &__rating {
+        margin-bottom: toRem(12);
+        color: $secondary;
+    }
+
+    &__bottom {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__price {
+        display: inline-block;
+
+        span, del {
+            display: block;
+        }
+
+        &--row {
+            display: block;
+
+            span, del {
+                display: inline-block;
+            }
+        }
+
+        span {
+            color: $dark;
+            font-size: toRem(16);
+            line-height: toRem(24);
+            font-weight: 600;
+            margin-right: toRem(12);
+        }
+
+        del {
+            color: $secondary;
+        }
+    }
+}

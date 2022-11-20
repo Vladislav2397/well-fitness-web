@@ -1,0 +1,107 @@
+$marginMobile: 10 / 310 * 100%;
+$marginTablet: 20 / 940 * 100%;
+$marginDesktop: 30 / 1200 * 100%;
+
+$widthMobile: ((300 - 10) / 2) / 300 * 100%;
+$widthTablet: ((610 - (20 * 2)) / 3) / 610 * 100%;
+$widthDesktop: ((1200 - (30 * 3)) / 4) / 1200 * 100%;
+
+.equipment-preview {
+    border-radius: toRem(4); // FIXME: to var
+    box-sizing: border-box;
+    vertical-align: middle;
+    min-height: toRem(140);
+    padding-top: toRem(20);
+    padding-left: toRem(16);
+    --spacing: #{toRem(16)};
+
+    $b: &;
+
+    &__title {
+        font-size: toRem(14);
+        line-height: toRem(18);
+        font-weight: 900;
+    }
+
+    @media (max-width: $maxMobile) {
+        &--stretch {
+            &-default,
+            &-none {
+                //
+            }
+
+            &-horizontal {
+                height: 100%;
+            }
+        }
+    }
+
+    &--theme {
+        &-dark {
+            background:
+                linear-gradient(
+                        9.93deg,
+                        rgba(72, 77, 92, 0) 25.95%,
+                        rgba(112, 121, 148, 0.2) 80.01%
+                ), #1A1A25;
+
+            #{$b}__title {
+                color: $white;
+            }
+        }
+
+        &-light {
+            background-color: #E9EAEF;
+        }
+
+        &-secondary {
+            background:
+                linear-gradient(
+                        269.61deg,
+                        rgba(255, 255, 255, 0.68) -16.49%,
+                        rgba(255, 255, 255, 0) 99.7%
+                ), #C2C4CE;
+        }
+    }
+
+    @media (min-width: $tablet) {
+        &--stretch {
+            &-horizontal,
+            &-default {
+                min-height: toRem(190);
+            }
+
+            &-none {
+                min-height: toRem(135);
+            }
+
+            &-vertical {
+                min-height: toRem(290);
+            }
+        }
+    }
+
+    @media (min-width: $desktop) {
+        padding: toRem(30);
+
+        &__title {
+            font-size: toRem(18);
+            line-height: toRem(22);
+        }
+
+        &--stretch {
+            &-horizontal,
+            &-default {
+                min-height: toRem(230);
+            }
+
+            &-none {
+                min-height: toRem(165);
+            }
+
+            &-vertical {
+                min-height: toRem(354);
+            }
+        }
+    }
+}

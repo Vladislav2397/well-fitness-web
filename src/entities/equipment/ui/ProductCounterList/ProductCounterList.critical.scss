@@ -1,0 +1,36 @@
+.product-counter-list {
+    padding: toRem(24);
+
+    &__title {
+        @include fontSize(h3, bold);
+        @include marginLevel(bottom, blue);
+    }
+
+    &__list {
+        margin-bottom: toRem(-8);
+    }
+
+    &__item {
+        @include paddingLevel(top, red);
+        @include paddingLevel(bottom, blue);
+        display: table;
+        width: 100%;
+
+        & + & {
+            border-top: 1px solid rgba(#858fa4, 0.2);
+        }
+
+        span {
+            @include fontSize(p3);
+            display: table-cell;
+            vertical-align: middle;
+
+            & + span {
+                @include fontSize(p4, bold);
+                text-align: right;
+                opacity: 0.4;
+                padding-left: toRem(8);
+            }
+        }
+    }
+}

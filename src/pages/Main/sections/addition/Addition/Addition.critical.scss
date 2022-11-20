@@ -1,0 +1,15 @@
+.addition {
+    @media (min-width: 768px) {
+        &__card {
+            display: inline-block;
+            box-sizing: border-box;
+            width: 50%;
+        }
+    }
+
+    @media (min-width: 1200px) {
+        &__card {
+            width: 25%;
+        }
+    }
+}

@@ -1,0 +1,13 @@
+.characteristics {
+    p {
+        color: $secondary;
+
+        & + p {
+            margin-top: toRem(6);
+        }
+    }
+
+    span {
+        color: #384255;
+    }
+}

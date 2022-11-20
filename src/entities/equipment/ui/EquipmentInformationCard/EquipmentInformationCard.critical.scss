@@ -1,0 +1,29 @@
+.equipment-information-card {
+    padding: toRem(30) toRem(20) toRem(20);
+    background-color: #f6f6f6;
+    border-radius: toRem(6);
+
+    &__quantity {
+        @include marginLevel(bottom, yellow);
+    }
+
+    &__price {
+        @include marginLevel(bottom, yellow);
+    }
+
+    &__dealer {
+        @include marginLevel(bottom, yellow);
+    }
+
+    &__bonus {
+        @include marginLevel(bottom, yellow);
+    }
+
+    &__divider {
+        @include marginLevel(bottom, orange);
+    }
+
+    &__cart {
+        @include marginLevel(bottom, gray);
+    }
+}

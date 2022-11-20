@@ -1,0 +1,56 @@
+.idea {
+    background-color: $darken;
+    padding-top: toRem(80);
+    padding-bottom: toRem(60);
+
+    @media (max-width: 767px) {
+        &__card {
+            & + & {
+                margin-top: toRem(10);
+            }
+        }
+    }
+
+    @media (min-width: 768px) {
+        padding-top: toRem(100);
+
+        --spacing: #{toRem(16)};
+        --n-spacing: #{toRem(-16)};
+
+        &__wrapper {
+            white-space: nowrap;
+        }
+
+        &__list {
+            overflow: auto;
+            padding-left: var(--spacing);
+            padding-right: var(--spacing);
+            transform: translateX(var(--n-spacing));
+            width: 100%;
+        }
+
+        &__card {
+            $containerWidth: 1160;
+            $itemCount: 4;
+            $spacing: 24;
+
+            display: inline-block;
+
+            //&:last-child {
+            //    margin-right: var(--spacing);
+            //}
+
+            & + & {
+                margin-left: $spacing / $containerWidth * 100%;
+            }
+        }
+    }
+
+    @media (min-width: 1200px) {
+        padding-top: toRem(120);
+        padding-bottom: toRem(80);
+
+        --spacing: #{toRem(20)};
+        --n-spacing: #{toRem(-20)};
+    }
+}

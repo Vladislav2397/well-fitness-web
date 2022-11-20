@@ -1,0 +1,28 @@
+.become-partner {
+    padding-top: toRem(60);
+    background-color: $darken;
+
+    &__caption {
+        padding-left: toRem(20);
+        padding-right: toRem(20);
+    }
+
+    &__content {
+        margin-bottom: toRem(30);
+        min-width: toRem(231);
+        max-width: toRem(572);
+
+        color: $white;
+        font-size: toRem(18);
+        line-height: toRem(24);
+
+        span {
+            color: $primary;
+        }
+    }
+
+    &__image {
+        width: toRem(300);
+        height: toRem(240);
+    }
+}

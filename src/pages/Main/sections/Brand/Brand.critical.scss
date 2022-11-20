@@ -1,0 +1,49 @@
+.brand {
+    padding-top: toRem(80);
+    padding-bottom: toRem(60);
+
+    &__link {
+        padding: toRem(6);
+
+        &:first-child {
+            padding-left: 0;
+        }
+
+        &:last-child {
+            padding-right: 0;
+        }
+    }
+
+    &__list {
+        border: 1px solid;
+        border-radius: toRem(6);
+    }
+
+    &__item {
+        width: 33.33%;
+        aspect-ratio: 10 / 6; // FIXME: change for ie
+        display: inline-block;
+        box-sizing: border-box;
+        vertical-align: middle;
+
+        &:not(&.first) {
+            border-left: 1px solid;
+        }
+
+        &.border-top {
+            border-top: 1px solid;
+        }
+    }
+
+    @media (min-width: 650px) {
+        &__item {
+            width: 25%;
+        }
+    }
+
+    @media (min-width: 1200px) {
+        &__item {
+            width: 20%;
+        }
+    }
+}

@@ -1,0 +1,19 @@
+.pagination {
+    &__item {
+        @include fontSize(p3, bold);
+
+        padding: toRem(6) toRem(10);
+        display: inline-block;
+        color: $secondary;
+        border-radius: toRem(6);
+
+        & + & {
+            margin-left: toRem(2);
+        }
+
+        &.active {
+            background-color: #fff;
+            color: $darken;
+        }
+    }
+}

@@ -1,0 +1,51 @@
+.button {
+    font-size: toRem(14);
+    line-height: toRem(16);
+    font-weight: 600;
+    border-radius: toRem(4);
+    border: 1px solid transparent;
+    vertical-align: middle;
+
+    i {
+        vertical-align: middle;
+    }
+
+    &--size {
+        &-s {
+            padding: toRem(8);
+        }
+
+        &-m {
+            padding: toRem(11) toRem(19) toRem(12);
+        }
+    }
+
+    &--theme {
+        &-brand {
+            background-color: #f53b49;
+            color: #ffffff;
+            border-color: #f53b49;
+        }
+        
+        &-secondary {
+            background-color: #909cb5;
+            border-color: #909cb5;
+            color: #ffffff;
+        }
+
+        &-ghost-brand {
+            color: #f53b49;
+            border-color: #f53b49;
+        }
+        
+        &-ghost {
+            border-color: #909cb5;
+            color: #909cb5;
+        }
+
+        &-ghost-light {
+            border-color: $white;
+            color: $white;
+        }
+    }
+}

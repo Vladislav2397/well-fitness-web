@@ -1,0 +1,99 @@
+.icon {
+    position: relative;
+    display: inline-block;
+
+    &::before {
+        font-family: 'icon', sans-serif;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    &--size {
+        &-s {
+            width: toRem(16);
+            height: toRem(16);
+            min-width: toRem(16);
+            min-height: toRem(16);
+
+            &::before {
+                font-size: toRem(16);
+                line-height: toRem(16);
+            }
+        }
+
+        &-m {
+            width: toRem(24);
+            height: toRem(24);
+            min-width: toRem(24);
+            min-height: toRem(24);
+
+            &::before {
+                font-size: toRem(24);
+                line-height: toRem(24);
+            }
+        }
+
+        &-l {
+            width: toRem(30);
+            height: toRem(30);
+            min-width: toRem(30);
+            min-height: toRem(30);
+
+            &::before {
+                font-size: toRem(30);
+                line-height: toRem(30);
+            }
+        }
+
+        &-xl {
+            width: toRem(36);
+            height: toRem(36);
+            min-width: toRem(36);
+            min-height: toRem(36);
+
+            &::before {
+                font-size: toRem(36);
+                line-height: toRem(36);
+            }
+        }
+    }
+
+    &--burger::before {
+        content: '\ea01';
+    }
+
+    &--collapse::before {
+        content: '\ea02';
+        transform: translate(-50%, -56%);
+    }
+
+    &--bento::before {
+        content: '\ea03';
+    }
+
+    &--cart::before {
+        content: '\ea04';
+    }
+
+    &--heart::before {
+        content: '\ea05';
+    }
+
+    &--right-arrow::before {
+        content: '\ea06';
+    }
+
+    &--stats::before {
+        content: '\ea07';
+    }
+
+    &--search::before {
+        content: '\ea08';
+    }
+
+    &--close::before {
+        content: '\ea09';
+    }
+}

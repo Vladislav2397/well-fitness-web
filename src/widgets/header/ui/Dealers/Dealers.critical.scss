@@ -1,0 +1,26 @@
+.dealers {
+    &--view {
+        &-default {
+            span {
+                color: #fff;
+            }
+        }
+
+        &-modal {
+            span {
+                color: #909cb5;
+            }
+        }
+    }
+
+    span, button {
+        font-size: toRem(14);
+        line-height: toRem(20);
+        vertical-align: middle;
+    }
+
+    span + span,
+    span + button {
+        margin-left: toRem(30);
+    }
+}

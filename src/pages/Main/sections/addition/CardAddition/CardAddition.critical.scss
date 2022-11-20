@@ -1,0 +1,42 @@
+.card-addition {
+    text-align: center;
+    padding: toRem(20);
+
+    &__image {
+        display: inline-block;
+        width: toRem(60);
+        height: toRem(60);
+        margin-bottom: toRem(10);
+        border-radius: 50%;
+        border: 1px solid #ccc;
+        box-sizing: border-box;
+    }
+
+    &__title {
+        font-size: toRem(16);
+        line-height: toRem(20);
+        font-weight: bold;
+        margin-bottom: toRem(8);
+    }
+
+    &__description {
+        font-size: toRem(14);
+        line-height: toRem(20);
+        margin-bottom: toRem(10);
+    }
+
+    &__link {
+        font-size: toRem(12);
+        line-height: toRem(16);
+        font-weight: bold;
+    }
+
+    @media (min-width: 650px) {
+        padding: toRem(30) toRem(20) toRem(40);
+    }
+
+    @media (min-width: 1200px) {
+        padding-left: toRem(40);
+        padding-right:toRem(40);
+    }
+}

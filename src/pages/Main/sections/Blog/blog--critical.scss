@@ -1,0 +1,18 @@
+.blog {
+    padding-top: toRem(80);
+    padding-bottom: toRem(60);
+
+    &__tabs {
+        margin-bottom: toRem(20);
+    }
+
+    &__item {
+        width: toRem(250);
+        white-space: normal;
+        display: inline-block;
+
+        & + & {
+            margin-left: toRem(20);
+        }
+    }
+}

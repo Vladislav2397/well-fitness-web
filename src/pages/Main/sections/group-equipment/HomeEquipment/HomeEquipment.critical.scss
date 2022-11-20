@@ -1,0 +1,16 @@
+.home-equipment {
+    padding-top: toRem(64);
+
+    &__container {
+        overflow: hidden;
+        box-sizing: border-box;
+    }
+
+    @media (min-width: 650px) {
+        padding-top: toRem(80);
+    }
+
+    @media (min-width: $desktop) {
+        padding-top: toRem(104);
+    }
+}

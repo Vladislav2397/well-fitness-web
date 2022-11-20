@@ -1,0 +1,20 @@
+.gym-equipment {
+    padding-top: toRem(64);
+    padding-bottom: toRem(20);
+    border-bottom: 1px solid #858FA433;
+
+
+    &__container {
+        overflow: hidden;
+        box-sizing: border-box;
+    }
+
+    @media (min-width: 650px) {
+        padding-top: toRem(80);
+    }
+
+    @media (min-width: $desktop) {
+        padding-top: toRem(104);
+        padding-bottom: toRem(30);
+    }
+}

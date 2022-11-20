@@ -1,0 +1,18 @@
+.os-windows {
+    background-color: $lightControlBorderSecondary;
+    scrollbar-width: thin;
+    scrollbar-color: $lightControlBorderBrand $lightControlBorderSecondary;
+
+    ::-webkit-scrollbar {
+        width: 2px;
+    }
+
+    ::-webkit-scrollbar-track {
+        background-color: $lightControlBorderSecondary;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background-color: $lightControlBorderBrand;
+        border-radius: 2px;
+    }
+}

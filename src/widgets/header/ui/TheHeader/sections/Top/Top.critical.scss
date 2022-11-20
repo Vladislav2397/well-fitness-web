@@ -1,0 +1,114 @@
+.top {
+    --spacing: #{toRem(12)};
+    padding-top: toRem(20);
+    padding-bottom: toRem(20);
+    background-color: $darken;
+    border-bottom: 1px solid rgba(#858FA4, 0.15); // FIXME: Common color
+
+    &__container {
+        display: table;
+        width: 100%;
+    }
+
+    &__logo,
+    &__user-actions {
+        display: table-cell;
+        vertical-align: middle;
+    }
+
+    &__image,
+    &__city {
+        display: inline-block;
+        vertical-align: middle;
+    }
+
+    &__image {
+        width: toRem(170);
+
+        img {
+            width: 100%;
+        }
+    }
+
+    &__city {
+        margin-left: toRem(24);
+        color: $secondary;
+    }
+
+    &__search {
+        display: inline-block;
+        padding-right: var(--spacing);
+        margin-right: var(--spacing);
+        border-right: 1px solid rgba(#858FA4, 0.15);
+    }
+
+    &__action {
+        display: inline-block;
+        vertical-align: middle;
+        color: rgba(#fff, 0.7);
+
+        &--search {
+            color: rgba(#858FA4, 0.7);
+            position: relative;
+        }
+
+        //&.icon--search {
+        //    color: rgba(#858FA4, 0.7);
+        //    margin-right: toRem(25);
+        //    position: relative;
+        //
+        //    &::after {
+        //        content: '';
+        //        position: absolute;
+        //        right: toRem(-10);
+        //        top: 50%;
+        //        transform: translateY(-50%);
+        //        width: 1px;
+        //        height: toRem(40);
+        //        background-color: rgba(#858FA4, 0.15);
+        //    }
+        //}
+
+        & + & {
+            margin-left: var(--spacing);
+        }
+    }
+
+    &__phone {
+        a {
+            margin-left: toRem(26);
+            color: $primary;
+        }
+
+        span + span {
+            color: $secondary;
+            margin-left: toRem(4);
+        }
+    }
+
+    &__user-actions {
+        text-align: right;
+    }
+
+    @media (min-width: $tablet) {
+        --spacing: #{toRem(16)};
+    }
+
+    @media (min-width: $desktop) {
+        &__info {
+            display: inline-block;
+            vertical-align: middle;
+            line-height: toRem(30);
+
+            & + & {
+                margin-left: toRem(16);
+                padding-left: toRem(16);
+                border-left: 1px solid #858fa426;
+            }
+        }
+
+        &__image {
+            width: toRem(280);
+        }
+    }
+}

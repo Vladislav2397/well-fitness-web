@@ -1,0 +1,85 @@
+.card-idea {
+    background-color: #ccc;
+    border-radius: toRem(4);
+    overflow: hidden;
+    position: relative;
+
+    &::before {
+        content: '';
+        display: block;
+    }
+
+    img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+    @media (max-width: 767px) {
+        &--size {
+            &-s,
+            &-l {
+                &::before {
+                    height: 0;
+                    padding-bottom: 53.33%;
+                }
+            }
+        }
+    }
+
+    $containerWidth: 1160;
+    $itemCount: 4;
+    $spacing: 24;
+    $commonMargin: $spacing * ($itemCount - 1);
+    $itemWidth: $containerWidth / $itemCount - ($commonMargin / $itemCount);
+
+    @function toPercent($container, $item) {
+        @return ($item / $container) * 100%;
+    }
+
+    @media (min-width: 768px) {
+        &--size {
+            &-l {
+                width: $itemWidth * 2 + $spacing * 1px;
+
+                &::before {
+                    height: 0;
+                    padding-bottom: 57.97%;
+                }
+            }
+
+            &-s {
+                width: $itemWidth * 1px;
+
+                &::before {
+                    height: 0;
+                    padding-bottom: 121.21%;
+                }
+            }
+        }
+    }
+
+    @media (min-width: $desktop) {
+        &--size {
+            &-l {
+                width: toPercent($containerWidth, $itemWidth * 2 + $spacing);
+
+                &::before {
+                    height: 0;
+                    padding-bottom: 57.97%;
+                }
+            }
+
+            &-s {
+                width: toPercent($containerWidth, $itemWidth);
+
+                &::before {
+                    height: 0;
+                    padding-bottom: 121.21%;
+                }
+            }
+        }
+    }
+}

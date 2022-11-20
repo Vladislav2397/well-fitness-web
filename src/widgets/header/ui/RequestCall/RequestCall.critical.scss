@@ -1,0 +1,20 @@
+.request-call {
+    color: #fff;
+
+    &__link {
+        display: inline-block;
+        color: $secondary;
+        margin-left: toRem(4);
+    }
+
+    span, a {
+        vertical-align: middle;
+        font-size: toRem(14);
+        line-height: toRem(20);
+    }
+
+    a {
+        margin-left: toRem(26);
+        color: $primary;
+    }
+}

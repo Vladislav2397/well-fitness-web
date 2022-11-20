@@ -1,0 +1,39 @@
+.link {
+    display: inline-block;
+    vertical-align: middle;
+    cursor: pointer;
+    @include fontSize(p4);
+
+    i {
+        vertical-align: middle;
+        color: inherit;
+    }
+
+    &--icon {
+        //&-left i.icon {
+        //    margin-right: toRem(4);
+        //}
+        //
+        //&-right i.icon {
+        //    margin-left: toRem(4);
+        //}
+    }
+
+    &--theme {
+        &-primary {
+            color: $primary;
+        }
+
+        &-secondary {
+            color: $secondary;
+        }
+
+        &-white {
+            color: $white;
+        }
+
+        &-dark {
+            color: $dark;
+        }
+    }
+}

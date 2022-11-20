@@ -1,0 +1,35 @@
+.pagination-wrapper {
+    padding-top: toRem(20);
+    padding-bottom: toRem(32);
+
+    &__container {
+        overflow: hidden;
+    }
+
+    &__wrapper {
+        text-align: center;
+        display: block;
+        margin-top: toRem(32);
+    }
+
+    &__link {
+        @include fontSize(p3, bold);
+
+        display: inline-block;
+        color: $primary;
+    }
+
+    &__pagination {
+        display: block;
+        margin-top: toRem(12);
+    }
+
+    &__link,
+    &__pagination {
+        text-align: center;
+    }
+
+    @media (min-width: 1200px) {
+        padding-top: toRem(30);
+    }
+}

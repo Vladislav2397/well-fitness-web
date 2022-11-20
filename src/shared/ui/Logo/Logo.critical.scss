@@ -1,0 +1,15 @@
+.logo {
+    width: toRem(170);
+
+    img {
+        width: 100%;
+    }
+
+    @media (min-width: 650px) {
+        width: toRem(200);
+    }
+
+    @media (min-width: 1200px) {
+        width: toRem(280);
+    }
+}

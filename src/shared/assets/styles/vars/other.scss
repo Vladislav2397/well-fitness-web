@@ -1,0 +1,17 @@
+$borderRadiusSkeleton: toRem(4);
+
+$borderRadiusUI: toRem(8);
+
+$borderRadiusSectionMobile: toRem(12);
+
+$borderRadiusTopSectionMobile:
+    $borderRadiusSectionMobile
+    $borderRadiusSectionMobile
+    0 0;
+
+$borderRadiusSectionDesktop: toRem(16);
+
+$z-index-overlay: 5;
+$z-index-header: 4;
+$z-index-sidebar: 6;
+$z-index-snackbar: 7;

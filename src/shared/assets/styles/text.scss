@@ -1,0 +1,32 @@
+.text {
+    .h3 {
+        @include fontSize(h3);
+    }
+
+    .p2 {
+        @include fontSize(p2);
+    }
+
+    div.section {
+        display: table;
+
+        &--dark {
+            background-color: #1A1A25;
+
+            p, .image {
+                color: $white;
+            }
+        }
+
+        &__text,
+        &__image {
+            display: table-cell;
+            vertical-align: top;
+            min-width: 30%;
+        }
+
+        &__text {
+            padding: toRem(60);
+        }
+    }
+}

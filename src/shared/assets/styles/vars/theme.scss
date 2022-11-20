@@ -1,0 +1,79 @@
+.theme-light {
+
+    // =============== COMMON ===============
+
+    --white: #fff;
+
+    // =============== BACKGROUND ===============
+
+    --backgroundBase: #{$lightBackgroundBase};
+    --backgroundBrand: #{$lightBackgroundBrand};
+    --backgroundSecondary: #{$lightBackgroundSecondary};
+    --backgroundOverlay: #{$lightBackgroundOverlay};
+    --backgroundOverlaySecondary: #{$lightBackgroundOverlaySecondary};
+    --backgroundCritical: #{$lightBackgroundCritical};
+    --backgroundBaseGradient: #{$lightBackgroundBaseGradient};
+    --backgroundOverlayGradient: #{$lightBackgroundOverlayGradient};
+    --backgroundOverlayGradientTop: #{$lightBackgroundOverlayGradientTop};
+
+    // =============== TYPOGRAPHY ===============
+
+    --textBrand: #{$lightTextBrand};
+    --textBrandHover: #{$lightTextBrandHover};
+    --textBase: #{$lightTextBase};
+    --textSecondary: #{$lightTextSecondary};
+    --textOnBrand: #{$lightTextOnBrand};
+    --textOnCritical: #{$lightTextOnCritical};
+    --textSecondaryOnBrand: #{$lightTextSecondaryOnBrand};
+    --textOnPrimaryInverse: #{$lightTextOnPrimaryInverse};
+    --textPlaceholder: #{$lightTextPlaceholder};
+    --textPlaceholderFocus: #{$lightTextPlaceholderFocus};
+    --textSuccess: #{$lightTextSuccess};
+    --textCritical: #{$lightTextCritical};
+    --textOnBrandInverse: #{$lightTextOnBrandInverse};
+
+    // =============== CONTROLS ===============
+
+    --controlBackgroundBrand: #{$lightControlBackgroundBrand};
+    --controlBackgroundBrandHover: #{$lightControlBackgroundBrandHover};
+    --controlBackgroundBrandSecondaryInverse: #{$lightControlBackgroundBrandSecondaryInverse};
+    --controlBackgroundBrandSecondary: #{$lightControlBackgroundBrandSecondary};
+    --controlBackgroundBrandSecondaryHover: #{$lightControlBackgroundBrandSecondaryHover};
+    --controlBackgroundBrandSecondaryTransparent: #{$lightControlBackgroundBrandSecondaryTransparent};
+    --controlBackgroundBrandSecondaryTransparentHover: #{$lightControlBackgroundBrandSecondaryTransparentHover};
+    --controlBackgroundBrandSecondaryActive: #{$lightControlBackgroundBrandSecondaryActive};
+    --controlBackgroundBase: #{$lightControlBackgroundBase};
+    --controlBackgroundPrimaryInverse: #{$lightControlBackgroundPrimaryInverse};
+    --controlBorderBase: #{$lightControlBorderBase};
+    --controlBorderBaseHover: #{$lightControlBorderBaseHover};
+    --controlBorderCritical: #{$lightControlBorderCritical};
+    --controlBackgroundCriticalTransparent: #{$lightControlBackgroundCriticalTransparent};
+    --controlBackgroundCriticalTransparentHover: #{$lightControlBackgroundCriticalTransparentHover};
+    --controlBackgroundCritical: #{$lightControlBackgroundCritical};
+    --controlBackgroundCriticalHover: #{$lightControlBackgroundCriticalHover};
+    --controlBackgroundCriticalMain: #{$lightControlBackgroundCriticalMain};
+    --controlBorderBaseFocus: #{$lightControlBorderBaseFocus};
+    --controlBorderBrand: #{$lightControlBorderBrand};
+    --controlBorderBrandSecondary: #{$lightControlBorderBrandSecondary};
+    --controlBorderSecondary: #{$lightControlBorderSecondary};
+    --controlBackgroundSuccessSecondary: #{$lightControlBackgroundSuccessSecondary};
+    --controlBackgroundBaseActive: #{$lightControlBackgroundBaseActive};
+
+    // =============== SYSTEM ===============
+
+    --systemAccent: #{$lightSystemAccent};
+    --systemAppleBackground: #{$lightSystemAppleBackground};
+    --systemBackgroundAlertSecondary: #{$lightSystemBackgroundAlertSecondary};
+    --systemBorderAlert: #{$lightSystemBorderAlert};
+    --systemBackgroundAlertIOS: #{$lightSystemBackgroundAlertIOS};
+    --systemBackgroundClose: #{$lightSystemBackgroundClose};
+    --systemBorderTabBar: #{$lightSystemBorderTabBar};
+
+    // =============== ELEVATIONS ================
+    --elevationBase: #{$lightElevationBase};
+    --elevationBaseHover: #{$darkElevationBaseHover};
+    --elevationBrand: #{$darkElevationBrand};
+    --elevationBrandHover: #{$darkElevationBrandHover};
+    --elevationCritical: #{$darkElevationCritical};
+    --elevationCriticalHover: #{$darkElevationCriticalHover};
+}

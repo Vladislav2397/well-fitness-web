@@ -1,0 +1,60 @@
+$spacingMobile: 4;
+$spacingTablet: 8;
+$spacingDesktop: 12;
+
+.vue-grid {
+    &__middle,
+    &__first {
+        padding-right: toRem($spacingMobile);
+    }
+
+    &__middle,
+    &__last {
+        padding-left: toRem($spacingMobile);
+
+    }
+
+    tr + tr {
+        td {
+            padding-top: toRem($spacingMobile * 2);
+        }
+    }
+
+    @media (min-width: 650px) {
+        &__middle,
+        &__first {
+            padding-right: toRem($spacingTablet);
+        }
+
+        &__middle,
+        &__last {
+            padding-left: toRem($spacingTablet);
+
+        }
+
+        tr + tr {
+            td {
+                padding-top: toRem($spacingTablet * 2);
+            }
+        }
+    }
+
+    @media (min-width: 1200px) {
+        &__middle,
+        &__first {
+            padding-right: toRem($spacingDesktop);
+        }
+
+        &__middle,
+        &__last {
+            padding-left: toRem($spacingDesktop);
+
+        }
+
+        tr + tr {
+            td {
+                padding-top: toRem($spacingDesktop * 2);
+            }
+        }
+    }
+}
