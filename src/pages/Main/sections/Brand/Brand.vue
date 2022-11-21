@@ -81,18 +81,20 @@ export default class Brand extends Vue {
         },
     ]
 
-    // getImageApi = apiHelpers.getImageApi
+    getImageApi = (...args: any[]) => {
+        // console.log('getImageApi', args)
+    } // apiHelpers.getImageApi
 
     // get brandLogoCount (): number {
     //     return this.device.size.desktop ? 15 : 12
     // }
 
     get brands() {
-        return [] // this.Brand.all()
+        return this.$store.getters['brand/list'] // this.Brand.all()
     }
 
     get countColumns (): number {
-        if (this.device.size.mobile) return 3
+        if (this.device.size.mobile) return 2
         if (this.device.size.tablet) return 4
         return 5
     }

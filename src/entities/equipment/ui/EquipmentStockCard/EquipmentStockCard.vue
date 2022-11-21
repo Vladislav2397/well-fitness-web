@@ -48,7 +48,7 @@ export default class EquipmentStockCard extends Vue {
     // Equipment!: Repository<Equipment>
 
     get content() {
-        return {} // this.Equipment.find(this.id ?? 0)
+        return this.$store.getters['equipment/getById'](this.id)
     }
 }
 </script>

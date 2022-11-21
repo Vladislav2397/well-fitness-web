@@ -33,8 +33,14 @@ export default class LoginButton extends Vue {
         vertical-align: middle;
     }
 
+    span {
+        @include fontSize(p3);
+    }
+
     &__avatar {
         margin-left: toRem(8);
+        height: toRem(20);
+        width: toRem(20);
     }
 }
 </style>

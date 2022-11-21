@@ -1,6 +1,8 @@
 .card-addition {
+    background-color: #fff;
     text-align: center;
     padding: toRem(20);
+    min-height: toRem(280);
 
     &__image {
         display: inline-block;
@@ -31,11 +33,11 @@
         font-weight: bold;
     }
 
-    @media (min-width: 650px) {
+    @media (min-width: $tablet) {
         padding: toRem(30) toRem(20) toRem(40);
     }
 
-    @media (min-width: 1200px) {
+    @media (min-width: $desktop) {
         padding-left: toRem(40);
         padding-right:toRem(40);
     }

@@ -25,7 +25,7 @@
 
 <script lang="ts">
 // TODO: Refactor (use index page SectionWrapper)
-import {Component, Inject, Vue} from 'vue-property-decorator'
+import { Component, Inject, Vue, Watch } from 'vue-property-decorator'
 
 import { SectionWrapper } from '@/pages/Main/sections/SectionWrapper'
 import TabList from '@/shared/ui/TabList.vue'
@@ -119,6 +119,96 @@ export default class Stock extends Vue {
     async created() {
         this.fetchEquipments()
     }
+
+    @Watch('activeTabIndex', { immediate: true })
+    onChangeIndex(value: number) {
+        if (value === 0) {
+            this.activeIds = this.$store.getters['equipment/novelties']
+        } else if (value === 1) {
+            this.activeIds = this.$store.getters['equipment/stocks']
+        } else {
+            this.activeIds = this.$store.getters['equipment/recommended']
+        }
+    }
 }
 
 </script>
+
+<style lang="scss">
+.stock {
+    padding-top: toRem(80);
+    padding-bottom: toRem(60);
+
+    --spacing: #{toRem(10)};
+    --n-spacing: #{toRem(-10)};
+    --i-spacing: #{toRem(20)};
+
+    &__container {
+        overflow: hidden;
+    }
+
+    &__cards,
+    &__tabs {
+        white-space: nowrap;
+        overflow-y: hidden;
+        overflow-x: auto;
+    }
+
+    &__tabs {
+        margin-bottom: toRem(30);
+    }
+
+    &__cards {
+        padding: 0 var(--spacing);
+        transform: translateX(var(--n-spacing));
+        width: 100%;
+    }
+
+    &__card {
+        display: inline-block;
+        white-space: normal;
+        vertical-align: top;
+        background-color: #fff;
+        width: toRem(220);
+
+        &:last-child {
+            margin-right: var(--spacing);
+        }
+
+        & + & {
+            margin-left: var(--i-spacing);
+        }
+    }
+
+    &__stats {
+        padding: toRem(16);
+    }
+
+    @media (min-width: 650px) {
+        padding-top: toRem(104);
+        padding-bottom: toRem(80);
+
+        --spacing: #{toRem(16)};
+        --n-spacing: #{toRem(-16)};
+        --i-spacing: #{toRem(30)};
+
+        &__card {
+            width: toRem(270);
+        }
+    }
+
+    @media (min-width: 768px) {
+        &__card {
+            width: toRem(300);
+        }
+    }
+
+    @media (min-width: 1200px) {
+        padding-top: toRem(120);
+        padding-bottom: toRem(100);
+
+        --spacing: #{toRem(20)};
+        --n-spacing: #{toRem(-20)};
+    }
+}
+</style>

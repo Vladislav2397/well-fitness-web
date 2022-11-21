@@ -31,4 +31,5 @@ export default class Tab extends Vue {
 
 </script>
 
-<style lang="scss" src="./Tab.critical.scss"></style>
+<style lang="scss" src="./Tab.critical.scss" />
+<style lang="scss" src="./Tab.main.scss" />

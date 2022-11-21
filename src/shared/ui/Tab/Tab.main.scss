@@ -1,0 +1,7 @@
+.tab {
+    transition: 0.3s ease;
+    transition-property: color, font-size;
+    @media (min-width: 1200px) {
+        cursor: pointer;
+    }
+}

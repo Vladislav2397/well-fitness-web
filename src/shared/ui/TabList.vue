@@ -3,7 +3,7 @@
 .b-tab-list
     tab-component.__item(
         v-for="(tab, index) in list"
-        :key="index"
+        :key="`${index}`"
         :value="activeIndex === index"
 
         @input="updateActiveIndex(index)"

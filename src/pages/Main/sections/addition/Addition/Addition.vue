@@ -1,9 +1,9 @@
 <template lang="pug">
 
 section.b-addition
-    ._container.container
-        ._cards
-            card-addition-component._card(
+    .__container.container
+        .__cards
+            card-addition-component.__card(
                 v-for="(card, index) in cards"
                 :key="index"
                 :imageSrc="card.image.src"

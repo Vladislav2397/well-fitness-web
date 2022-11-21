@@ -1,3 +1,12 @@
 .tab {
-    //
+    font-size: toRem(20);
+    line-height: toRem(24);
+    font-weight: 700;
+    color: #909cb5;
+
+    &.active {
+        font-size: toRem(30);
+        line-height: toRem(36);
+        color: #1a1a25;
+    }
 }
