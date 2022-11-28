@@ -32,16 +32,5 @@ export default class TabList extends Vue {
 }
 </script>
 
-<style lang="scss">
-.tab-list {
-    min-height: toRem(36);
-
-    &__item {
-        display: inline-block;
-        vertical-align: middle;
-
-        & + & {
-            margin-left: toRem(30);
-        }
-    }
-}</style>
+<!--<style lang="scss" src="./TabList.critical.scss"/>-->
+<!--<style lang="scss" src="./TabList.main.scss"/>-->

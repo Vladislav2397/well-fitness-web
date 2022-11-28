@@ -33,5 +33,5 @@ export default class BecomePartner extends Vue {
 
 </script>
 
-<style lang="scss" src="./BecomePartner.critical.scss" />
+<!--<style lang="scss" src="./BecomePartner.critical.scss" />-->
 <!--<style lang="scss" src="./BecomePartner.main.scss" />-->

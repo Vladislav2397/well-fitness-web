@@ -28,7 +28,7 @@
 import { Component, Inject, Vue, Watch } from 'vue-property-decorator'
 
 import { SectionWrapper } from '@/pages/Main/sections/SectionWrapper'
-import TabList from '@/shared/ui/TabList.vue'
+import { TabList } from '@/shared/ui/TabList'
 import { EquipmentStockCard, CardProductStats, CardProduct } from "@/entities/equipment"
 // import {env} from "@/shared/config"
 import DeviceProvider from '@/shared/lib/providers/device'

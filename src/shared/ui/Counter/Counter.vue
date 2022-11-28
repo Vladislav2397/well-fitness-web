@@ -1,11 +1,11 @@
 <template lang="pug">
 
-.counter
-    button._button(
+.b-counter
+    button.-_button(
         v-on:click="decrement"
     ) -
-    span._digit {{ count }}
-    button._button(
+    span.__digit {{ count }}
+    button.__button(
         v-on:click="increment"
     ) +
 
@@ -44,25 +44,5 @@ export default class Counter extends Vue {
 
 </script>
 
-<style lang="scss">
-.counter {
-    &__button,
-    &__digit {
-        display: inline-block;
-        vertical-align: middle;
-    }
-
-    &__button {
-        width: toRem(28);
-        height: toRem(28);
-        border-radius: 50%;
-        border: 1px solid;
-    }
-
-    &__digit {
-        margin-left: toRem(12);
-        margin-right: toRem(12);
-        color: #858fa4;
-    }
-}
-</style>
+<!--<style lang="scss" src="./Counter.critical.scss"/>-->
+<!--<style lang="scss" src="./Counter.main.scss"/>-->

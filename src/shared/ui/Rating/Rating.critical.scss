@@ -1,0 +1,38 @@
+.rating {
+    font-size: toRem(14);
+    line-height: toRem(20);
+
+    vertical-align: middle;
+    color: $secondary;
+
+    &__list {
+        display: inline-block;
+        vertical-align: middle;
+        color: #f99808;
+    }
+
+    &__label {
+        &--bold {
+            font-weight: 600;
+        }
+    }
+
+    &__label + &__list {
+        margin-left: toRem(6);
+    }
+
+    &__star {
+        width: toRem(10);
+        height: toRem(10);
+        display: inline-block;
+        border: 1px solid;
+
+        &--fill {
+            background-color: #f99808; // FIXME: make a var
+        }
+
+        & + & {
+            margin-left: toRem(2);
+        }
+    }
+}

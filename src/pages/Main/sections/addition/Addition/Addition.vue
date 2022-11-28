@@ -81,5 +81,5 @@ export default class Addition extends Vue {
 
 </script>
 
-<style lang="scss" src="./Addition.critical.scss" />
+<!--<style lang="scss" src="./Addition.critical.scss" />-->
 <!--<style lang="scss" src="./Addition.main.scss" />-->

@@ -39,4 +39,4 @@ export default class PaginationWrapper extends Vue {
 
 </script>
 
-<style lang="scss" src="./PaginationWrapper.critical.scss" />
+<!--<style lang="scss" src="./PaginationWrapper.critical.scss" />-->

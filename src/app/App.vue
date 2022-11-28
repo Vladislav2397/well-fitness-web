@@ -20,4 +20,14 @@ export default class App extends Vue {
 }
 </script>
 
-<!--<style lang="scss" src="../shared/assets/styles/main.scss" />-->
+<style lang="scss">
+@import "../shared/assets/styles/main";
+
+@import "../shared/shared.critical";
+@import "../shared/shared.main";
+
+@import "../entities/entities.critical";
+@import "../entities/entities.main";
+
+@import "../pages/pages.critical.scss";
+</style>

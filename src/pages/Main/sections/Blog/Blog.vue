@@ -30,7 +30,7 @@ section.b-blog
 import { Component, Vue } from 'vue-property-decorator'
 
 import { SectionWrapper } from '@/pages/Main/sections/SectionWrapper'
-import TabList from '@/shared/ui/TabList.vue'
+import { TabList } from '@/shared/ui/TabList'
 // import {CardPost} from '@/entities/post/ui/CardPost'
 
 @Component({
@@ -94,5 +94,5 @@ export default class Blog extends Vue {
 
 </script>
 
-<style lang="scss" src="./blog--critical.scss"></style>
+<!--<style lang="scss" src="Blog.critical.scss"></style>-->
 <!--<style lang="scss" src="./blog&#45;&#45;main.scss"></style>-->

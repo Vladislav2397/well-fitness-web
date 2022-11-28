@@ -20,4 +20,4 @@ export default Functional<AvatarProps>((h, { props, data }) => {
 })
 </script>
 
-<style lang="scss" src="./Avatar.critical.scss"></style>
+<!--<style lang="scss" src="./Avatar.critical.scss" />-->

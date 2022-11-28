@@ -28,8 +28,8 @@
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator'
 
-import Quantity from "@/shared/ui/Quantity.vue"
-import Price from "@/shared/ui/Price.vue"
+import { Quantity } from "@/shared/ui/Quantity"
+import { Price } from "@/shared/ui/Price"
 import { DealerPrice, BonusPrice } from "@/entities/equipment"
 
 @Component({

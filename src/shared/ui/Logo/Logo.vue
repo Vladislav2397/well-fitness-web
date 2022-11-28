@@ -52,4 +52,4 @@ export default Functional<LogoProps>((h, { data }) => {
 
 </script>
 
-<style lang="scss" src="./Logo.critical.scss"></style>
+<!--<style lang="scss" src="./Logo.critical.scss" />-->

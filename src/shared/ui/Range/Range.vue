@@ -49,4 +49,4 @@ export default class Range extends Vue {
 
 </script>
 
-<style lang="scss" src="./Range.critical.scss" />
+<!--<style lang="scss" src="./Range.critical.scss" />-->

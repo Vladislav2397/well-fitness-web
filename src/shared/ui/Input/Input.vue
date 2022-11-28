@@ -94,4 +94,4 @@ export default class Input extends Vue {
 
 </script>
 
-<style lang="scss" src="./Input.critical.scss"></style>
+<!--<style lang="scss" src="./Input.critical.scss" />-->

@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import App from './app/App.vue'
 
-import './shared/assets/styles/main.scss'
+// import './shared/assets/styles/main.scss'
 
 import './registerServiceWorker'
 

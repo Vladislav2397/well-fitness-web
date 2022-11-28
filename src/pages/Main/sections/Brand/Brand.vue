@@ -141,5 +141,5 @@ export default class Brand extends Vue {
 
 </script>
 
-<style lang="scss" src="./Brand.critical.scss" />
+<!--<style lang="scss" src="./Brand.critical.scss" />-->
 <!--<style lang="scss" src="./Brand.main.scss" />-->

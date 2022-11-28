@@ -43,5 +43,5 @@ export default {
 }
 </script>
 
-<style lang="scss" src="./carousel--critical.scss"></style>
-<style lang="scss" src="./carousel--main.scss"></style>
+<!--<style lang="scss" src="./Carousel.critical.scss"></style>-->
+<!--<style lang="scss" src="./Carousel.main.scss"></style>-->

@@ -1,9 +1,9 @@
 <template lang="pug">
 
 .b-home
-    carousel-section
-    home-equipment-section
-    gym-equipment-section
+    carousel-section.__section
+    home-equipment-section.__section
+    gym-equipment-section.__section
     stock-section
     idea-section
     brand-section

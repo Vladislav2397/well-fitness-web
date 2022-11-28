@@ -78,4 +78,4 @@ export default Functional<LinkProps>((h, { props, data, listeners, children }) =
 })
 </script>
 
-<style lang="scss" src="./Link.critical.scss" />
+<!--<style lang="scss" src="./Link.critical.scss" />-->

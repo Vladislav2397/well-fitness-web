@@ -1,6 +1,6 @@
 <template lang="pug">
 
-.price(
+.b-price(
     :class="classes"
 )
     span(
@@ -49,40 +49,5 @@ export default class Price extends Vue {
 
 </script>
 
-<style lang="scss">
-.price {
-    span,
-    del {
-        display: block;
-    }
-
-    &--row {
-        span,
-        del {
-            display: inline-block;
-        }
-    }
-
-    &--size {
-        &-base {
-            span {
-                @include fontSize(p2, medium);
-            }
-
-            del {
-                @include fontSize(p3);
-            }
-        }
-    }
-
-    span {
-        color: $dark;
-        font-weight: 600;
-    }
-
-    del {
-        color: $secondary;
-        margin-left: toRem(12);
-    }
-}
-</style>
+<!--<style lang="scss" src="./Price.critical.scss"/>-->
+<!--<style lang="scss" src="./Price.main.scss"/>-->

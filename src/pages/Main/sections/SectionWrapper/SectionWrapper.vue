@@ -50,5 +50,5 @@ export default class SectionWrapper extends Vue {
 
 </script>
 
-<style lang="scss" src="./SectionWrapper.critical.scss" />
+<!--<style lang="scss" src="./SectionWrapper.critical.scss" />-->
 <!--<style lang="scss" src="./SectionWrapper.main.scss" />-->

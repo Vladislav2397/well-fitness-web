@@ -1,7 +1,7 @@
 <template lang="pug">
 
-.user
-    
+.b-user
+
 </template>
 
 <script lang="ts">
@@ -21,3 +21,6 @@ export default class User extends Vue {
 }
 
 </script>
+
+<!--<style lang="scss" src="./User.critical.scss"/>-->
+<!--<style lang="scss" src="./User.main.scss"/>-->

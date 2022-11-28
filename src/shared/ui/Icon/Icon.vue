@@ -33,4 +33,4 @@ export default Functional<IconProps>((h, { props, data, listeners }) => {
 })
 </script>
 
-<style lang="scss" src="./Icon.critical.scss"></style>
+<!--<style lang="scss" src="./Icon.critical.scss" />-->

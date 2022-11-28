@@ -103,4 +103,4 @@ export default class Button extends Vue implements ButtonProps {
 }
 </script>
 
-<style lang="scss" src="./Button.critical.scss" />
+<!--<style lang="scss" src="./Button.critical.scss" />-->

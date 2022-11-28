@@ -46,8 +46,8 @@
 <script lang="ts">
 import { Component, Prop, Vue } from 'vue-property-decorator'
 
-import Quantity from '@/shared/ui/Quantity.vue'
-import Rating from '@/shared/ui/Rating.vue'
+import { Quantity } from '@/shared/ui/Quantity'
+import { Rating } from '@/shared/ui/Rating'
 
 // import { ProductCardType } from '@/entities/equipment'
 

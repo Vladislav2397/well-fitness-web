@@ -26,4 +26,4 @@ export default class Checkbox extends Vue {
 
 </script>
 
-<style lang="scss" src="./Checkbox.critical.scss"></style>
+<!--<style lang="scss" src="./Checkbox.critical.scss"></style>-->

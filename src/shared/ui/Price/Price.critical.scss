@@ -1,0 +1,35 @@
+.price {
+    span,
+    del {
+        display: block;
+    }
+
+    &--row {
+        span,
+        del {
+            display: inline-block;
+        }
+    }
+
+    &--size {
+        &-base {
+            span {
+                @include fontSize(p2, medium);
+            }
+
+            del {
+                @include fontSize(p3);
+            }
+        }
+    }
+
+    span {
+        color: $dark;
+        font-weight: 600;
+    }
+
+    del {
+        color: $secondary;
+        margin-left: toRem(12);
+    }
+}

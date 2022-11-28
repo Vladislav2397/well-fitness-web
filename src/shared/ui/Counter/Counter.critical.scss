@@ -1,0 +1,20 @@
+.counter {
+    &__button,
+    &__digit {
+        display: inline-block;
+        vertical-align: middle;
+    }
+
+    &__button {
+        width: toRem(28);
+        height: toRem(28);
+        border-radius: 50%;
+        border: 1px solid;
+    }
+
+    &__digit {
+        margin-left: toRem(12);
+        margin-right: toRem(12);
+        color: #858fa4;
+    }
+}

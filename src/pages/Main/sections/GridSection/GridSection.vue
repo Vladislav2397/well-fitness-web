@@ -57,5 +57,5 @@ export default class GridSection extends Vue {
 
 </script>
 
-<style lang="scss" src="./GridSection.critical.scss" />
+<!--<style lang="scss" src="./GridSection.critical.scss" />-->
 <!--<style lang="scss" src="./GridSection.main.scss" />-->
