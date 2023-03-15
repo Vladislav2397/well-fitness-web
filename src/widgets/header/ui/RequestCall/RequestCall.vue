@@ -27,7 +27,7 @@
 
 <script lang="ts" setup>
 import {computed, inject} from 'vue'
-import { Device } from '@/shared/lib/providers/device'
+import type { Device } from '@/shared/lib/providers/device'
 
 const isOpenDropdown = false
 

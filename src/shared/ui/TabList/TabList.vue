@@ -16,6 +16,8 @@ import { Component, Prop, VModel, Vue } from 'vue-property-decorator'
 
 import { Tab } from '@/shared/ui/Tab'
 
+export type TabListProps = Pick<TabList, 'list'> & { value: number }
+
 @Component({
     components: {
         'tab-component': Tab,

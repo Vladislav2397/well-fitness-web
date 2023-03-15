@@ -1,7 +1,7 @@
 <script lang="ts">
 import { Functional } from '@/shared/config/functionalComponent'
 
-type AvatarProps = {
+export type AvatarProps = {
     src: string
     alt: string
 }
@@ -14,9 +14,13 @@ export default Functional<AvatarProps>((h, { props, data }) => {
         },
     })
 
-    return h('div', {
-        class: ['avatar', data.class, data.staticClass ]
-    }, [children])
+    return h(
+        'div',
+        {
+            class: ['avatar', data.class, data.staticClass],
+        },
+        [children]
+    )
 })
 </script>
 

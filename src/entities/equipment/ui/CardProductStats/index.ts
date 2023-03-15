@@ -1,3 +1,5 @@
-import CardProductStats from './CardProductStats.vue'
+import CardProductStats, {
+    type CardProductStatsProps,
+} from './CardProductStats.vue'
 
-export { CardProductStats }
+export { CardProductStats, CardProductStatsProps }

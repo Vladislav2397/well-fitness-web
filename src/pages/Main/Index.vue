@@ -1,46 +1,46 @@
 <template lang="pug">
 
 .b-home
-    carousel-section.__section
-    home-equipment-section.__section
-    gym-equipment-section.__section
-    stock-section
-    idea-section
-    brand-section
-    addition-section
-    about-section
-    become-partner-section
-    blog-section
+    //carousel-section.__section
+    //home-equipment-section.__section
+    //gym-equipment-section.__section
+    //stock-section
+    //idea-section
+    //brand-section
+    //addition-section
+    //about-section
+    //become-partner-section
+    //blog-section
 
 </template>
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator'
 import {
-    Carousel,
-    HomeEquipment,
-    GymEquipment,
-    Stock,
-    Idea,
-    Brand,
-    Addition,
-    About,
-    BecomePartner,
-    Blog,
+    // Carousel,
+    // HomeEquipment,
+    // GymEquipment,
+    // Stock,
+    // Idea,
+    // Brand,
+    // Addition,
+    // About,
+    // BecomePartner,
+    // Blog,
 } from './sections'
 
 @Component({
     components: {
-        'carousel-section': Carousel,
-        'home-equipment-section': HomeEquipment,
-        'gym-equipment-section': GymEquipment,
-        'stock-section': Stock,
-        'idea-section': Idea,
-        'brand-section': Brand,
-        'addition-section': Addition,
-        'about-section': About,
-        'become-partner-section': BecomePartner,
-        'blog-section': Blog,
+        // 'carousel-section': Carousel,
+        // 'home-equipment-section': HomeEquipment,
+        // 'gym-equipment-section': GymEquipment,
+        // 'stock-section': Stock,
+        // 'idea-section': Idea,
+        // 'brand-section': Brand,
+        // 'addition-section': Addition,
+        // 'about-section': About,
+        // 'become-partner-section': BecomePartner,
+        // 'blog-section': Blog,
     },
 })
 export default class IndexPage extends Vue {

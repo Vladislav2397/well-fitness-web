@@ -1,0 +1,3 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`IdeaCard snapshot 1`] = `<div class="b-idea-card"><img src="path/to/image" alt="image"></div>`;

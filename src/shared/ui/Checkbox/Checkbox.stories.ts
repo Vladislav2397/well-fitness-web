@@ -1,18 +1,18 @@
-import Checkbox from './Checkbox.vue'
+import Checkbox, { type CheckboxProps } from './Checkbox.vue'
+import { Story } from '@storybook/vue'
 
 export default {
-    title: 'UI/Checkbox',
+    title: 'shared/Checkbox',
     component: Checkbox,
 }
 
-const Template = (args: any, {argTypes}: any) => ({
+const Template: Story<CheckboxProps> = (args, { argTypes }) => ({
     props: Object.keys(argTypes),
-    components: {Checkbox},
-    template: `<Checkbox v-bind="" />`
+    components: { Checkbox },
+    template: `<Checkbox v-bind="$props" />`,
 })
 
 export const Default = Template.bind({})
-// @ts-ignore
 Default.args = {
-    //
+    value: false,
 }

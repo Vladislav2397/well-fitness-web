@@ -1,14 +1,14 @@
 import Blog from './Blog.vue'
 
 export default {
-    title: 'UI/Blog',
+    title: 'shared/Blog',
     component: Blog,
 }
 
 const Template = (args: any, { argTypes }: any) => ({
     props: Object.keys(argTypes),
     components: { Blog },
-    template: `<Blog v-bind="" />`,
+    template: `<Blog v-bind="$props" />`,
 })
 
 export const Default = Template.bind({})

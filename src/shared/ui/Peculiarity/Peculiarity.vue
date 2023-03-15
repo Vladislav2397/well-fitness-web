@@ -31,12 +31,13 @@ import { Component, Mixins, Prop } from 'vue-property-decorator'
 
 import Collapsible from '@/shared/lib/mixins/collapsible'
 
+export type PeculiarityProps = Pick<Peculiarity, 'title' | 'list'>
+
 @Component
 export default class Peculiarity extends Mixins(Collapsible) {
     @Prop() readonly title!: string
     @Prop() readonly list!: [key: string, value: string][]
 }
-
 </script>
 
 <!--<style lang="scss" src="./Peculiarity.critical.scss"/>-->

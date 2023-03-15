@@ -16,11 +16,13 @@
 <script lang="ts">
 import { Component, Prop, Vue } from 'vue-property-decorator'
 
+export type QuantityProps = Pick<Quantity, 'count'>
+
 @Component
 export default class Quantity extends Vue {
     @Prop() readonly count!: 0 | 1 | 2 | 3
 
-    get state(): { label: string, class: string } {
+    get state(): { label: string; class: string } {
         switch (this.count) {
             case 0:
                 return {
@@ -35,12 +37,11 @@ export default class Quantity extends Vue {
             default:
                 return {
                     label: 'В наличии',
-                    class: 'success'
+                    class: 'success',
                 }
         }
     }
 }
-
 </script>
 
 <!--<style lang="scss" src="./Quantity.critical.scss"/>-->

@@ -39,12 +39,18 @@
 </template>
 
 <script lang="ts">
-import {Component, Prop, PropSync, VModel, Vue} from 'vue-property-decorator'
+import { Component, Prop, PropSync, VModel, Vue } from 'vue-property-decorator'
 
-type inputThemePropType =
-    | 'light'
-    | 'dark'
-    | 'transparent'
+export type InputProps = Pick<
+    Input,
+    'textSize' | 'placeholder' | 'name' | 'label' | 'disabled' | 'errorText'
+> &
+    Partial<Pick<Input, 'theme' | 'size'>> & {
+        value: Input['inputValue']
+        error: Input['errorSync']
+    }
+
+type inputThemePropType = 'light' | 'dark' | 'transparent'
 
 @Component
 export default class Input extends Vue {
@@ -91,7 +97,6 @@ export default class Input extends Vue {
         }
     }
 }
-
 </script>
 
 <!--<style lang="scss" src="./Input.critical.scss" />-->

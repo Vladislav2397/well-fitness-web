@@ -1,13 +1,12 @@
 <template lang="pug">
 
-card-product-component.b-equipment-card
+card-product-component.b-equipment-card(
+    :image-src="equipment.image.src"
+    :image-alt="equipment.image.alt"
+)
     card-product-stats-component.__content(
-        :has-show-room="true"
-        :price="price"
-        :quantity="3"
-        :title="equipmentCard.name"
-        :rating="4"
-        :info="device.size.desktop ? [['key', 'value']] : []"
+        :equipment="equipment"
+
         :isRatingLabel="!device.size.mobile"
         :isPriceRow="device.size.tablet"
     )
@@ -27,14 +26,15 @@ card-product-component.b-equipment-card
 <script lang="ts">
 import { Component, Inject, Prop, Vue } from 'vue-property-decorator'
 
-import {CardProduct} from '../CardProduct'
+import { CardProduct } from '../CardProduct'
 import { CardProductStats } from '../CardProductStats'
 
-import Button from '@/shared/ui/Button/Button.vue'
+import { Button } from '@/shared/ui/Button'
 import DeviceProvider from '@/shared/lib/providers/device'
-// import { Model } from '@/shared/config/decorators'
-// import { Equipment } from '@/entities/equipment'
-// import { Item, Repository } from '@vuex-orm/core'
+
+import { domain } from '@/shared/lib'
+
+export type EquipmentCardProps = Pick<EquipmentCard, 'equipment'>
 
 @Component({
     components: {
@@ -44,10 +44,12 @@ import DeviceProvider from '@/shared/lib/providers/device'
     },
 })
 export default class EquipmentCard extends Vue {
-    @Prop() readonly equipmentCard!: any
-    @Prop() readonly id!: number
+    // @Prop() readonly equipmentCard!: domain.Equipment
+    // @Prop() readonly id!: number
 
-    // @Model(Equipment) Equipment!: Repository<Equipment>
+    @Prop({ required: true })
+    readonly equipment!: CardProductStats['equipment'] &
+        Pick<domain.Equipment, 'image'>
 
     @Inject('$device') device!: DeviceProvider['device']
 
@@ -64,18 +66,7 @@ export default class EquipmentCard extends Vue {
             // FavoriteService.add(this.equipment)
         }
     }
-
-    get equipment() {
-        return null // this.Equipment.find(this.id)
-    }
-
-    get price(): CardProductStats['price'] {
-        return [
-            this.equipmentCard?.price?.current ?? '0',
-            this.equipmentCard?.price?.old ?? '0',
-        ]
-    }
 }
 </script>
 
-<style lang="scss" src="./equipment-card--critical.scss"></style>
+<!--<style lang="scss" src="./EquipmentCard.critical.scss"></style>-->

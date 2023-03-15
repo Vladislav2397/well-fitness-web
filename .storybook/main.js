@@ -1,9 +1,29 @@
 const path = require('path')
 
+const generateByEquipment = folderNames => {
+    return folderNames.map(
+        name =>
+            `../src/entities/equipment/ui/${name}/**/*.stories.(js|jsx|ts|tsx)`
+    )
+}
+
 module.exports = {
     stories: [
-        '../src/shared/**/*.stories.mdx',
-        '../src/shared/**/*.stories.@(js|jsx|ts|tsx)',
+        '../src/shared/**/*.stories.(js|jsx|ts|tsx)',
+        ...generateByEquipment([
+            'EquipmentPreview',
+            'EquipmentCard',
+            'CardProduct',
+            'CardProductStats',
+        ]),
+        // '../src/entities/equipment/ui/EquipmentPreview/**/*.stories.(js|jsx|ts|tsx)',
+        // '../src/entities/equipment/ui/EquipmentCard/**/*.stories.(js|jsx|ts|tsx)',
+        // '../src/entities/equipment/ui/CardProduct/**/*.stories.(js|jsx|ts|tsx)',
+        // '../src/entities/equipment/ui/CardProductStats/**/*.stories.(js|jsx|ts|tsx)',
+        '../src/entities/article/**/*.stories.(js|jsx|ts|tsx)',
+        '../src/entities/brand/**/*.stories.(js|jsx|ts|tsx)',
+        '../src/entities/work/**/*.stories.(js|jsx|ts|tsx)',
+        '../src/entities/idea/**/*.stories.(js|jsx|ts|tsx)',
     ],
     addons: [
         '@storybook/addon-links',
@@ -14,7 +34,7 @@ module.exports = {
     webpackFinal: config => {
         config.resolve.alias = {
             ...config.resolve.alias,
-            '@': path.resolve(__dirname, '../src')
+            '@': path.resolve(__dirname, '../src'),
         }
 
         config.module.rules.push({
@@ -24,9 +44,9 @@ module.exports = {
                     loader: 'pug-bem-plain-loader',
                     options: {
                         b: true,
-                    }
+                    },
                 },
-            ]
+            ],
         })
         return config
     },

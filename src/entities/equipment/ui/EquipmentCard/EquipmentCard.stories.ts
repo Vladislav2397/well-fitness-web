@@ -1,18 +1,38 @@
-import EquipmentCard from './EquipmentCard.vue'
+import EquipmentCard, { type EquipmentCardProps } from './EquipmentCard.vue'
+import { Story } from '@storybook/vue'
 
 export default {
-    title: 'UI/EquipmentCard',
+    title: 'entities/Equipment/EquipmentCard',
     component: EquipmentCard,
 }
 
-const Template = (args: any, {argTypes}: any) => ({
+const Template: Story<EquipmentCardProps> = (args: any, { argTypes }: any) => ({
     props: Object.keys(argTypes),
-    components: {EquipmentCard},
-    template: `<EquipmentCard v-bind="" />`
+    components: { EquipmentCard },
+    provide: {
+        $device: {
+            size: {
+                mobile: false,
+                tablet: false,
+                desktop: true,
+            },
+        },
+    },
+    template: `<EquipmentCard v-bind="$props" />`,
 })
 
 export const Default = Template.bind({})
-// @ts-ignore
 Default.args = {
-    //
+    equipment: {
+        name: 'equipment name',
+        info: [['key', 'value']],
+        image: {
+            src: 'path/to/image',
+            alt: 'image',
+        },
+        hasShowRoom: false,
+        quantity: 3,
+        rating: 5,
+        price: [12345, 12355],
+    },
 }

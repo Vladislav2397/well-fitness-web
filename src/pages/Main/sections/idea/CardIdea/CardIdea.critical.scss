@@ -33,10 +33,10 @@
     $itemCount: 4;
     $spacing: 24;
     $commonMargin: $spacing * ($itemCount - 1);
-    $itemWidth: $containerWidth / $itemCount - ($commonMargin / $itemCount);
+    $itemWidth: calc($containerWidth / $itemCount) - calc($commonMargin / $itemCount);
 
     @function toPercent($container, $item) {
-        @return ($item / $container) * 100%;
+        @return calc($item / $container) * 100%;
     }
 
     @media (min-width: 768px) {

@@ -1,15 +1,16 @@
-import Logo from './Logo.vue'
+import Logo, { type LogoProps } from './Logo.vue'
 import { defineControls } from '@/shared/lib/stories'
+import { Story } from '@storybook/vue'
 
 export default {
-    title: 'Ui/Logo',
+    title: 'shared/Logo',
     component: Logo,
     argTypes: defineControls({
         size: ['s', 'm', 'l'],
     }),
 }
 
-const Template = (args: any, { argTypes }: any) => ({
+const Template: Story<LogoProps> = (args, { argTypes }) => ({
     props: Object.keys(argTypes),
     components: {
         Logo,
@@ -18,5 +19,6 @@ const Template = (args: any, { argTypes }: any) => ({
 })
 
 export const Default = Template.bind({})
-// @ts-ignore
-Default.args = {}
+Default.args = {
+    size: 'm',
+}

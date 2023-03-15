@@ -1,18 +1,20 @@
-import ButtonIcon from './ButtonIcon.vue'
+import ButtonIcon, { type ButtonIconProps } from './ButtonIcon.vue'
+import { Story } from '@storybook/vue'
 
 export default {
-    title: 'ButtonIcon',
+    title: 'shared/ButtonIcon',
     component: ButtonIcon,
     argTypes: {},
 }
 
-const Template = (args: any, {argTypes}: any) => ({
+const Template: Story<ButtonIconProps> = (args, { argTypes }) => ({
     props: Object.keys(argTypes),
-    components: {ButtonIcon},
+    components: { ButtonIcon },
     methods: {},
     template: '<ButtonIcon v-bind="$props"/>',
 })
 
 export const Default = Template.bind({})
-// @ts-ignore
-Default.args = {}
+Default.args = {
+    //
+}

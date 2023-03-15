@@ -17,7 +17,7 @@ export default VueFunctional<DealersProps>((
 
     const actionChild = ['Become a Partner']
 
-    const label = h('span', ['Для дилеров'])
+    const label = h('span', /*['Для дилеров']*/)
 
     const action = isDefault
         ? h(Button, {

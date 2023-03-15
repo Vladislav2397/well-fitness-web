@@ -1,6 +1,28 @@
 @import "reset";
+@import "vars";
 @import "fonts";
 @import "icons";
 @import "common";
 @import "animations";
 @import "text";
+
+.typo {
+    &--size {
+        &-h4 {
+            font-size: toRem(20);
+            line-height: toRem(24);
+            font-weight: 800;
+        }
+
+        &-p3 {
+            font-size: toRem(16);
+            line-height: toRem(20);
+        }
+    }
+
+    &--view {
+        &-secondary {
+            color: #384255;
+        }
+    }
+}

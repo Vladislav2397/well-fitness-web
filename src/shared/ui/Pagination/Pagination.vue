@@ -13,6 +13,11 @@
 <script lang="ts">
 import { Component, Prop, VModel, Vue } from 'vue-property-decorator'
 
+export type PaginationProps = Pick<
+    Pagination,
+    'quantity' | 'prevVisiblePages' | 'nextVisiblePages'
+> & { value: Pagination['currentValue'] }
+
 function* range(start: number, end: number, step = 1): Generator<number> {
     for (let i = start; i < end; i += step) {
         yield i
@@ -55,12 +60,16 @@ export default class Pagination extends Vue {
             )
         } else if (this.index >= this.quantity - this.nextVisiblePages - 1) {
             currentRange.push(
-                ...this.range.slice(prevIndex, nextIndex + this.nextVisiblePages)
+                ...this.range.slice(
+                    prevIndex,
+                    nextIndex + this.nextVisiblePages
+                )
             )
-        } else if (this.index > this.prevVisiblePages && this.index < this.range.length - 2) {
-            currentRange.push(
-                ...this.range.slice(prevIndex, nextIndex + 1)
-            )
+        } else if (
+            this.index > this.prevVisiblePages &&
+            this.index < this.range.length - 2
+        ) {
+            currentRange.push(...this.range.slice(prevIndex, nextIndex + 1))
         }
 
         return currentRange
@@ -70,7 +79,9 @@ export default class Pagination extends Vue {
         const [prevIndex, nextIndex] = this.prevAndNextIndexes
 
         let result: (string | number | undefined)[] = [
-            '1', '...', `${this.quantity}`
+            '1',
+            '...',
+            `${this.quantity}`,
         ]
 
         if (this.index < 2 || this.index > this.quantity - 2) {
@@ -78,8 +89,9 @@ export default class Pagination extends Vue {
                 ...this.range.slice(0, Math.round(this.maxPageCount / 2)),
                 '...',
                 ...this.range.slice(
-                    this.quantity - this.maxPageCount / 2, this.quantity
-                )
+                    this.quantity - this.maxPageCount / 2,
+                    this.quantity
+                ),
             ]
         } else {
             if (prevIndex < 1) {
@@ -98,7 +110,6 @@ export default class Pagination extends Vue {
         return result.map(item => `${item}`)
     }
 }
-
 </script>
 
 <!--<style lang="scss" src="./Pagination.critical.scss" />-->

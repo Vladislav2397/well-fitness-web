@@ -1,10 +1,10 @@
-$marginMobile: 10 / 310 * 100%;
-$marginTablet: 20 / 940 * 100%;
-$marginDesktop: 30 / 1200 * 100%;
+$marginMobile: calc(10 / 310) * 100%;
+$marginTablet: calc(20 / 940) * 100%;
+$marginDesktop: calc(30 / 1200) * 100%;
 
-$widthMobile: ((300 - 10) / 2) / 300 * 100%;
-$widthTablet: ((610 - (20 * 2)) / 3) / 610 * 100%;
-$widthDesktop: ((1200 - (30 * 3)) / 4) / 1200 * 100%;
+$widthMobile: calc(((300 - 10) / 2) / 300) * 100%;
+$widthTablet: calc(((610 - (20 * 2)) / 3) / 610) * 100%;
+$widthDesktop: calc(((1200 - (30 * 3)) / 4) / 1200) * 100%;
 
 .equipment-preview {
     border-radius: toRem(4); // FIXME: to var

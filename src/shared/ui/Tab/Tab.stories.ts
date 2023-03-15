@@ -1,18 +1,22 @@
-import Tab from './Tab.vue'
+import Tab, { type TabProps } from './Tab.vue'
+import { Story } from '@storybook/vue'
+import { defineControls } from '@/shared/lib/stories'
 
 export default {
-    title: 'UI/Tab',
+    title: 'shared/Tab',
     component: Tab,
+    argTypes: defineControls({
+        value: false,
+    }),
 }
 
-const Template = (args: any, {argTypes}: any) => ({
+const Template: Story<TabProps> = (args, { argTypes }) => ({
     props: Object.keys(argTypes),
-    components: {Tab},
-    template: `<Tab v-bind="" />`
+    components: { Tab },
+    template: `<Tab v-bind="$props">tab content</Tab>`,
 })
 
 export const Default = Template.bind({})
-// @ts-ignore
 Default.args = {
-    //
+    value: false,
 }

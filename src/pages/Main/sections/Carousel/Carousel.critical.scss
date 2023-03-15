@@ -121,7 +121,7 @@
         }
 
         &__triangle {
-            width: 680 / 960 * 100%;
+            width: calc(680 / 960) * 100%;
         }
 
         &__image {

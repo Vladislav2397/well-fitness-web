@@ -1,18 +1,19 @@
-import Avatar from './Avatar.vue'
+import Avatar, { type AvatarProps } from './Avatar.vue'
+import { Story } from '@storybook/vue'
 
 export default {
-    title: 'UI/Avatar',
+    title: 'shared/Avatar',
     component: Avatar,
 }
 
-const Template = (args: any, {argTypes}: any) => ({
+const Template: Story<AvatarProps> = (args, { argTypes }) => ({
     props: Object.keys(argTypes),
-    components: {Avatar},
-    template: `<Avatar v-bind="" />`
+    components: { Avatar },
+    template: `<Avatar v-bind="$props" />`,
 })
 
 export const Default = Template.bind({})
-// @ts-ignore
 Default.args = {
-    //
+    src: 'path/to/image',
+    alt: 'image',
 }

@@ -1,18 +1,22 @@
-import Pagination from './Pagination.vue'
+import Pagination, { type PaginationProps } from './Pagination.vue'
+import { Story } from '@storybook/vue'
 
 export default {
-    title: 'Pagination',
+    title: 'shared/Pagination',
     component: Pagination,
     argTypes: {},
 }
 
-const Template = (args: any, {argTypes}: any) => ({
+const Template: Story<PaginationProps> = (args, { argTypes }) => ({
     props: Object.keys(argTypes),
-    components: {Pagination},
+    components: { Pagination },
     methods: {},
     template: '<Pagination v-bind="$props"/>',
 })
 
 export const Default = Template.bind({})
-// @ts-ignore
-Default.args = {}
+Default.args = {
+    quantity: 13,
+    prevVisiblePages: 3,
+    nextVisiblePages: 3,
+}

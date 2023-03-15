@@ -23,15 +23,19 @@
 <script lang="ts">
 import { Component, Prop, Vue } from 'vue-property-decorator'
 
+export type RatingProps = {
+    //
+} & Partial<Pick<Rating, 'count' | 'hasLabel'>> &
+    Pick<Rating, 'isBold'>
+
 @Component
 export default class Rating extends Vue {
-    @Prop({ default: 0 }) readonly count?: 0 | 1 | 2 | 3 | 4 | 5
+    @Prop({ default: 0 }) readonly count!: 0 | 1 | 2 | 3 | 4 | 5
 
-    @Prop({ default: true }) readonly hasLabel!: boolean
+    @Prop({ default: true, type: Boolean }) readonly hasLabel!: boolean
 
-    @Prop() readonly isBold!: boolean
+    @Prop({ type: Boolean }) readonly isBold!: boolean
 }
-
 </script>
 
 <!--<style lang="scss" src="./Rating.critical.scss"/>-->

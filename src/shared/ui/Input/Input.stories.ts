@@ -1,18 +1,18 @@
-import Input from './Input.vue'
+import Input, { type InputProps } from './Input.vue'
+import { Story } from '@storybook/vue'
 
 export default {
-    title: 'UI/Input',
+    title: 'shared/Input',
     component: Input,
 }
 
-const Template = (args: any, {argTypes}: any) => ({
+const Template: Story<InputProps> = (args, { argTypes }) => ({
     props: Object.keys(argTypes),
-    components: {Input},
-    template: `<Input v-bind="" />`
+    components: { Input },
+    template: `<Input v-bind="$props" />`,
 })
 
 export const Default = Template.bind({})
-// @ts-ignore
 Default.args = {
     //
 }

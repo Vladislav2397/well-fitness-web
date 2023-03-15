@@ -1,5 +1,5 @@
 @function toRem($size) {
-    $remSize: $size / 12 + rem;
+    $remSize: calc($size / 12) + rem;
 
     @return #{$remSize};
 }
@@ -17,10 +17,10 @@
     $column-count,
     $gap-direction
 ) {
-    $column-width: ($container - $gap * ($column-count - 1)) / $column-count;
+    $column-width: calc(($container - $gap * ($column-count - 1)) / $column-count);
 
-    $column-width-percent: $column-width / $container * 100%;
-    $gap-width-percent: $gap / $container * 100%;
+    $column-width-percent: calc($column-width / $container) * 100%;
+    $gap-width-percent: calc($gap / $container) * 100%;
 
     @if $count == 0 {
         @return $gap-width-percent;
@@ -56,10 +56,10 @@
     $gap: 30;
     $column-count: 12;
 
-    $column-width: ($container - $gap * ($column-count - 1)) / $column-count;
+    $column-width: calc(($container - $gap * ($column-count - 1)) / $column-count);
 
-    $column-width-percent: $column-width / $container * 100%;
-    $gap-width-percent: $gap / $container * 100%;
+    $column-width-percent: calc($column-width / $container) * 100%;
+    $gap-width-percent: calc($gap / $container) * 100%;
 
     @if $count == 0 {
         @return $gap-width-percent;

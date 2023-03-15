@@ -2,7 +2,7 @@ import Icon, { icons } from './Icon.vue'
 import { defineControls } from '@/shared/lib/stories'
 
 export default {
-    title: 'Ui/Icon',
+    title: 'shared/Icon',
     component: Icon,
     argTypes: defineControls({
         size: ['s', 'm', 'l'],

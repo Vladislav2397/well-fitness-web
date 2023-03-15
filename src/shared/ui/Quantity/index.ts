@@ -1,3 +1,4 @@
-import Quantity from './Quantity.vue'
+// @ts-ignore
+import Quantity, { type QuantityProps } from './Quantity.vue'
 
-export { Quantity }
+export { Quantity, QuantityProps }

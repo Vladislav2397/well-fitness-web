@@ -1,9 +1,10 @@
-import Link from './Link.vue'
+import Link, { type LinkProps } from './Link.vue'
 import { icons } from '@/shared/ui/Icon'
 import { defineControls } from '@/shared/lib/stories'
+import { Story } from '@storybook/vue'
 
 export default {
-    title: 'Ui/Link',
+    title: 'shared/Link',
     component: Link,
     argTypes: defineControls({
         tag: ['router-link', 'a', 'span', 'div'],
@@ -15,7 +16,7 @@ export default {
     }),
 }
 
-const Template = (args: any, { argTypes }: any) => ({
+const Template: Story<LinkProps> = (args, { argTypes }) => ({
     props: Object.keys(argTypes),
     components: {
         Link,
@@ -24,5 +25,11 @@ const Template = (args: any, { argTypes }: any) => ({
 })
 
 export const Default = Template.bind({})
-// @ts-ignore
-Default.args = {}
+Default.args = {
+    tag: 'a',
+    icon: 'plus',
+    iconLeft: false,
+    href: '',
+    theme: 'dark',
+    iconSize: 'm',
+}

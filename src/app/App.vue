@@ -2,7 +2,7 @@
 
 #app
     header-widget
-    router-view
+    //router-view
 
 </template>
 
@@ -13,21 +13,21 @@ import { TheHeader } from '@/widgets/header'
 @Component({
     components: {
         'header-widget': TheHeader,
-    }
+    },
 })
 export default class App extends Vue {
     //
 }
 </script>
 
-<style lang="scss">
-@import "../shared/assets/styles/main";
+<!--<style lang="scss">-->
+<!--@import "../shared/assets/styles/main";-->
 
-@import "../shared/shared.critical";
-@import "../shared/shared.main";
+<!--@import "../shared/shared.critical";-->
+<!--@import "../shared/shared.main";-->
 
-@import "../entities/entities.critical";
-@import "../entities/entities.main";
+<!--@import "../entities/entities.critical";-->
+<!--@import "../entities/entities.main";-->
 
-@import "../pages/pages.critical.scss";
-</style>
+<!--@import "../pages/pages.critical.scss";-->
+<!--</style>-->

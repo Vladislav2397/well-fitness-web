@@ -24,5 +24,5 @@ export default class CardProduct extends Vue {
 }
 </script>
 
-<style lang="scss" src="./CardProduct.critical.scss"/>
+<!--<style lang="scss" src="./CardProduct.critical.scss"/>-->
 <!--<style lang="scss" src="./CardProduct.main.scss"/>-->

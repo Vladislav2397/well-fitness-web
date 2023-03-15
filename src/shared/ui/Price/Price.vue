@@ -8,14 +8,20 @@
     ) {{ correctPrice[0] }}
     del(
         :class="classPrices"
-    )(
-        v-if="correctPrice.length > 1"
-    ) {{ correctPrice[1] }}
+    )
+        p(
+            v-if="correctPrice.length > 1"
+        ) {{ correctPrice[1] }}
 
 </template>
 
 <script lang="ts">
 import { Component, Prop, Vue } from 'vue-property-decorator'
+
+export type PriceProps = Pick<
+    Price,
+    'isRow' | 'new' | 'old' | 'classPrices' | 'size'
+>
 
 @Component
 export default class Price extends Vue {
@@ -39,14 +45,9 @@ export default class Price extends Vue {
         const newPrice = `${this.new}`.toLocaleString()
         const oldPrice = `${this.old}`.toLocaleString()
 
-        return this.old ? [
-            newPrice, oldPrice
-        ] : [
-            newPrice
-        ]
+        return this.old ? [newPrice, oldPrice] : [newPrice]
     }
 }
-
 </script>
 
 <!--<style lang="scss" src="./Price.critical.scss"/>-->

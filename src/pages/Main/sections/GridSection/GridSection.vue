@@ -40,6 +40,10 @@ export type cardType = {
 }
 
 @Component({
+    props: {
+        title: String,
+        button: String
+    },
     components: {
         'section-wrapper-component': SectionWrapper,
         'vue-grid-component': VueGrid,
