@@ -10,6 +10,20 @@ const routes: Array<RouteConfig> = [
         name: 'index',
         component: IndexPage,
     },
+    {
+        path: '/articles',
+        name: 'Articles',
+        component: () => import('@/pages/Articles/Articles.vue'),
+        meta: {
+            breadcrumbs: ['Блог'],
+            title: 'Блог',
+        },
+    },
+    {
+        path: '/articles/:id',
+        name: 'Article',
+        // component: () => import('@/pages/Article/Article.vue'),
+    },
 ]
 
 const router = new VueRouter({
