@@ -1,8 +1,9 @@
 <template lang="pug">
 
 .b-page-breadcrumb-layout
-    .__breadcrumbs {{ breadcrumbs }}
-    .__title {{ title }}
+    .__container.container
+        .__breadcrumbs {{ breadcrumbs }}
+        .__title.typo.typo--size-h1 {{ title }}
 
 </template>
 

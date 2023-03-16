@@ -8,6 +8,11 @@
 
 .typo {
     &--size {
+        &-h1 {
+            font-size: toRem(36);
+            line-height: toRem(44);
+            font-weight: 800;
+        }
         &-h4 {
             font-size: toRem(20);
             line-height: toRem(24);

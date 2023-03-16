@@ -1,4 +1,15 @@
-
 .page-breadcrumb-layout {
-    //
+    border-bottom: 1px solid #ccc;
+
+    &__breadcrumbs {
+        @include paddingLevel(top, brown);
+        color: #384255;
+        opacity: 0.6;
+    }
+
+    &__title {
+        padding: toRem(32) 0 toRem(24);
+        min-height: toRem(96);
+        box-sizing: border-box;
+    }
 }

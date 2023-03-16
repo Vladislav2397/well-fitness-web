@@ -9,9 +9,13 @@ export const server = createServer({
         }),
     },
     routes() {
-        this.get('articles', schema => {
+        this.get('articles', (schema, request) => {
+            const { limit = 9, offset = 0 } = request.queryParams
+
             // @ts-ignore
-            return schema.articles.all()
+            const articles = schema.articles.all()
+
+            return articles.slice(+offset, +limit + +offset)
         })
         this.get('articles/:id', (schema, request) => {
             const { id } = request.params
@@ -23,13 +27,19 @@ export const server = createServer({
     factories: {
         article: Factory.extend({
             title(i) {
-                return `article title ${i}`
+                return `article title ${i + 1}`
             },
             description(i) {
-                return `article description ${i}`
+                return `article description ${i + 1}`
             },
             date() {
                 return '12.12.2020'
+            },
+            image() {
+                return {
+                    src: 'images/carousel/1.png',
+                    alt: 'image',
+                }
             },
         }),
     },

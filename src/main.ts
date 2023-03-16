@@ -7,6 +7,8 @@ import router from './app/providers/router'
 import store from './app/providers/store'
 import DeviceProvider from '@/shared/lib/providers/device'
 
+import './server'
+
 Vue.config.productionTip = false
 
 new Vue({

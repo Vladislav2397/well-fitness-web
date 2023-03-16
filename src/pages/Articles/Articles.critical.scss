@@ -1,4 +1,34 @@
-
 .articles {
-    //
+    &__breadcrumb {
+        @include marginLevel(bottom, purple);
+    }
+
+    &__filters {
+        @include marginLevel(bottom, pink)
+    }
+
+    &__button {
+        & + & {
+            margin-left: toRem(12);
+        }
+    }
+
+    &__blog {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: toRem(16);
+    }
+
+    @media (min-width: 650px) {
+        &__blog {
+            grid-template-columns: 1fr 1fr;
+        }
+    }
+
+    @media (min-width: 1200px) {
+        &__blog {
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: toRem(20);
+        }
+    }
 }
