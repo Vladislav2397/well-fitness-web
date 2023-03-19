@@ -1,6 +1,5 @@
 import Vue from 'vue'
 import VueRouter, { RouteConfig } from 'vue-router'
-import IndexPage from '@/pages/Main/Index.vue'
 
 Vue.use(VueRouter)
 
@@ -8,7 +7,7 @@ const routes: Array<RouteConfig> = [
     {
         path: '/',
         name: 'index',
-        component: IndexPage,
+        component: () => import('@/pages/Main/Index.vue'),
     },
     {
         path: '/articles',
@@ -22,7 +21,7 @@ const routes: Array<RouteConfig> = [
     {
         path: '/articles/:id',
         name: 'Article',
-        // component: () => import('@/pages/Article/Article.vue'),
+        component: () => import('@/pages/Article/Article.vue'),
     },
 ]
 

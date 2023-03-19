@@ -2,32 +2,31 @@
 
 .b-page-breadcrumb-layout
     .__container.container
-        .__breadcrumbs {{ breadcrumbs }}
-        .__title.typo.typo--size-h1 {{ title }}
+        .__breadcrumbs {{ current.breadcrumbs }}
+        .__title.typo.typo--size-h1 {{ current.title }}
 
 </template>
 
 <script lang="ts">
-import { Component, Vue } from 'vue-property-decorator'
+import { Component, Prop, Vue } from 'vue-property-decorator'
 
-export type PageBreadcrumbLayoutProps = {
-    //
-}
+export type PageBreadcrumbLayoutProps = PartialPick<
+    PageBreadcrumbLayout,
+    'breadcrumbs' | 'title'
+>
 
 @Component
 export default class PageBreadcrumbLayout extends Vue {
-    get breadcrumbs() {
-        /* FIXME: Если страница использует этот компонент в keep-alive
-            то будет происходить ошибка если переходить на страницу без
-            без мета информации
-        */
+    @Prop() readonly breadcrumbs!: string[]
+    @Prop() readonly title!: string
+
+    get current() {
         const breadcrumbs = this.$route.meta?.breadcrumbs ?? []
 
-        return breadcrumbs.join(' / ')
-    }
-
-    get title() {
-        return this.$route.meta?.title
+        return {
+            breadcrumbs: (this.breadcrumbs ?? breadcrumbs).join(' / '),
+            title: this.title ?? this.$route.meta?.title,
+        }
     }
 }
 </script>

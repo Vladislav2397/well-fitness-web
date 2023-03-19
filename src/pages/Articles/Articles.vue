@@ -20,6 +20,7 @@
             c-article-card.__item(
                 v-for="article in list"
                 :article="article"
+                @click="onCardClick(article)"
             )
         c-pagination.__pagination(
             :page="pagination.page"
@@ -70,6 +71,10 @@ export default class Articles extends Vue {
 
     isActiveFilter(type: FilterType): Button['theme'] {
         return this.filters.type === type ? 'brand' : 'secondary'
+    }
+
+    onCardClick({ id }: domain.Article) {
+        this.$router.push(`/articles/${id}`)
     }
 
     get buttons(): { type: FilterType; text: string }[] {

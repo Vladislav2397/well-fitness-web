@@ -16,3 +16,13 @@ export const getArticles = async (params?: {
 
     return { articles, last_page }
 }
+
+export const getArticle = async (id: number) => {
+    const response = await fetch(`http://localhost:8000/api/articles/${id}`, {
+        method: 'GET',
+    })
+
+    const { article } = await response.json()
+
+    return article
+}

@@ -1,6 +1,8 @@
 <template lang="pug">
 
-.b-article-card
+.b-article-card(
+    @click="clickEmit"
+)
     .__image
         img(
             :src="article.image.src"
@@ -14,7 +16,7 @@
 </template>
 
 <script lang="ts">
-import { Component, Prop, Vue } from 'vue-property-decorator'
+import { Component, Emit, Prop, Vue } from 'vue-property-decorator'
 import { domain } from '@/shared/lib'
 
 export type ArticleCardProps = Pick<ArticleCard, 'article'>
@@ -25,6 +27,10 @@ export default class ArticleCard extends Vue {
         domain.Article,
         'image' | 'title' | 'description' | 'date'
     >
+
+    @Emit('click') clickEmit() {
+        return null
+    }
 
     get articleDate() {
         const date = new Date(this.article.date)

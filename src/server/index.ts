@@ -69,7 +69,7 @@ export const server = createServer({
             },
             image() {
                 return {
-                    src: faker.image.abstract(640, 480, true),
+                    src: faker.image.sports(640, 480, true),
                     alt: 'image',
                 }
             },
