@@ -1,5 +1,3 @@
 import CardIdea from './CardIdea.vue'
 
-export {
-    CardIdea,
-}
+export { CardIdea }

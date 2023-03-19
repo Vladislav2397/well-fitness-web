@@ -18,14 +18,14 @@ export default class CardIdea extends Vue {
     @Prop() readonly alt!: string
     @Prop() readonly size!: string
 
-    get imageAttributes (): Record<string, string> {
+    get imageAttributes(): Record<string, string> {
         return {
             src: this.src,
-            alt: this.alt
+            alt: this.alt,
         }
     }
 
-    get classes (): string[] {
+    get classes(): string[] {
         const classes = []
 
         if (this.size) classes.push(`card-idea--size-${this.size}`)
@@ -33,7 +33,6 @@ export default class CardIdea extends Vue {
         return classes
     }
 }
-
 </script>
 
 <!--<style lang="scss" src="./CardIdea.critical.scss" />-->

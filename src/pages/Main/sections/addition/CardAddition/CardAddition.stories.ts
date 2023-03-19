@@ -6,9 +6,9 @@ export default {
     argTypes: {},
 }
 
-const Template = (args: any, {argTypes}: any) => ({
+const Template = (args: any, { argTypes }: any) => ({
     props: Object.keys(argTypes),
-    components: {CardAddition},
+    components: { CardAddition },
     methods: {},
     template: '<CardAddition v-bind="$props"/>',
 })

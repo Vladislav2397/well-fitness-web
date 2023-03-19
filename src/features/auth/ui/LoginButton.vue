@@ -15,7 +15,7 @@ import { Avatar } from '@/shared/ui/Avatar'
 @Component({
     components: {
         'avatar-component': Avatar,
-    }
+    },
 })
 export default class LoginButton extends Vue {
     openModal(): void {
@@ -28,7 +28,8 @@ export default class LoginButton extends Vue {
 .login-button {
     color: #fff;
 
-    span, &__avatar {
+    span,
+    &__avatar {
         display: inline-block;
         vertical-align: middle;
     }

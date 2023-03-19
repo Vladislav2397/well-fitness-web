@@ -37,18 +37,20 @@ import { CardIdea } from '../CardIdea'
 @Component({
     components: {
         'card-idea-component': CardIdea,
-        'section-wrapper-component': SectionWrapper
-    }
+        'section-wrapper-component': SectionWrapper,
+    },
 })
 export default class Idea extends Vue {
     // @Model(IdeaModel) IdeaModel!: Repository<IdeaModel>
 
     get cards() {
-        return this.$store.getters['idea/list'].map((item: any, index: number) => ({
-            size: index === 0 ? 'l' : 's',
-            src: '', // ${MEDIA_HOST}/${item.image}
-            alt: '',
-        }))
+        return this.$store.getters['idea/list'].map(
+            (item: any, index: number) => ({
+                size: index === 0 ? 'l' : 's',
+                src: '', // ${MEDIA_HOST}/${item.image}
+                alt: '',
+            })
+        )
         /* this.IdeaModel.all().map((item, index) => ({
             size: index === 0 ? 'l' : 's',
             src: `${MEDIA_HOST}/${item.image}`,
@@ -57,7 +59,7 @@ export default class Idea extends Vue {
     }
 
     onClick(): void {
-        this.$router.push({ name: 'Idea'})
+        this.$router.push({ name: 'Idea' })
     }
 
     async created() {
@@ -80,7 +82,6 @@ export default class Idea extends Vue {
         // }
     }
 }
-
 </script>
 
 <!--<style lang="scss" src="./Idea.critical.scss" />-->

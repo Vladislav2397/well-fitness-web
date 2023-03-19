@@ -5,11 +5,11 @@ export const VueFunctional = <Props>(
 ) =>
     Vue.extend<Props>({
         functional: true,
-        render
+        render,
     })
 
 export function Functional<Props>(
-    renderFn: (h: CreateElement, context: RenderContext<Props>) => VNode,
+    renderFn: (h: CreateElement, context: RenderContext<Props>) => VNode
 ): any {
     return {
         functional: true,

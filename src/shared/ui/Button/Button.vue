@@ -97,7 +97,7 @@ export default class Button extends Vue implements ButtonProps {
                     click: this.clickEmit,
                 },
             },
-            children,
+            children
         )
     }
 }

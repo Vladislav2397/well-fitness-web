@@ -23,8 +23,8 @@ import { CardAddition } from '../CardAddition'
 
 @Component({
     components: {
-        'card-addition-component': CardAddition
-    }
+        'card-addition-component': CardAddition,
+    },
 })
 export default class Addition extends Vue {
     cards = [
@@ -34,11 +34,12 @@ export default class Addition extends Vue {
                 alt: '',
             },
             title: 'Помощь покупателю',
-            description: 'Узнайте как приобрести товар, способы доставки и оплаты, а также условия гарантии.',
+            description:
+                'Узнайте как приобрести товар, способы доставки и оплаты, а также условия гарантии.',
             link: {
                 text: 'Подробнее',
                 href: '',
-            }
+            },
         },
         {
             image: {
@@ -46,11 +47,12 @@ export default class Addition extends Vue {
                 alt: '',
             },
             title: 'Заявка на сервис',
-            description: 'Оставьте заявку на проведение гарантийного и постгарантийного ремонта.',
+            description:
+                'Оставьте заявку на проведение гарантийного и постгарантийного ремонта.',
             link: {
                 text: 'Оставить заявку',
                 href: '',
-            }
+            },
         },
         {
             image: {
@@ -58,11 +60,12 @@ export default class Addition extends Vue {
                 alt: '',
             },
             title: 'Личный кабинет партнера B2B',
-            description: 'Личный кабинет дилера с доступом к информационным материалам',
+            description:
+                'Личный кабинет дилера с доступом к информационным материалам',
             link: {
                 text: 'Стать партнером',
                 href: '',
-            }
+            },
         },
         {
             image: {
@@ -74,11 +77,10 @@ export default class Addition extends Vue {
             link: {
                 text: 'Записаться',
                 href: '',
-            }
+            },
         },
     ]
 }
-
 </script>
 
 <!--<style lang="scss" src="./Addition.critical.scss" />-->

@@ -3,7 +3,7 @@
     padding-top: toRem(20);
     padding-bottom: toRem(20);
     background-color: $darken;
-    border-bottom: 1px solid rgba(#858FA4, 0.15); // FIXME: Common color
+    border-bottom: 1px solid rgba(#858fa4, 0.15); // FIXME: Common color
 
     &__container {
         display: table;
@@ -39,7 +39,7 @@
         display: inline-block;
         padding-right: var(--spacing);
         margin-right: var(--spacing);
-        border-right: 1px solid rgba(#858FA4, 0.15);
+        border-right: 1px solid rgba(#858fa4, 0.15);
     }
 
     &__action {
@@ -48,7 +48,7 @@
         color: rgba(#fff, 0.7);
 
         &--search {
-            color: rgba(#858FA4, 0.7);
+            color: rgba(#858fa4, 0.7);
             position: relative;
         }
 

@@ -1,5 +1,3 @@
 import { Idea } from './Idea'
 
-export {
-    Idea,
-}
+export { Idea }

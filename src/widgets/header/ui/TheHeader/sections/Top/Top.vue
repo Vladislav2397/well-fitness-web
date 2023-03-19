@@ -60,12 +60,12 @@ import DeviceProvider from '@/shared/lib/providers/device'
         'c-login-button': LoginButton,
         'c-icon': Icon,
         'link-component': Link,
-    }
+    },
 })
 export default class Top extends Vue {
     @Inject('$device') device!: DeviceProvider['device']
 }
 </script>
 
-<style lang="scss" src="./Top.critical.scss"/>
-<style lang="scss" src="./Top.main.scss"/>
+<style lang="scss" src="./Top.critical.scss" />
+<style lang="scss" src="./Top.main.scss" />

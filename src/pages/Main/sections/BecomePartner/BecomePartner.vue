@@ -24,13 +24,10 @@ import { Button } from '@/shared/ui/Button'
 
 @Component({
     components: {
-        'button-component': Button
-    }
+        'button-component': Button,
+    },
 })
-export default class BecomePartner extends Vue {
-
-}
-
+export default class BecomePartner extends Vue {}
 </script>
 
 <!--<style lang="scss" src="./BecomePartner.critical.scss" />-->

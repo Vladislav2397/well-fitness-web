@@ -30,18 +30,17 @@ export default class Counter extends Vue {
     increment() {
         clearTimeout(timeout)
         timeout = setTimeout(() => {
-            this.count = +(this.count) + 1
+            this.count = +this.count + 1
         }, 50)
     }
 
     decrement() {
         clearTimeout(timeout)
         timeout = setTimeout(() => {
-            this.count = +(this.count) - 1
+            this.count = +this.count - 1
         }, 50)
     }
 }
-
 </script>
 
 <!--<style lang="scss" src="./Counter.critical.scss"/>-->

@@ -22,17 +22,27 @@ export const useArticles = () => {
         }
     }
 
-    const { pagination, isPending, changePage } = useQuery(fetcher, {
-        immediate: true,
-        initialValue: {
-            perPage: 9,
-        },
-    })
+    const { pagination, isPending, filters, setFilter, changePage } = useQuery(
+        fetcher,
+        {
+            immediate: true,
+            initialValue: {
+                perPage: 9,
+                type: 'blog',
+            },
+        }
+    )
+
+    async function changeType(type: 'blog' | 'news') {
+        await setFilter('type', type)
+    }
 
     return {
         list,
         isPending,
         pagination,
+        filters,
         changePage,
+        changeType,
     }
 }

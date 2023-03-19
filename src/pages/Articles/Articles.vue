@@ -5,9 +5,10 @@
     .__container.container
         .__filters
             c-button.__button(
-                v-for="filter in filters"
-                :theme="filter.theme"
+                v-for="filter in buttons"
+                :theme="isActiveFilter(filter.type)"
                 size="s"
+                @click="changeType(filter.type)"
             ) {{ filter.text }}
         .__blog(
             v-if="isPending"
@@ -21,6 +22,7 @@
                 :article="article"
             )
         c-pagination.__pagination(
+            :page="pagination.page"
             :max-items="9"
             :total="pagination.lastPage"
             @changePage="changePage"
@@ -41,6 +43,8 @@ import { domain } from '@/shared/lib'
 
 import { useArticles } from './model'
 
+type FilterType = 'blog' | 'news'
+
 @Component({
     components: {
         'c-pagination': Pagination,
@@ -55,20 +59,28 @@ import { useArticles } from './model'
 export default class Articles extends Vue {
     page = 1
 
+    // filter: 'blog' | 'news' = 'blog'
+
     isPending!: Ref<boolean>
     list!: domain.Article[]
+    filters!: { type: FilterType }
     pagination!: { page: string; perPage: string; lastPage: string }
     changePage!: (page: number) => Promise<void>
+    changeType!: (type: FilterType) => Promise<void>
 
-    get filters(): ({ text: string } & Pick<Button, 'theme'>)[] {
+    isActiveFilter(type: FilterType): Button['theme'] {
+        return this.filters.type === type ? 'brand' : 'secondary'
+    }
+
+    get buttons(): { type: FilterType; text: string }[] {
         return [
             {
+                type: 'blog',
                 text: 'Статьи в блоге',
-                theme: 'brand',
             },
             {
+                type: 'news',
                 text: 'Последние новости',
-                theme: 'secondary',
             },
         ]
     }

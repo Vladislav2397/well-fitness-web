@@ -2,7 +2,6 @@
     &__image {
         width: 100%;
         height: toRem(260);
-        border: 1px solid;
         box-sizing: border-box;
         overflow-x: hidden;
         overflow-y: hidden;
@@ -26,9 +25,15 @@
 
     &__title {
         margin-bottom: toRem(16);
+        height: toRem(48);
     }
 
     &__description {
+        display: inline-block;
         margin-bottom: toRem(16);
+        height: toRem(60);
+        overflow-x: hidden;
+        overflow-y: hidden;
+        text-overflow: ellipsis;
     }
 }

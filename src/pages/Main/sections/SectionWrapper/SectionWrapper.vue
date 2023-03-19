@@ -32,7 +32,7 @@ import { Button } from '@/shared/ui/Button'
 @Component({
     components: {
         'button-component': Button,
-    }
+    },
 })
 export default class SectionWrapper extends Vue {
     @Prop() readonly title!: string
@@ -42,12 +42,14 @@ export default class SectionWrapper extends Vue {
     @Prop() readonly buttonText!: string
 
     @Prop({
-        default: 'ghost-brand'
-    }) readonly buttonTheme!: buttonThemeType
+        default: 'ghost-brand',
+    })
+    readonly buttonTheme!: buttonThemeType
 
-    @Emit('click') clickEmit (): void {/**/}
+    @Emit('click') clickEmit(): void {
+        /**/
+    }
 }
-
 </script>
 
 <!--<style lang="scss" src="./SectionWrapper.critical.scss" />-->

@@ -16,18 +16,17 @@
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator'
-import {
-    // Carousel,
-    // HomeEquipment,
-    // GymEquipment,
-    // Stock,
-    // Idea,
-    // Brand,
-    // Addition,
-    // About,
-    // BecomePartner,
-    // Blog,
-} from './sections'
+import // Carousel,
+// HomeEquipment,
+// GymEquipment,
+// Stock,
+// Idea,
+// Brand,
+// Addition,
+// About,
+// BecomePartner,
+// Blog,
+'./sections'
 
 @Component({
     components: {

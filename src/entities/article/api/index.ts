@@ -1,11 +1,12 @@
 export const getArticles = async (params?: {
     page?: number
     perPage?: number
+    type?: 'blog' | 'news'
 }) => {
-    const { page = 1, perPage = 10 } = params ?? {}
+    const { page = 1, perPage = 10, type = 'blog' } = params ?? {}
 
     const response = await fetch(
-        `http://localhost:8000/api/articles?page=${page}&perPage=${perPage}`,
+        `http://localhost:8000/api/articles?page=${page}&perPage=${perPage}&type=${type}`,
         {
             method: 'GET',
         }

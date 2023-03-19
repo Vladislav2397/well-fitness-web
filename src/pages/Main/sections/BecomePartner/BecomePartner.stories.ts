@@ -6,9 +6,9 @@ export default {
     argTypes: {},
 }
 
-const Template = (args: any, {argTypes}: any) => ({
+const Template = (args: any, { argTypes }: any) => ({
     props: Object.keys(argTypes),
-    components: {BecomePartner},
+    components: { BecomePartner },
     methods: {},
     template: '<BecomePartner v-bind="$props"/>',
 })

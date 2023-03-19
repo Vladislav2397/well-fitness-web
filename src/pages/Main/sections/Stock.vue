@@ -29,7 +29,11 @@ import { Component, Inject, Vue, Watch } from 'vue-property-decorator'
 
 import { SectionWrapper } from '@/pages/Main/sections/SectionWrapper'
 import { TabList } from '@/shared/ui/TabList'
-import { EquipmentStockCard, CardProductStats, CardProduct } from "@/entities/equipment"
+import {
+    EquipmentStockCard,
+    CardProductStats,
+    CardProduct,
+} from '@/entities/equipment'
 // import {env} from "@/shared/config"
 import DeviceProvider from '@/shared/lib/providers/device'
 
@@ -53,7 +57,7 @@ import DeviceProvider from '@/shared/lib/providers/device'
         'card-product-stats-component': CardProductStats,
         'card-product-component': CardProduct,
         'tab-list-component': TabList,
-        'section-wrapper-component': SectionWrapper
+        'section-wrapper-component': SectionWrapper,
     },
 })
 export default class Stock extends Vue {
@@ -65,11 +69,7 @@ export default class Stock extends Vue {
 
     activeIds = []
 
-    tabList = [
-        'Акция',
-        'Новинки',
-        'Мы рекомендуем',
-    ]
+    tabList = ['Акция', 'Новинки', 'Мы рекомендуем']
 
     onInput(value: number): void {
         const oldValue = this.activeTabIndex
@@ -104,7 +104,6 @@ export default class Stock extends Vue {
         //         }
         //     }
         // `
-
         // try {
         //     const { allEquipments } = await request(env.GRAPHQL_HOST, query)
         //
@@ -131,7 +130,6 @@ export default class Stock extends Vue {
         }
     }
 }
-
 </script>
 
 <style lang="scss">

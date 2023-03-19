@@ -3,7 +3,9 @@ import { Component, Mixins, Provide } from 'vue-property-decorator'
 import resize from '../mixins/resize'
 
 function isMobile() {
-    return Boolean(navigator.userAgent.match(/(iPad)|(iPhone)|(iPod)|(android)|(webOS)/i))
+    return Boolean(
+        navigator.userAgent.match(/(iPad)|(iPhone)|(iPod)|(android)|(webOS)/i)
+    )
 }
 
 const device = {
@@ -23,7 +25,9 @@ export type Device = typeof device
 
 @Component
 export default class DeviceProvider extends Mixins(resize) {
-    @Provide('$device') device = JSON.parse(JSON.stringify(device)) as typeof device
+    @Provide('$device') device = JSON.parse(
+        JSON.stringify(device)
+    ) as typeof device
 
     created(): void {
         this.setSize()
@@ -45,8 +49,10 @@ export default class DeviceProvider extends Mixins(resize) {
         }
 
         this.device.size.mobile = width < breakpoints.tablet
-        this.device.size.tablet = width < breakpoints.desktop && width >= breakpoints.tablet
-        this.device.size.tabletLate = width < breakpoints.desktop && width >= breakpoints.tabletLate
+        this.device.size.tablet =
+            width < breakpoints.desktop && width >= breakpoints.tablet
+        this.device.size.tabletLate =
+            width < breakpoints.desktop && width >= breakpoints.tabletLate
         this.device.size.desktop = width >= breakpoints.desktop
     }
 

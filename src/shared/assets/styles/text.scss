@@ -11,9 +11,10 @@
         display: table;
 
         &--dark {
-            background-color: #1A1A25;
+            background-color: #1a1a25;
 
-            p, .image {
+            p,
+            .image {
                 color: $white;
             }
         }

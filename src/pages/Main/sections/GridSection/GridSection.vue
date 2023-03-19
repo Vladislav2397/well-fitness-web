@@ -35,19 +35,19 @@ export type cardType = {
         src: string
         alt: string
     }
-    theme: 'dark' | 'light' | 'secondary',
+    theme: 'dark' | 'light' | 'secondary'
     stretch: 'horizontal' | 'vertical' | 'none' | 'default'
 }
 
 @Component({
     props: {
         title: String,
-        button: String
+        button: String,
     },
     components: {
         'section-wrapper-component': SectionWrapper,
         'vue-grid-component': VueGrid,
-        'c-equipment-preview': EquipmentPreview
+        'c-equipment-preview': EquipmentPreview,
     },
 })
 export default class GridSection extends Vue {
@@ -56,9 +56,10 @@ export default class GridSection extends Vue {
     @Prop() readonly title!: string
     @Prop() readonly button!: string
 
-    @Emit('click') clickEmit(): void {/**/}
+    @Emit('click') clickEmit(): void {
+        /**/
+    }
 }
-
 </script>
 
 <!--<style lang="scss" src="./GridSection.critical.scss" />-->

@@ -8,7 +8,7 @@ export const Action = createDecoratorFactory('methods', mapActions)
 
 function createDecoratorFactory<ArgType = string>(
     optionsKey: 'computed' | 'methods',
-    mapFn: any,
+    mapFn: any
 ) {
     return (value: ArgType) => {
         return createDecorator((options, key) => {

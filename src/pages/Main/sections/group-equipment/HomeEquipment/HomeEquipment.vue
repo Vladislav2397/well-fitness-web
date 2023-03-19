@@ -25,7 +25,7 @@ import DeviceProvider from '@/shared/lib/providers/device'
 @Component({
     components: {
         'grid-section-component': GridSection,
-    }
+    },
 })
 export default class HomeEquipmentPage extends Vue {
     @Inject('$device') device!: DeviceProvider['device']
@@ -119,7 +119,10 @@ export default class HomeEquipmentPage extends Vue {
                     alt: '',
                 },
                 theme: 'light',
-                stretch: this.device.size.tablet || this.device.size.desktop ? 'none' : 'default',
+                stretch:
+                    this.device.size.tablet || this.device.size.desktop
+                        ? 'none'
+                        : 'default',
             },
             {
                 title: 'Горнолыжные<br />тренажеры',
@@ -129,7 +132,10 @@ export default class HomeEquipmentPage extends Vue {
                     alt: '',
                 },
                 theme: 'light',
-                stretch: this.device.size.tablet || this.device.size.desktop ? 'none' : 'default',
+                stretch:
+                    this.device.size.tablet || this.device.size.desktop
+                        ? 'none'
+                        : 'default',
             },
             {
                 title: 'Силовые<br />тренажеры',
@@ -139,7 +145,10 @@ export default class HomeEquipmentPage extends Vue {
                     alt: '',
                 },
                 theme: 'light',
-                stretch: this.device.size.tablet && !this.device.size.tabletLate ? 'default' : 'none',
+                stretch:
+                    this.device.size.tablet && !this.device.size.tabletLate
+                        ? 'default'
+                        : 'none',
             },
             {
                 title: 'Гребные<br />тренажеры',
@@ -149,7 +158,10 @@ export default class HomeEquipmentPage extends Vue {
                     alt: '',
                 },
                 theme: 'light',
-                stretch: this.device.size.tablet && !this.device.size.tabletLate ? 'default' : 'none',
+                stretch:
+                    this.device.size.tablet && !this.device.size.tabletLate
+                        ? 'default'
+                        : 'none',
             },
             {
                 title: 'Батуты',
@@ -195,13 +207,14 @@ export default class HomeEquipmentPage extends Vue {
     }
 
     onClick(): void {
-        this.$router.push({
-            name: 'EquipmentGroup', // RouteNames.EQUIPMENT_GROUP,
-            params: {
-                group: 'home'
-            }
-        }).catch(error => console.error(error))
+        this.$router
+            .push({
+                name: 'EquipmentGroup', // RouteNames.EQUIPMENT_GROUP,
+                params: {
+                    group: 'home',
+                },
+            })
+            .catch(error => console.error(error))
     }
 }
-
 </script>

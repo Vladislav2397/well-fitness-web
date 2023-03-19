@@ -23,8 +23,8 @@ import { SectionWrapper } from '../SectionWrapper'
 
 @Component({
     components: {
-        'section-wrapper-component': SectionWrapper
-    }
+        'section-wrapper-component': SectionWrapper,
+    },
 })
 export default class About extends Vue {}
 </script>

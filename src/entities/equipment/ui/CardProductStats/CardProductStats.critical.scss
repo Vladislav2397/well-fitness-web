@@ -33,14 +33,16 @@
     &__price {
         display: inline-block;
 
-        span, del {
+        span,
+        del {
             display: block;
         }
 
         &--row {
             display: block;
 
-            span, del {
+            span,
+            del {
                 display: inline-block;
             }
         }

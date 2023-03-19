@@ -1,5 +1,3 @@
 import Middle from './Middle.vue'
 
-export {
-    Middle,
-}
+export { Middle }

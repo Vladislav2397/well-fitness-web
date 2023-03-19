@@ -25,7 +25,7 @@ import { Link } from '@/shared/ui/Link'
 @Component({
     components: {
         'link-component': Link,
-    }
+    },
 })
 export default class CardAddition extends Vue {
     @Prop() readonly imageSrc!: string
@@ -35,7 +35,6 @@ export default class CardAddition extends Vue {
     @Prop() readonly linkText!: string
     @Prop() readonly linkHref!: string
 }
-
 </script>
 
 <!--<style lang="scss" src="./CardAddition.critical.scss" />-->

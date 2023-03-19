@@ -1,4 +1,5 @@
 import { createServer, Factory, Model } from 'miragejs'
+import { faker } from '@faker-js/faker'
 
 const delay = (ms = 1000) =>
     new Promise(resolve => {
@@ -7,6 +8,10 @@ const delay = (ms = 1000) =>
             resolve(null)
         }, ms)
     })
+
+const randint = (min: number, max: number) => {
+    return Math.min(Math.floor(Math.random() * (max - min + 1) + min), max - 1)
+}
 
 export const server = createServer({
     urlPrefix: 'http://localhost:8000',
@@ -18,15 +23,28 @@ export const server = createServer({
     },
     routes() {
         this.get('articles', async function (schema, request) {
-            const { page = 1, perPage = 10 } = request.queryParams
+            const {
+                page = 1,
+                perPage = 10,
+                type = 'blog',
+            } = request.queryParams
 
             await delay()
 
             // @ts-ignore
-            const { articles } = this.serialize(schema.articles.all()) as any[]
+            let { articles } = this.serialize(schema.articles.all()) as any[]
+
+            if (type === 'news') {
+                const getTimestamp = (date: Date) => date.getTime()
+
+                console.log('type === news')
+
+                articles = [...articles].sort(
+                    (a, b) => getTimestamp(b.date) - getTimestamp(a.date)
+                )
+            }
 
             return {
-                // @ts-ignore
                 data: articles.slice((+page - 1) * +perPage, +page * +perPage),
                 last_page: Math.floor(articles.length / +perPage),
             }
@@ -40,18 +58,18 @@ export const server = createServer({
     },
     factories: {
         article: Factory.extend({
-            title(i) {
-                return `article title ${i + 1}`
+            title() {
+                return faker.lorem.words(5)
             },
-            description(i) {
-                return `article description ${i + 1}`
+            description() {
+                return faker.lorem.lines(2)
             },
             date() {
-                return '12.12.2020'
+                return new Date(`2022-04-${randint(1, 25)}`)
             },
             image() {
                 return {
-                    src: 'images/carousel/1.png',
+                    src: faker.image.abstract(640, 480, true),
                     alt: 'image',
                 }
             },

@@ -26,16 +26,14 @@
 </template>
 
 <script lang="ts" setup>
-import {computed, inject} from 'vue'
+import { computed, inject } from 'vue'
 import type { Device } from '@/shared/lib/providers/device'
 
 const isOpenDropdown = false
 
 const device = inject<Device>('$device')
 
-const isNotMobile = computed(
-    () => device?.size.desktop || device?.size.tablet
-)
+const isNotMobile = computed(() => device?.size.desktop || device?.size.tablet)
 </script>
 
 <script lang="ts">
@@ -48,7 +46,7 @@ export default {
         'c-dropdown-wrapper': DropdownWrapper,
         'c-card': Card,
         'link-component': Link,
-    }
+    },
 }
 </script>
 

@@ -28,7 +28,7 @@
 </template>
 
 <script lang="ts">
-import {Component, Inject, Vue} from 'vue-property-decorator'
+import { Component, Inject, Vue } from 'vue-property-decorator'
 
 import { SectionWrapper } from '../SectionWrapper'
 
@@ -47,7 +47,7 @@ import { Link } from '@/shared/ui/Link'
     components: {
         'section-wrapper-component': SectionWrapper,
         'link-component': Link,
-    }
+    },
 })
 export default class Brand extends Vue {
     @Inject('$device') device!: DeviceProvider['device']
@@ -93,22 +93,22 @@ export default class Brand extends Vue {
         return this.$store.getters['brand/list'] // this.Brand.all()
     }
 
-    get countColumns (): number {
+    get countColumns(): number {
         if (this.device.size.mobile) return 2
         if (this.device.size.tablet) return 4
         return 5
     }
 
-    itemClasses (index: number): string[] {
+    itemClasses(index: number): string[] {
         const classes = []
 
         switch ((index + 1) % this.countColumns) {
-        case 0:
-            classes.push('last')
-            break
-        case 1:
-            classes.push('first')
-            break
+            case 0:
+                classes.push('last')
+                break
+            case 1:
+                classes.push('first')
+                break
         }
 
         if (index >= this.countColumns) {
@@ -138,7 +138,6 @@ export default class Brand extends Vue {
         // }
     }
 }
-
 </script>
 
 <!--<style lang="scss" src="./Brand.critical.scss" />-->

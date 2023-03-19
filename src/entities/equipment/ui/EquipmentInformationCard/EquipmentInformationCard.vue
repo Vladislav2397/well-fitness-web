@@ -28,17 +28,17 @@
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator'
 
-import { Quantity } from "@/shared/ui/Quantity"
-import { Price } from "@/shared/ui/Price"
-import { DealerPrice, BonusPrice } from "@/entities/equipment"
+import { Quantity } from '@/shared/ui/Quantity'
+import { Price } from '@/shared/ui/Price'
+import { DealerPrice, BonusPrice } from '@/entities/equipment'
 
 @Component({
     components: {
         'c-bonus-price': BonusPrice,
         'c-dealer-price': DealerPrice,
         'c-price': Price,
-        'c-quantity': Quantity
-    }
+        'c-quantity': Quantity,
+    },
 })
 export default class EquipmentInformationCard extends Vue {
     //

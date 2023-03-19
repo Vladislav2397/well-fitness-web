@@ -1,5 +1,3 @@
 import CatalogCard from './CatalogCard.vue'
 
-export {
-    CatalogCard,
-}
+export { CatalogCard }

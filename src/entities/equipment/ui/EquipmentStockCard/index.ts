@@ -1,5 +1,3 @@
 import EquipmentStockCard from './EquipmentStockCard.vue'
 
-export {
-    EquipmentStockCard
-}
+export { EquipmentStockCard }

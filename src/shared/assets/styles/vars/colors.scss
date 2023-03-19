@@ -18,26 +18,23 @@ $lightBackgroundSecondary: #f8f8f8;
 $lightBackgroundOverlay: rgba(#001123, 0.15);
 $lightBackgroundOverlaySecondary: rgba($colorWhite, 0.5);
 $lightBackgroundCritical: #ee8989;
-$lightBackgroundBaseGradient:
-    linear-gradient(
-        180deg,
-        rgba(255, 255, 255, 0) 0%,
-        rgba(255, 255, 255, 0.65) 28.5%,
-        #fff 100%
-    );
-$lightBackgroundOverlayGradient:
-    linear-gradient(
-        180deg,
-        rgba(248, 248, 248, 0) 0%,
-        rgba(248, 248, 248, 0.65) 28.5%,
-        #f8f8f8 100%
-    );
-$lightBackgroundOverlayGradientTop:
-    linear-gradient(
-        180deg,
-        rgba(248, 248, 248, 0.65) 0%,
-        rgba(248, 248, 248, 0) 100%
-    );
+$lightBackgroundBaseGradient: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.65) 28.5%,
+    #fff 100%
+);
+$lightBackgroundOverlayGradient: linear-gradient(
+    180deg,
+    rgba(248, 248, 248, 0) 0%,
+    rgba(248, 248, 248, 0.65) 28.5%,
+    #f8f8f8 100%
+);
+$lightBackgroundOverlayGradientTop: linear-gradient(
+    180deg,
+    rgba(248, 248, 248, 0.65) 0%,
+    rgba(248, 248, 248, 0) 100%
+);
 
 // =============== TYPOGRAPHY ===============
 
@@ -60,15 +57,13 @@ $lightTextOnBrandInverse: $colorWhite;
 $lightControlBackgroundBrand: $colorBlue;
 $lightControlBackgroundBrandHover: #0068d9;
 $lightControlBackgroundBrandSecondaryInverse: rgba($colorWhite, 0.25);
-$lightControlBackgroundBrandSecondary:
-    linear-gradient(
+$lightControlBackgroundBrandSecondary: linear-gradient(
         0deg,
         rgba(0, 122, 255, 0.08),
         rgba(0, 122, 255, 0.08)
     ),
     #fff;
-$lightControlBackgroundBrandSecondaryHover:
-    linear-gradient(
+$lightControlBackgroundBrandSecondaryHover: linear-gradient(
         0deg,
         rgba(0, 122, 255, 0.16),
         rgba(0, 122, 255, 0.16)
@@ -85,18 +80,18 @@ $lightControlBorderBaseHover: #80bcff;
 $lightControlBorderCritical: rgba($colorRed, 0.75);
 $lightControlBackgroundCriticalTransparent: rgba(#fcf3f3, 0.85);
 $lightControlBackgroundCriticalTransparentHover: rgba(#fbe1e1, 0.85);
-$lightControlBackgroundCritical:
-    linear-gradient(
+$lightControlBackgroundCritical: linear-gradient(
         0deg,
         rgba(252, 243, 243, 0.85),
         rgba(252, 243, 243, 0.85)
-    ), #fff;
-$lightControlBackgroundCriticalHover:
-    linear-gradient(
+    ),
+    #fff;
+$lightControlBackgroundCriticalHover: linear-gradient(
         0deg,
         rgba(251, 225, 225, 0.85),
         rgba(251, 225, 225, 0.85)
-    ), #fff;
+    ),
+    #fff;
 $lightControlBackgroundCriticalMain: rgba($colorRed, 0.25);
 $lightControlBorderBaseFocus: $colorBlue;
 $lightControlBorderBrand: $colorBlue;
@@ -104,12 +99,12 @@ $lightControlBorderBrandSecondary: #{rgba($colorBlue, 0.5)};
 
 $lightControlBorderSecondary: rgba(#ccd3db, 0.5);
 $lightControlBackgroundSuccessSecondary: rgba(#3b8d39, 0.1);
-$lightControlBackgroundBaseActive:
-    linear-gradient(
+$lightControlBackgroundBaseActive: linear-gradient(
         0deg,
         rgba(0, 122, 255, 0.04),
         rgba(0, 122, 255, 0.04)
-    ), #fff;
+    ),
+    #fff;
 
 // =============== SYSTEM ===============
 
@@ -141,26 +136,23 @@ $darkBackgroundSecondary: $colorBlack;
 $darkBackgroundOverlay: rgba(#000, 0.5);
 $darkBackgroundOverlaySecondary: rgba($colorDark, 0.5);
 $darkBackgroundCritical: rgba(#551d1e, 0.85);
-$darkBackgroundBaseGradient:
-    linear-gradient(
-        180deg,
-        rgba(28, 35, 41, 0) 0%,
-        rgba(28, 35, 41, 0.65) 28.5%,
-        $colorDark 100%
-    );
-$darkBackgroundOverlayGradient:
-    linear-gradient(
-        180deg,
-        rgba(0, 0, 0, 0) 0%,
-        rgba(0, 0, 0, 0.65) 28.5%,
-        #000 100%
-    );
-$darkBackgroundOverlayGradientTop:
-    linear-gradient(
-        180deg,
-        rgba(0, 0, 0, 0.65) 0%,
-        rgba(0, 0, 0, 0) 100%
-    );
+$darkBackgroundBaseGradient: linear-gradient(
+    180deg,
+    rgba(28, 35, 41, 0) 0%,
+    rgba(28, 35, 41, 0.65) 28.5%,
+    $colorDark 100%
+);
+$darkBackgroundOverlayGradient: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(0, 0, 0, 0.65) 28.5%,
+    #000 100%
+);
+$darkBackgroundOverlayGradientTop: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.65) 0%,
+    rgba(0, 0, 0, 0) 100%
+);
 
 // =============== TYPOGRAPHY ===============
 
@@ -183,61 +175,57 @@ $darkTextOnBrandInverse: $colorWhite;
 $darkControlBackgroundBrand: $colorBlue;
 $darkControlBackgroundBrandHover: #0068d9;
 $darkControlBackgroundBrandSecondaryInverse: rgba($colorWhite, 0.25);
-$darkControlBackgroundBrandSecondary:
-    linear-gradient(
+$darkControlBackgroundBrandSecondary: linear-gradient(
         0deg,
         rgba(0, 122, 255, 0.08),
         rgba(0, 122, 255, 0.08)
     ),
-    linear-gradient(
-        0deg,
-        rgba(255, 255, 255, 0.08),
-        rgba(255, 255, 255, 0.08)
-    ), $colorDark;
-$darkControlBackgroundBrandSecondaryHover:
-    linear-gradient(
+    linear-gradient(0deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.08)),
+    $colorDark;
+$darkControlBackgroundBrandSecondaryHover: linear-gradient(
         0deg,
         rgba(0, 122, 255, 0.16),
         rgba(0, 122, 255, 0.16)
-    ), $colorWhite;
-$darkControlBackgroundBrandSecondaryTransparent:
-    linear-gradient(
+    ),
+    $colorWhite;
+$darkControlBackgroundBrandSecondaryTransparent: linear-gradient(
         0deg,
         rgba(0, 122, 255, 0.08),
         rgba(0, 122, 255, 0.08)
-    ), rgba(255, 255, 255, 0.08);
+    ),
+    rgba(255, 255, 255, 0.08);
 $darkControlBackgroundBrandSecondaryTransparentHover: rgba($colorBlue, 0.16);
-$darkControlBackgroundBrandSecondaryActive:
-    linear-gradient(
+$darkControlBackgroundBrandSecondaryActive: linear-gradient(
         0deg,
         rgba(0, 122, 255, 0.25),
         rgba(0, 122, 255, 0.25)
-    ), rgba(255, 255, 255, 0.25);
+    ),
+    rgba(255, 255, 255, 0.25);
 $darkControlBackgroundBase: $colorDark;
 $darkControlBackgroundPrimaryInverse: $colorWhite;
 
 $darkControlBorderBase: #4f575e;
-$darkControlBorderBaseHover:
-    linear-gradient(
+$darkControlBorderBaseHover: linear-gradient(
         0deg,
         rgba(0, 122, 255, 0.25),
         rgba(0, 122, 255, 0.25)
-    ), rgba(255, 255, 255, 0.25);
+    ),
+    rgba(255, 255, 255, 0.25);
 $darkControlBorderCritical: rgba($colorRed, 0.75);
 $darkControlBackgroundCriticalTransparent: rgba(#551d1e, 0.85);
 $darkControlBackgroundCriticalTransparentHover: rgba(#fbe1e1, 0.85);
-$darkControlBackgroundCritical:
-    linear-gradient(
+$darkControlBackgroundCritical: linear-gradient(
         0deg,
         rgba(85, 29, 30, 0.85),
         rgba(85, 29, 30, 0.85)
-    ), #000;
-$darkControlBackgroundCriticalHover:
-    linear-gradient(
+    ),
+    #000;
+$darkControlBackgroundCriticalHover: linear-gradient(
         0deg,
         rgba(251, 225, 225, 0.85),
         rgba(251, 225, 225, 0.85)
-    ), #fff;
+    ),
+    #fff;
 $darkControlBackgroundCriticalMain: rgba($colorRed, 0.25);
 $darkControlBorderBaseFocus: #74b6ff;
 $darkControlBorderBrand: #74b6ff;
@@ -245,12 +233,12 @@ $darkControlBorderBrandSecondary: rgba(#74b6ff, 0.5);
 
 $darkControlBorderSecondary: rgba(#828b94, 0.5);
 $darkControlBackgroundSuccessSecondary: rgba(#3b8d39, 0.1);
-$darkControlBackgroundBaseActive:
-    linear-gradient(
+$darkControlBackgroundBaseActive: linear-gradient(
         0deg,
         rgba(0, 122, 255, 0.15),
         rgba(0, 122, 255, 0.15)
-    ), $colorDark;
+    ),
+    $colorDark;
 
 // =============== SYSTEM ===============
 

@@ -1,5 +1,3 @@
 import About from './About.vue'
 
-export {
-    About,
-}
+export { About }

@@ -1,5 +1,3 @@
 import { Addition } from './Addition'
 
-export {
-    Addition,
-}
+export { Addition }

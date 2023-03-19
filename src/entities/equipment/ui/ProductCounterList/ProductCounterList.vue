@@ -24,5 +24,5 @@ export default class ProductCounterList extends Vue {
 }
 </script>
 
-<style lang="scss" src="./ProductCounterList.critical.scss"/>
+<style lang="scss" src="./ProductCounterList.critical.scss" />
 <!--<style lang="scss" src="./ProductCounterList.main.scss"/>-->

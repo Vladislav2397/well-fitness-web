@@ -11,12 +11,16 @@
 </template>
 
 <script lang="ts">
-import { Component, Emit, Prop, Vue } from 'vue-property-decorator'
+import { Component, Emit, Prop, Vue, Watch } from 'vue-property-decorator'
 import { getPaginationArray } from './usePaginationView'
 
 export type PaginationProps = Partial<
     Pick<Pagination, 'page' | 'total' | 'maxItems'>
 >
+
+/* FIXME: Поправить пагинацию, так как сейчас изменение сделано костыльно
+    через watch
+*/
 
 @Component
 export default class Pagination extends Vue {
@@ -45,6 +49,11 @@ export default class Pagination extends Vue {
 
     get range() {
         return getPaginationArray(this.total, +this.active, this.maxItems)
+    }
+
+    @Watch('page')
+    onChangePage(value: number) {
+        this.active = `${value}`
     }
 }
 </script>

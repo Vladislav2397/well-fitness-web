@@ -68,9 +68,9 @@ export const useQuery = (fetcher: QueryFetcher, config?: QueryConfig) => {
      */
     async function setFilter(key: string, value: unknown) {
         try {
-            await fetch({ [key]: value, page: 1 })
             pagination.page = 1
             filters.value[key] = value
+            await fetch({ [key]: value, page: 1 })
         } catch (error) {
             console.error(error)
         }

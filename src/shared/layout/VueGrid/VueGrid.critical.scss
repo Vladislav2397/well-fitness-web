@@ -11,7 +11,6 @@ $spacingDesktop: 12;
     &__middle,
     &__last {
         padding-left: toRem($spacingMobile);
-
     }
 
     tr + tr {
@@ -29,7 +28,6 @@ $spacingDesktop: 12;
         &__middle,
         &__last {
             padding-left: toRem($spacingTablet);
-
         }
 
         tr + tr {
@@ -48,7 +46,6 @@ $spacingDesktop: 12;
         &__middle,
         &__last {
             padding-left: toRem($spacingDesktop);
-
         }
 
         tr + tr {

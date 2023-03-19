@@ -27,8 +27,8 @@ const imageUrl = (image: string) => `${'MEDIA_HOST'}/${image}`
 @Component({
     components: {
         'c-product-counter-list': ProductCounterList,
-        'c-card-product': CardProduct
-    }
+        'c-card-product': CardProduct,
+    },
 })
 export default class EquipmentFamilyCard extends Vue {
     @Prop() readonly id!: number | string

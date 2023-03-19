@@ -13,17 +13,16 @@
 </template>
 
 <script lang="ts">
-import {Component, Inject, Vue} from 'vue-property-decorator'
+import { Component, Inject, Vue } from 'vue-property-decorator'
 
 import { GridSection, cardType } from '../../GridSection'
 import type { Point } from '@/shared/layout/VueGrid'
 import DeviceProvider from '@/shared/lib/providers/device'
 
-
 @Component({
     components: {
-        'grid-section-component': GridSection
-    }
+        'grid-section-component': GridSection,
+    },
 })
 export default class GymEquipment extends Vue {
     @Inject('$device') device!: DeviceProvider['device']
@@ -58,14 +57,14 @@ export default class GymEquipment extends Vue {
         [3, 1, 1, 1],
     ]
 
-    get layout (): Point[] {
+    get layout(): Point[] {
         if (this.device.size.tabletLate) return this.layoutDesktop
         if (this.device.size.tablet) return this.layoutTablet
         if (this.device.size.mobile) return this.layoutMobile
         return this.layoutDesktop
     }
 
-    get cardList (): cardType[] {
+    get cardList(): cardType[] {
         return [
             {
                 title: 'Профессиональные<br />кардиотренажеры',
@@ -144,5 +143,4 @@ export default class GymEquipment extends Vue {
         this.$router.push('/equipment/gym')
     }
 }
-
 </script>

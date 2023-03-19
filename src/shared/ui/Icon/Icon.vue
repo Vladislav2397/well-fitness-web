@@ -28,7 +28,7 @@ export default Functional<IconProps>((h, { props, data, listeners }) => {
 
     return h('i', {
         class: classes,
-        on: listeners
+        on: listeners,
     })
 })
 </script>

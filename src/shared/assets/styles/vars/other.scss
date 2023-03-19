@@ -4,10 +4,8 @@ $borderRadiusUI: toRem(8);
 
 $borderRadiusSectionMobile: toRem(12);
 
-$borderRadiusTopSectionMobile:
-    $borderRadiusSectionMobile
-    $borderRadiusSectionMobile
-    0 0;
+$borderRadiusTopSectionMobile: $borderRadiusSectionMobile
+    $borderRadiusSectionMobile 0 0;
 
 $borderRadiusSectionDesktop: toRem(16);
 

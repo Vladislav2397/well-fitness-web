@@ -16,21 +16,21 @@ const classes = {
 export default class VueGrid extends Vue {
     @Prop() readonly layout!: Point[]
 
-    get rows (): Set<number> {
+    get rows(): Set<number> {
         return new Set(this.layout.map(item => item[1]))
     }
 
-    get cols (): Set<number> {
+    get cols(): Set<number> {
         return new Set(this.layout.map(item => item[0]))
     }
 
-    get correctList (): VNode[] {
-        return this?.$slots?.default?.filter(
-            item => item.tag !== undefined
-        ) ?? []
+    get correctList(): VNode[] {
+        return (
+            this?.$slots?.default?.filter(item => item.tag !== undefined) ?? []
+        )
     }
 
-    render (h: CreateElement): VNode {
+    render(h: CreateElement): VNode {
         const tbody = h('tbody', {}, [])
 
         let i = 0
@@ -38,7 +38,7 @@ export default class VueGrid extends Vue {
         for (const row of this.rows) {
             const rowChildren = []
 
-            const currentRows = this.layout.filter(item => item[1] === +(row))
+            const currentRows = this.layout.filter(item => item[1] === +row)
 
             for (const col of currentRows) {
                 const slotChildren =
@@ -49,22 +49,26 @@ export default class VueGrid extends Vue {
                 const isSingle = isFirst && currentRows.length === 1
 
                 rowChildren.push(
-                    h('td', {
-                        class: isSingle ? classes.single : [
-                            isFirst && classes.first,
-                            !isFirst && !isLast && classes.middle,
-                            isLast && classes.last,
-                        ],
-                        style: {
-                            width: `${100 / this.cols.size}%`
+                    h(
+                        'td',
+                        {
+                            class: isSingle
+                                ? classes.single
+                                : [
+                                      isFirst && classes.first,
+                                      !isFirst && !isLast && classes.middle,
+                                      isLast && classes.last,
+                                  ],
+                            style: {
+                                width: `${100 / this.cols.size}%`,
+                            },
+                            attrs: {
+                                colspan: col[2],
+                                rowspan: col[3],
+                            },
                         },
-                        attrs: {
-                            colspan: col[2],
-                            rowspan: col[3]
-                        },
-                    }, [
-                        slotChildren
-                    ])
+                        [slotChildren]
+                    )
                 )
                 i++
             }
@@ -73,12 +77,15 @@ export default class VueGrid extends Vue {
 
         const children = [tbody]
 
-        return h('table', {
-            class: 'vue-grid'
-        }, children)
+        return h(
+            'table',
+            {
+                class: 'vue-grid',
+            },
+            children
+        )
     }
 }
-
 </script>
 
 <style lang="scss" src="./VueGrid.critical.scss" />

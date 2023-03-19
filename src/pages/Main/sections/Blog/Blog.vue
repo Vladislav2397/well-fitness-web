@@ -38,15 +38,12 @@ import { TabList } from '@/shared/ui/TabList'
         'section-wrapper-component': SectionWrapper,
         'tab-list-component': TabList,
         // 'card-post-component': CardPost,
-    }
+    },
 })
 export default class Blog extends Vue {
     activeTabIndex = 0
 
-    tabList = [
-        'Новости',
-        'Блог',
-    ]
+    tabList = ['Новости', 'Блог']
 
     cardList = [
         {
@@ -91,7 +88,6 @@ export default class Blog extends Vue {
         },
     ]
 }
-
 </script>
 
 <!--<style lang="scss" src="Blog.critical.scss"></style>-->

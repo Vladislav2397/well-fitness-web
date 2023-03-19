@@ -38,12 +38,12 @@ $widthDesktop: calc(((1200 - (30 * 3)) / 4) / 1200) * 100%;
 
     &--theme {
         &-dark {
-            background:
-                linear-gradient(
-                        9.93deg,
-                        rgba(72, 77, 92, 0) 25.95%,
-                        rgba(112, 121, 148, 0.2) 80.01%
-                ), #1A1A25;
+            background: linear-gradient(
+                    9.93deg,
+                    rgba(72, 77, 92, 0) 25.95%,
+                    rgba(112, 121, 148, 0.2) 80.01%
+                ),
+                #1a1a25;
 
             #{$b}__title {
                 color: $white;
@@ -51,16 +51,16 @@ $widthDesktop: calc(((1200 - (30 * 3)) / 4) / 1200) * 100%;
         }
 
         &-light {
-            background-color: #E9EAEF;
+            background-color: #e9eaef;
         }
 
         &-secondary {
-            background:
-                linear-gradient(
-                        269.61deg,
-                        rgba(255, 255, 255, 0.68) -16.49%,
-                        rgba(255, 255, 255, 0) 99.7%
-                ), #C2C4CE;
+            background: linear-gradient(
+                    269.61deg,
+                    rgba(255, 255, 255, 0.68) -16.49%,
+                    rgba(255, 255, 255, 0) 99.7%
+                ),
+                #c2c4ce;
         }
     }
 

@@ -23,7 +23,7 @@ c-card-product.b-equipment-stock-card
 <script lang="ts">
 import { Component, Inject, Prop, Vue } from 'vue-property-decorator'
 
-import {CardProduct} from '../CardProduct'
+import { CardProduct } from '../CardProduct'
 import { CardProductStats } from '../CardProductStats'
 import { Button } from '@/shared/ui/Button'
 

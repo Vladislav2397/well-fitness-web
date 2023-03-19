@@ -39,7 +39,7 @@ export default {
     },
     directives: {
         // swiper: directive
-    }
+    },
 }
 </script>
 

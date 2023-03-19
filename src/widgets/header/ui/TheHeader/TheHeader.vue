@@ -54,7 +54,7 @@ import { DropdownWrapper } from '@/shared/ui/DropdownWrapper'
 import { Card } from '@/shared/ui/Card'
 
 import { Top } from './sections/Top'
-import {Middle} from './sections/Middle'
+import { Middle } from './sections/Middle'
 import { Navigation } from '../Navigation'
 import { Dealers } from '../Dealers'
 import { RequestCall } from '../RequestCall'

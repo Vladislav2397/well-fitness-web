@@ -1,5 +1,3 @@
 import DealerPrice from './DealerPrice.vue'
 
-export {
-    DealerPrice,
-}
+export { DealerPrice }

@@ -33,20 +33,19 @@ import { Input } from '@/shared/ui/Input'
     components: {
         'input-component': Input,
         // 'slider-component': VueSlider
-    }
+    },
 })
 export default class Range extends Vue {
     @Prop() readonly range!: [start: number, end: number]
 
     slider = {
-        value: [] as number[]
+        value: [] as number[],
     }
 
     mounted(): void {
         this.slider.value = [this.range[0], this.range[1]]
     }
 }
-
 </script>
 
 <!--<style lang="scss" src="./Range.critical.scss" />-->

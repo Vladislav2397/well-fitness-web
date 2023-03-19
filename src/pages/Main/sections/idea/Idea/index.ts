@@ -1,5 +1,3 @@
 import Idea from './Idea.vue'
 
-export {
-    Idea,
-}
+export { Idea }

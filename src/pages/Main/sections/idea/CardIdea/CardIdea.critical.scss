@@ -33,7 +33,8 @@
     $itemCount: 4;
     $spacing: 24;
     $commonMargin: $spacing * ($itemCount - 1);
-    $itemWidth: calc($containerWidth / $itemCount) - calc($commonMargin / $itemCount);
+    $itemWidth: calc($containerWidth / $itemCount) -
+        calc($commonMargin / $itemCount);
 
     @function toPercent($container, $item) {
         @return calc($item / $container) * 100%;

@@ -9,8 +9,8 @@ export default class Collapsible extends Vue {
     container = {
         maxHeight: 0,
         style: {
-            height: 'auto'
-        }
+            height: 'auto',
+        },
     }
 
     mounted(): void {

@@ -27,7 +27,9 @@ export default class ArticleCard extends Vue {
     >
 
     get articleDate() {
-        return '12.12.2020'
+        const date = new Date(this.article.date)
+
+        return `${date.getDate()}.${date.getMonth() + 1}.${date.getFullYear()}`
     }
 }
 </script>

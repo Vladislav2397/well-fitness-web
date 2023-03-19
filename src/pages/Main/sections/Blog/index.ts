@@ -1,5 +1,3 @@
 import Blog from './Blog.vue'
 
-export {
-    Blog
-}
+export { Blog }

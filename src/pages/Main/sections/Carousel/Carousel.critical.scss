@@ -27,12 +27,12 @@
         min-height: toRem(460);
         padding: toRem(24) 6.66% 0;
         font-size: 0;
-        background:
-            linear-gradient(
+        background: linear-gradient(
                 180deg,
-                #DEDFE7 0%,
+                #dedfe7 0%,
                 rgba(233, 234, 239, 0) 100%
-            ), #E9EAEF;
+            ),
+            #e9eaef;
         height: 100%;
         overflow: hidden;
     }
