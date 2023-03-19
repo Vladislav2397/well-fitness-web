@@ -6,3 +6,5 @@ declare type ImageView = {
     src: string
     alt: string
 }
+
+declare type PartialPick<T, U> = Partial<Pick<T, U>>

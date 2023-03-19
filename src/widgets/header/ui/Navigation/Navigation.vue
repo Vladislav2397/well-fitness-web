@@ -25,7 +25,7 @@ const navigationItems = [
     },
     {
         text: 'Блог',
-        href: '/',
+        href: '/articles',
     },
     {
         text: 'Где купить',
@@ -44,25 +44,31 @@ interface NavigationProps {
 export default VueFunctional<NavigationProps>((h, { data, props }) => {
     const align = props.align ?? 'vertical'
 
-    const classes = [ data.staticClass, `navigation--align-${align}`]
+    const classes = [data.staticClass, `navigation--align-${align}`]
 
-    return h('nav', {
-        class: classes
-    }, [
-        ...navigationItems.map(({text, href}, index) => h(
-            Link,
-            {
-                props: {
-                    href,
-                    key: index,
-                    tag: 'router-link',
-                    theme: 'white',
-                }
-            }, [text]
-        ))
-    ])
+    return h(
+        'nav',
+        {
+            class: classes,
+        },
+        [
+            ...navigationItems.map(({ text, href }, index) =>
+                h(
+                    Link,
+                    {
+                        props: {
+                            href,
+                            key: index,
+                            tag: 'router-link',
+                            theme: 'white',
+                        },
+                    },
+                    [text]
+                )
+            ),
+        ]
+    )
 })
-
 </script>
 
 <style lang="scss" src="./Navigation.critical.scss" />

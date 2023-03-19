@@ -80,7 +80,7 @@ html {
     }
 
     @media (min-width: $maxRems) {
-        font-size: 16px;
+        font-size: $maxRems / 100;
     }
 }
 

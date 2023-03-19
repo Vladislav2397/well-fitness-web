@@ -19,6 +19,11 @@
         gap: toRem(16);
     }
 
+    &__pagination {
+        margin: 0 auto;
+        text-align: center;
+    }
+
     @media (min-width: 650px) {
         &__blog {
             grid-template-columns: 1fr 1fr;

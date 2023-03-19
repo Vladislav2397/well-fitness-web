@@ -1,22 +1,38 @@
 import Pagination, { type PaginationProps } from './Pagination.vue'
 import { Story } from '@storybook/vue'
+import { useArgs } from '@storybook/client-api'
+import { action } from '@storybook/addon-actions'
+import { numberControl } from '@/shared/lib/stories'
 
 export default {
     title: 'shared/Pagination',
     component: Pagination,
-    argTypes: {},
+    argTypes: {
+        page: numberControl(),
+        maxItems: numberControl(),
+        total: numberControl(),
+    },
 }
 
-const Template: Story<PaginationProps> = (args, { argTypes }) => ({
-    props: Object.keys(argTypes),
-    components: { Pagination },
-    methods: {},
-    template: '<Pagination v-bind="$props"/>',
-})
+const Template: Story<PaginationProps> = (args, { argTypes }) => {
+    const [, updateArgs] = useArgs()
+
+    return {
+        props: Object.keys(argTypes),
+        components: { Pagination },
+        methods: {
+            handle(page) {
+                action('page changed to')
+                updateArgs({ ...args, page })
+            },
+        },
+        template: '<Pagination v-bind="$props" @changePage="handle"/>',
+    }
+}
 
 export const Default = Template.bind({})
 Default.args = {
-    quantity: 13,
-    prevVisiblePages: 3,
-    nextVisiblePages: 3,
+    page: 1,
+    maxItems: 9,
+    total: 15,
 }

@@ -7,6 +7,10 @@
         color: $secondary;
         border-radius: toRem(6);
 
+        @media (hover: hover) {
+            cursor: pointer;
+        }
+
         & + & {
             margin-left: toRem(2);
         }

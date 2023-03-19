@@ -1,113 +1,50 @@
 <template lang="pug">
 
 .b-pagination
-    ._item(
-        v-for="(item, index) in pagination"
+    .__item(
+        v-for="(item, index) in range"
         :key="index"
-        :class="{ 'active': +(item) === +(currentValue) }"
-        @click="currentValue = +(item)"
+        :class="{ 'active': item === active }"
+        v-on="handlers(item)"
     ) {{ item }}
 
 </template>
 
 <script lang="ts">
-import { Component, Prop, VModel, Vue } from 'vue-property-decorator'
+import { Component, Emit, Prop, Vue } from 'vue-property-decorator'
+import { getPaginationArray } from './usePaginationView'
 
-export type PaginationProps = Pick<
-    Pagination,
-    'quantity' | 'prevVisiblePages' | 'nextVisiblePages'
-> & { value: Pagination['currentValue'] }
-
-function* range(start: number, end: number, step = 1): Generator<number> {
-    for (let i = start; i < end; i += step) {
-        yield i
-    }
-}
+export type PaginationProps = Partial<
+    Pick<Pagination, 'page' | 'total' | 'maxItems'>
+>
 
 @Component
 export default class Pagination extends Vue {
-    @VModel() currentValue!: number
+    @Prop({ default: 1 }) page!: number
+    @Prop({ default: 10 }) readonly total!: number
+    @Prop({ default: 7 }) readonly maxItems!: number
 
-    @Prop({ default: 10 }) readonly quantity!: number
-    @Prop({ default: 1 }) readonly prevVisiblePages!: number
-    @Prop({ default: 1 }) readonly nextVisiblePages!: number
-
-    maxPageCount = 6
-
-    get index(): number {
-        return this.range.indexOf(`${this.currentValue}`)
+    @Emit('changePage') changePageEmit(page: string) {
+        return page
     }
 
-    get prevAndNextIndexes(): [prev: number, next: number] {
-        return [
-            this.index - this.prevVisiblePages,
-            this.index + this.nextVisiblePages,
-        ]
-    }
+    handlers(item: string) {
+        if (Number.isNaN(+item)) return {}
 
-    get range(): string[] {
-        return Array.from(range(1, 17)).map(item => `${item}`)
-    }
-
-    get currentRange(): string[] {
-        let currentRange: string[] = []
-
-        const [prevIndex, nextIndex] = this.prevAndNextIndexes
-
-        if (this.index <= this.prevVisiblePages) {
-            currentRange.push(
-                ...this.range.slice(0, this.index + 1 + this.nextVisiblePages)
-            )
-        } else if (this.index >= this.quantity - this.nextVisiblePages - 1) {
-            currentRange.push(
-                ...this.range.slice(
-                    prevIndex,
-                    nextIndex + this.nextVisiblePages
-                )
-            )
-        } else if (
-            this.index > this.prevVisiblePages &&
-            this.index < this.range.length - 2
-        ) {
-            currentRange.push(...this.range.slice(prevIndex, nextIndex + 1))
+        return {
+            click: () => this.changePage(item),
         }
-
-        return currentRange
     }
 
-    get pagination(): (string | number)[] {
-        const [prevIndex, nextIndex] = this.prevAndNextIndexes
+    changePage(page: string) {
+        this.active = page
+        this.changePageEmit(page)
+    }
 
-        let result: (string | number | undefined)[] = [
-            '1',
-            '...',
-            `${this.quantity}`,
-        ]
+    active = '1'
 
-        if (this.index < 2 || this.index > this.quantity - 2) {
-            result = [
-                ...this.range.slice(0, Math.round(this.maxPageCount / 2)),
-                '...',
-                ...this.range.slice(
-                    this.quantity - this.maxPageCount / 2,
-                    this.quantity
-                ),
-            ]
-        } else {
-            if (prevIndex < 1) {
-                result.splice(0, 2, ...this.currentRange, '...')
-            } else if (prevIndex < 2) {
-                result.splice(1, 1, ...this.currentRange, '...')
-            } else if (nextIndex > this.quantity - 2) {
-                result.splice(1, 2, '...', ...this.currentRange)
-            } else if (nextIndex > this.quantity - 3) {
-                result.splice(1, 1, '...', ...this.currentRange)
-            } else {
-                result.splice(1, 1, '...', ...this.currentRange, '...')
-            }
-        }
-
-        return result.map(item => `${item}`)
+    get range() {
+        return getPaginationArray(this.total, +this.active, this.maxItems)
     }
 }
 </script>

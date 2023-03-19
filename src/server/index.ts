@@ -1,5 +1,13 @@
 import { createServer, Factory, Model } from 'miragejs'
 
+const delay = (ms = 1000) =>
+    new Promise(resolve => {
+        const timeout = setTimeout(() => {
+            clearTimeout(timeout)
+            resolve(null)
+        }, ms)
+    })
+
 export const server = createServer({
     urlPrefix: 'http://localhost:8000',
     namespace: 'api',
@@ -9,13 +17,19 @@ export const server = createServer({
         }),
     },
     routes() {
-        this.get('articles', (schema, request) => {
-            const { limit = 9, offset = 0 } = request.queryParams
+        this.get('articles', async function (schema, request) {
+            const { page = 1, perPage = 10 } = request.queryParams
+
+            await delay()
 
             // @ts-ignore
-            const articles = schema.articles.all()
+            const { articles } = this.serialize(schema.articles.all()) as any[]
 
-            return articles.slice(+offset, +limit + +offset)
+            return {
+                // @ts-ignore
+                data: articles.slice((+page - 1) * +perPage, +page * +perPage),
+                last_page: Math.floor(articles.length / +perPage),
+            }
         })
         this.get('articles/:id', (schema, request) => {
             const { id } = request.params

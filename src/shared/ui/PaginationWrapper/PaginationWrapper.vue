@@ -10,33 +10,41 @@
                 @click="clickLinkEmit"
             ) Показать еще
             pagination-component.__pagination(
-                v-model="pageCount"
-                :quantity="quantity"
-                :nextVisiblePages="3"
-                :prevVisiblePages="3"
+                page="1"
+                max-items="9"
+                total="10"
             )
 
 </template>
 
 <script lang="ts">
-import {Component, Emit, Prop, VModel, Vue} from 'vue-property-decorator'
+import { Component, Emit, Prop, VModel, Vue } from 'vue-property-decorator'
 
 import { Pagination } from '@/shared/ui/Pagination'
 import { Link } from '@/shared/ui/Link'
 
+type PaginationWrapperProps = {
+    value: PaginationWrapper['valueModel']
+} & PartialPick<PaginationWrapper, 'maxItems'>
+
 @Component({
     components: {
         'link-component': Link,
-        'pagination-component': Pagination
-    }
+        'pagination-component': Pagination,
+    },
 })
 export default class PaginationWrapper extends Vue {
-    @VModel() pageCount!: Pagination['currentValue']
-    @Prop() readonly quantity!: Pagination['quantity']
+    @VModel() valueModel!: { limit: number; offset: number }
 
-    @Emit('clickLink') clickLinkEmit() {/**/}
+    @Prop() readonly maxItems!: Pagination['maxItems']
+
+    @Emit('clickLink') clickLinkEmit() {
+        /**/
+    }
+
+    limit = 9
+    offset = 0
 }
-
 </script>
 
 <!--<style lang="scss" src="./PaginationWrapper.critical.scss" />-->

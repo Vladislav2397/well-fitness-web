@@ -33,6 +33,8 @@
         background-color: $dark;
         color: $white;
         font-weight: 600;
+        padding-top: toRem(12);
+        padding-bottom: toRem(12);
     }
 
     &__link {

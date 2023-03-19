@@ -17,7 +17,13 @@ export type PageBreadcrumbLayoutProps = {
 @Component
 export default class PageBreadcrumbLayout extends Vue {
     get breadcrumbs() {
-        return this.$route.meta?.breadcrumbs
+        /* FIXME: Если страница использует этот компонент в keep-alive
+            то будет происходить ошибка если переходить на страницу без
+            без мета информации
+        */
+        const breadcrumbs = this.$route.meta?.breadcrumbs ?? []
+
+        return breadcrumbs.join(' / ')
     }
 
     get title() {

@@ -2,17 +2,23 @@
 
 #app
     header-widget
-    router-view
+    keep-alive
+        router-view(
+            :key="$route.name"
+        )
+    the-footer
 
 </template>
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator'
 import { TheHeader } from '@/widgets/header'
+import { TheFooter } from '@/widgets/TheFooter'
 
 @Component({
     components: {
         'header-widget': TheHeader,
+        'the-footer': TheFooter,
     },
 })
 export default class App extends Vue {
@@ -21,13 +27,6 @@ export default class App extends Vue {
 </script>
 
 <style lang="scss">
-@import '../shared/assets/styles/main';
-
-@import '../shared/shared.critical';
-@import '../shared/shared.main';
-
-@import '../entities/entities.critical';
-@import '../entities/entities.main';
-
-@import '../pages/pages.critical.scss';
+@import './critical';
+@import './main';
 </style>

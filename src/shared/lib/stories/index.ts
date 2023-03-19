@@ -11,6 +11,19 @@ type argumentTypes = {
     }
 }
 
+export function numberControl(): argumentTypes {
+    return {
+        control: {
+            type: 'number',
+        },
+        table: {
+            type: {
+                summary: 'number',
+            },
+        },
+    }
+}
+
 export function textControl(): argumentTypes {
     return {
         control: {
@@ -49,7 +62,7 @@ export function booleanControl(): argumentTypes {
 }
 
 export function defineControls(
-    params: Record<string, string | boolean | string[]>,
+    params: Record<string, string | boolean | string[]>
 ): Record<string, argumentTypes> {
     const result: Record<string, argumentTypes> = {}
 

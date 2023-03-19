@@ -7,29 +7,59 @@
             c-button.__button(
                 v-for="filter in filters"
                 :theme="filter.theme"
+                size="s"
             ) {{ filter.text }}
-        .__blog
+        .__blog(
+            v-if="isPending"
+        )
+            p Loading...
+        .__blog(
+            v-else
+        )
             c-article-card.__item(
                 v-for="article in list"
                 :article="article"
             )
+        c-pagination.__pagination(
+            :max-items="9"
+            :total="pagination.lastPage"
+            @changePage="changePage"
+        )
 
 </template>
 
 <script lang="ts">
+import { Ref } from 'vue'
 import { Component, Vue } from 'vue-property-decorator'
+
+import { ArticleCard } from '@/entities/article'
+
 import { PageBreadcrumbLayout } from '@/shared/layout/PageBreadcrumbLayout'
 import { Button } from '@/shared/ui/Button'
-import { ArticleCard, articleApi } from '@/entities/article'
+import { Pagination } from '@/shared/ui/Pagination'
+import { domain } from '@/shared/lib'
+
+import { useArticles } from './model'
 
 @Component({
     components: {
+        'c-pagination': Pagination,
         'c-article-card': ArticleCard,
         'page-breadcrumb-layout': PageBreadcrumbLayout,
         'c-button': Button,
     },
+    setup() {
+        return useArticles()
+    },
 })
 export default class Articles extends Vue {
+    page = 1
+
+    isPending!: Ref<boolean>
+    list!: domain.Article[]
+    pagination!: { page: string; perPage: string; lastPage: string }
+    changePage!: (page: number) => Promise<void>
+
     get filters(): ({ text: string } & Pick<Button, 'theme'>)[] {
         return [
             {
@@ -41,16 +71,6 @@ export default class Articles extends Vue {
                 theme: 'secondary',
             },
         ]
-    }
-
-    async fetch(params = { limit: 9, offset: 0 }) {
-        this.list = await articleApi.getArticles(params)
-    }
-
-    list: ArticleCard['article'][] = []
-
-    async created() {
-        await this.fetch()
     }
 }
 </script>

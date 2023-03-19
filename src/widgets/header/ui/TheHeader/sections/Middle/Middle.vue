@@ -43,7 +43,7 @@ import { Navigation } from '../../../Navigation'
         'button-component': Button,
         'c-icon': Icon,
         'c-navigation': Navigation,
-    }
+    },
 })
 export default class Middle extends Vue {
     //
