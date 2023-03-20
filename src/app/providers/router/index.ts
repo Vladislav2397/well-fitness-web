@@ -23,6 +23,15 @@ const routes: Array<RouteConfig> = [
         name: 'Article',
         component: () => import('@/pages/Article/Article.vue'),
     },
+    {
+        path: '/services',
+        name: 'Services',
+        component: () => import('@/pages/Services/Services.vue'),
+        meta: {
+            breadcrumbs: ['Сервис', 'Оставить заявку на сервис'],
+            title: 'Оставить заявку на сервис',
+        },
+    },
 ]
 
 const router = new VueRouter({

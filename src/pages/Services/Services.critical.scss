@@ -1,0 +1,7 @@
+.services {
+    @media (max-width: 1199px) {
+        &__breadcrumbs {
+            @include marginLevel(bottom, gray);
+        }
+    }
+}

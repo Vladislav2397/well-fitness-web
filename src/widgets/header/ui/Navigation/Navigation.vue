@@ -9,7 +9,7 @@ const navigationItems = [
     },
     {
         text: 'Сервис',
-        href: '/',
+        href: '/services',
     },
     {
         text: 'Услуги',

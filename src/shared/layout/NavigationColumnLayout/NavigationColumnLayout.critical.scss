@@ -1,0 +1,64 @@
+.navigation-column-layout {
+    &__navigate {
+        margin-bottom: toRem(24);
+
+        @media (min-width: 650px) {
+            margin-bottom: toRem(32);
+        }
+    }
+
+    &__content {
+        max-width: toRem(1030);
+        width: 100%;
+    }
+
+    @media (max-width: 1199px) {
+        &__scroller {
+            display: inline-block;
+            padding: 0 toRem(16);
+        }
+
+        // TODO: Check horizontal scroll on firefox
+        &__navigate {
+            box-sizing: border-box;
+            white-space: nowrap;
+            overflow-x: auto;
+            overflow-y: hidden;
+        }
+
+        &__link {
+            & + & {
+                margin-left: toRem(16);
+            }
+        }
+    }
+
+    @media (min-width: 1200px) {
+        display: flex;
+        flex-direction: row;
+
+        &__navigate {
+            width: toRem(210);
+            border-right: 1px solid rgba(#858FA4, 0.2);
+            margin-right: toRem(60);
+            //padding-top: toRem(20);
+        }
+
+        &__link {
+            padding: toRem(12) 0;
+            cursor: pointer;
+
+            & + & {
+                border-top: 1px solid rgba(#858FA4, 0.2);
+            }
+
+            &.active {
+                color: #F53B49;
+            }
+        }
+
+        &__content {
+            padding-top: toRem(20);
+        }
+    }
+}
