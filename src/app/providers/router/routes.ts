@@ -37,6 +37,11 @@ const routes: Array<RouteConfig> = [
         redirect: '/offices/project',
         children: officeChildren,
     },
+    {
+        path: '/delivery',
+        name: 'Delivery',
+        component: () => import('@/pages/Delivery/Delivery.vue'),
+    },
 ]
 
 export default routes

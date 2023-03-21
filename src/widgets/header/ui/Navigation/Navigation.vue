@@ -17,11 +17,11 @@ const navigationItems = [
     },
     {
         text: 'Поддержка',
-        href: '/',
+        href: '/delivery',
     },
     {
         text: 'О компании',
-        href: '/',
+        href: '/about',
     },
     {
         text: 'Блог',
@@ -29,11 +29,11 @@ const navigationItems = [
     },
     {
         text: 'Где купить',
-        href: '/',
+        href: '/where-buy',
     },
     {
         text: 'Контакты',
-        href: '/',
+        href: '/contacts',
     },
 ]
 
