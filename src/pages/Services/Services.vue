@@ -1,12 +1,16 @@
 <template lang="pug">
 
 .b-services
-    page-breadcrumb-layout.__breadcrumbs
+    page-breadcrumb-layout.__breadcrumbs(
+        :title="title"
+        :breadcrumbs="breadcrumbs"
+    )
     component(
         v-bind="container"
     )
         navigation-column-layout.__layout(
             :navigation="navigation"
+            @change="active = $event"
         )
             template(
                 #order
@@ -25,6 +29,10 @@ import { PageBreadcrumbLayout } from '@/shared/layout/PageBreadcrumbLayout'
 import { NavigationColumnLayout } from '@/shared/layout/NavigationColumnLayout'
 import { Order, Service } from './sections'
 import DeviceProvider from '@/shared/lib/providers/device'
+
+/* TODO: Maybe use router-view and different routes
+    for different tabs
+ */
 
 export type ServicesProps = {
     //
@@ -50,6 +58,25 @@ export default class Services extends Vue {
             : {
                   is: 'div',
               }
+    }
+
+    active = null as unknown as keyof Services['tabs']
+
+    get title() {
+        return this.active ? this.tabs[this.active] : this.tabs.order
+    }
+
+    get breadcrumbs() {
+        return ['Сервис', this.title]
+    }
+
+    get tabs() {
+        return {
+            order: 'Заявка на сервис',
+            service: 'Обслуживание фитнес клубов',
+            guide: 'Инструкции',
+            video: 'Видео-инструкции',
+        }
     }
 
     get navigation(): NavigationColumnLayout['navigation'] {

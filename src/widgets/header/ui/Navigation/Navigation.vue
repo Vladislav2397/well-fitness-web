@@ -13,7 +13,7 @@ const navigationItems = [
     },
     {
         text: 'Услуги',
-        href: '/',
+        href: '/offices',
     },
     {
         text: 'Поддержка',

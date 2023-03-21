@@ -23,20 +23,29 @@
             .__container.container(
                 v-if="!$device.size.desktop"
             )
+                slot
                 slot(
-                    :name="active"
+                    :name="valueModel"
                 )
             template(
                 v-else
             )
+                slot
                 slot(
-                    :name="active"
+                    :name="valueModel"
                 )
 
 </template>
 
 <script lang="ts">
-import { Component, Inject, Prop, Vue } from 'vue-property-decorator'
+import {
+    Component,
+    Emit,
+    Inject,
+    Prop,
+    VModel,
+    Vue,
+} from 'vue-property-decorator'
 import { PropOptions } from 'vue'
 import { Button } from '@/shared/ui/Button'
 import DeviceProvider from '@/shared/lib/providers/device'
@@ -64,6 +73,7 @@ const navigationPropsOption: PropOptions = {
     },
 })
 export default class NavigationColumnLayout extends Vue {
+    @VModel() valueModel!: string
     @Prop(navigationPropsOption) readonly navigation!: NavigationItem[]
 
     @Inject('$device') $device!: DeviceProvider['device']
@@ -73,17 +83,11 @@ export default class NavigationColumnLayout extends Vue {
     }
 
     isActive({ key }: NavigationItem) {
-        return key === this.active
+        return key === this.valueModel
     }
 
-    setActive({ key }: NavigationItem) {
-        this.active = key
-    }
-
-    active = null as unknown as string
-
-    created() {
-        this.setActive(this.navigation[0])
+    setActive({ key }: Pick<NavigationItem, 'key'>) {
+        this.valueModel = key
     }
 }
 </script>
