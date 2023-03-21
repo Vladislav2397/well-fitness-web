@@ -9,8 +9,8 @@
         v-bind="container"
     )
         navigation-column-layout.__layout(
+            v-model="active"
             :navigation="navigation"
-            @change="active = $event"
         )
             template(
                 #order
@@ -60,7 +60,7 @@ export default class Services extends Vue {
               }
     }
 
-    active = null as unknown as keyof Services['tabs']
+    active = 'order' as keyof Services['tabs']
 
     get title() {
         return this.active ? this.tabs[this.active] : this.tabs.order
