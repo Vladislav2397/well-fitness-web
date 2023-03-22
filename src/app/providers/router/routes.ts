@@ -1,5 +1,6 @@
 import { RouteConfig } from 'vue-router'
 import officeChildren from '@/pages/Office/children'
+import servicesChildren from '@/pages/Services/sections'
 
 const routes: Array<RouteConfig> = [
     {
@@ -25,10 +26,8 @@ const routes: Array<RouteConfig> = [
         path: '/services',
         name: 'Services',
         component: () => import('@/pages/Services/Services.vue'),
-        meta: {
-            breadcrumbs: ['Сервис', 'Оставить заявку на сервис'],
-            title: 'Оставить заявку на сервис',
-        },
+        redirect: '/services/order',
+        children: servicesChildren,
     },
     {
         path: '/offices',

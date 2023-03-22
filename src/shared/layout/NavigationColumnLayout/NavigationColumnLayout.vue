@@ -1,6 +1,8 @@
 <template lang="pug">
 
-.b-navigation-column-layout
+.b-navigation-column-layout(
+    :class="{ 'container': $device.size.desktop }"
+)
     nav.__navigate
         .__scroller(
             v-if="!$device.size.desktop"
@@ -38,14 +40,7 @@
 </template>
 
 <script lang="ts">
-import {
-    Component,
-    Emit,
-    Inject,
-    Prop,
-    VModel,
-    Vue,
-} from 'vue-property-decorator'
+import { Component, Inject, Prop, VModel, Vue } from 'vue-property-decorator'
 import { PropOptions } from 'vue'
 import { Button } from '@/shared/ui/Button'
 import DeviceProvider from '@/shared/lib/providers/device'

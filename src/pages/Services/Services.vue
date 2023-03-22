@@ -5,21 +5,12 @@
         :title="title"
         :breadcrumbs="breadcrumbs"
     )
-    component(
-        v-bind="container"
+    navigation-column-layout.__layout(
+        :value="active"
+        :navigation="navigation"
+        @input="changePage"
     )
-        navigation-column-layout.__layout(
-            v-model="active"
-            :navigation="navigation"
-        )
-            template(
-                #order
-            )
-                order-section
-            template(
-                #service
-            )
-                service-section
+        router-view
 
 </template>
 
@@ -27,21 +18,18 @@
 import { Component, Inject, Vue } from 'vue-property-decorator'
 import { PageBreadcrumbLayout } from '@/shared/layout/PageBreadcrumbLayout'
 import { NavigationColumnLayout } from '@/shared/layout/NavigationColumnLayout'
-import { Order, Service } from './sections'
 import DeviceProvider from '@/shared/lib/providers/device'
-
-/* TODO: Maybe use router-view and different routes
-    for different tabs
- */
 
 export type ServicesProps = {
     //
 }
 
+/* TODO: Part of navigation-column-layout is a duplicate
+    simplify realization
+*/
+
 @Component({
     components: {
-        'order-section': Order,
-        'service-section': Service,
         'navigation-column-layout': NavigationColumnLayout,
         'page-breadcrumb-layout': PageBreadcrumbLayout,
     },
@@ -49,18 +37,14 @@ export type ServicesProps = {
 export default class Services extends Vue {
     @Inject('$device') $device!: DeviceProvider['device']
 
-    get container() {
-        return this.$device.size.desktop
-            ? {
-                  is: 'div',
-                  class: ['services__container', 'container'],
-              }
-            : {
-                  is: 'div',
-              }
+    get active(): keyof Services['tabs'] {
+        return (this.$route.path.split('/').at(-1) ??
+            'order') as keyof Services['tabs']
     }
 
-    active = 'order' as keyof Services['tabs']
+    changePage(key: string) {
+        this.$router.push(`/services/${key}`)
+    }
 
     get title() {
         return this.active ? this.tabs[this.active] : this.tabs.order
