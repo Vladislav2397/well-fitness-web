@@ -26,3 +26,12 @@ export type Article = {
     description: string
     date: DateTimeStamp
 }
+
+export type ViewerId = BrandedType<number, 'ViewerId'>
+export type Viewer = {
+    id: ViewerId
+    firstname: string
+    lastname: string
+    email: string
+    phone: string
+}

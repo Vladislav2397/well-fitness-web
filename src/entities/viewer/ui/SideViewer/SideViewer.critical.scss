@@ -1,0 +1,29 @@
+.side-viewer {
+    min-width: toRem(200);
+    max-width: toRem(300);
+    width: 100%;
+    padding-left: toRem(30);
+    box-sizing: border-box;
+
+    &__title {
+        margin-bottom: toRem(12);
+    }
+
+    &__email {
+        margin-bottom: toRem(4);
+    }
+
+    &__phone {
+        margin-bottom: toRem(12);
+    }
+
+    &__link {
+        font-weight: 600;
+        color: #4B7EE8;
+        cursor: pointer;
+
+        & + & {
+            margin-top: toRem(12);
+        }
+    }
+}

@@ -41,6 +41,11 @@ const routes: Array<RouteConfig> = [
         name: 'Delivery',
         component: () => import('@/pages/Delivery/Delivery.vue'),
     },
+    {
+        path: '/account',
+        name: 'Account',
+        component: () => import('@/pages/Account/Account.vue'),
+    },
 ]
 
 export default routes
