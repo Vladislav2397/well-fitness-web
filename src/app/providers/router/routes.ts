@@ -1,6 +1,7 @@
 import { RouteConfig } from 'vue-router'
 import officeChildren from '@/pages/Office/children'
 import servicesChildren from '@/pages/Services/sections'
+import accountChildren from '@/pages/Account/children'
 
 const routes: Array<RouteConfig> = [
     {
@@ -45,6 +46,7 @@ const routes: Array<RouteConfig> = [
         path: '/account',
         name: 'Account',
         component: () => import('@/pages/Account/Account.vue'),
+        children: accountChildren,
     },
 ]
 

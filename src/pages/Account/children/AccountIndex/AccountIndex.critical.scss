@@ -1,0 +1,13 @@
+.account-index {
+    &__list {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: toRem(16);
+    }
+
+    &__card {
+        //
+    }
+}
+
+@import "./AccountIndexCard/AccountIndexCard.critical";

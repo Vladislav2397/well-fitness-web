@@ -6,6 +6,7 @@
         .__filters
             c-button.__button(
                 v-for="filter in buttons"
+                :key="filter.type"
                 :theme="isActiveFilter(filter.type)"
                 size="s"
                 @click="changeType(filter.type)"
@@ -19,6 +20,7 @@
         )
             c-article-card.__item(
                 v-for="article in list"
+                :key="article.id"
                 :article="article"
                 @click="onCardClick(article)"
             )

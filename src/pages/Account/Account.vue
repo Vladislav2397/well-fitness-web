@@ -12,6 +12,7 @@
             c-side-viewer(
                 :viewer="viewer"
             )
+        router-view
 
 </template>
 

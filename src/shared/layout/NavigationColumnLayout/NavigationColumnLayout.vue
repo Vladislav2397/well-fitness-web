@@ -9,6 +9,7 @@
         )
             c-button.__link(
                 v-for="navigate in navigation"
+                :key="navigate.key"
                 :theme="getButtonTheme(navigate)"
                 @click="setActive(navigate)"
             ) {{ navigate.text }}
@@ -17,6 +18,7 @@
         )
             .__link.typo.typo--size-h5(
                 v-for="navigate in navigation"
+                :key="navigate.key"
                 :class="{ 'active': isActive(navigate) }"
                 @click="setActive(navigate)"
             ) {{ navigate.text }}
