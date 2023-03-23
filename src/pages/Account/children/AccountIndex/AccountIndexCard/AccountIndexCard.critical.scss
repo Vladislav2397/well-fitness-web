@@ -1,5 +1,31 @@
 .account-index-card {
+    $b: &;
+
     background-color: #fff;
     border-radius: toRem(12);
     padding: toRem(16);
+
+    &__title {
+        margin-bottom: toRem(12);
+    }
+
+    &__description {
+        margin-bottom: toRem(12);
+        min-height: toRem(96);
+    }
+
+    &__link {
+        font-weight: 600;
+        color: #4B7EE8;
+    }
+
+    &.is-active {
+        background-color: #F53B49;
+
+        #{$b}__title,
+        #{$b}__description,
+        #{$b}__link {
+            color: #fff;
+        }
+    }
 }

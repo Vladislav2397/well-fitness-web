@@ -1,0 +1,7 @@
+.navigation-tabs-layout {
+    &__link {
+        & + & {
+            margin-left: toRem(12);
+        }
+    }
+}

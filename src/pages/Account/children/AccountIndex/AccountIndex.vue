@@ -1,12 +1,12 @@
 <template lang="pug">
 
 .b-account-index
-    .__list
-        c-account-index-card.__card(
-            v-for="card in cards"
-            :key="card.title"
-            v-bind="card"
-        )
+    c-account-index-card.__card(
+        v-for="(card, index) in cards"
+        :class="{ 'is-active': index === 0 }"
+        :key="index"
+        v-bind="card"
+    )
 
 </template>
 
@@ -28,50 +28,50 @@ export default class AccountIndex extends Vue {
         return [
             {
                 title: 'Ближайшая доставка',
-                description: `<b>Самовывоз</b>\n14 июля с 10:00-12:00`,
+                description: `<b>Самовывоз</b><br />14 июля с 10:00-12:00`,
                 link: {
                     text: 'Подробнее',
                     to: '/account/delivery',
                 },
             },
             {
-                title: 'Ближайшая доставка',
+                title: 'Заказы',
                 description: `<b>Самовывоз</b>\n14 июля с 10:00-12:00`,
                 link: {
-                    text: 'Подробнее',
-                    to: '/account/delivery',
+                    text: 'Все заказы',
+                    to: '/account/orders',
                 },
             },
             {
-                title: 'Ближайшая доставка',
+                title: 'Ваша скидка',
                 description: `<b>Самовывоз</b>\n14 июля с 10:00-12:00`,
                 link: {
                     text: 'Подробнее',
-                    to: '/account/delivery',
+                    to: '/account/discount',
                 },
             },
             {
-                title: 'Ближайшая доставка',
+                title: 'Баланс Бонусных рублей',
                 description: `<b>Самовывоз</b>\n14 июля с 10:00-12:00`,
                 link: {
                     text: 'Подробнее',
-                    to: '/account/delivery',
+                    to: '/account/bonus',
                 },
             },
             {
-                title: 'Ближайшая доставка',
+                title: 'Инструкции',
                 description: `<b>Самовывоз</b>\n14 июля с 10:00-12:00`,
                 link: {
                     text: 'Подробнее',
-                    to: '/account/delivery',
+                    to: '/account/instruction',
                 },
             },
             {
-                title: 'Ближайшая доставка',
+                title: 'Ваши обращения',
                 description: `<b>Самовывоз</b>\n14 июля с 10:00-12:00`,
                 link: {
-                    text: 'Подробнее',
-                    to: '/account/delivery',
+                    text: 'Написать',
+                    to: '/account/feedback',
                 },
             },
         ]

@@ -1,6 +1,7 @@
 .aside-layout {
     &__container {
         display: flex;
+        flex-direction: column;
     }
 
     &__content {
@@ -8,7 +9,40 @@
         height: 100px;
     }
 
+    &__content,
     &__aside {
-        border-left: 1px solid rgba(#8584a4, 0.2);
+        padding-top: toRem(16);
+    }
+
+    @media (max-width: 767px) {
+        &__content {
+            order: 2;
+        }
+
+        &__aside {
+            order: 1;
+        }
+    }
+
+    @media (min-width: 768px) {
+        &__container {
+            flex-direction: row;
+        }
+
+        &__aside {
+            border-left: 1px solid rgba(#8584a4, 0.2);
+        }
+
+        &__content,
+        &__aside {
+            padding-top: toRem(20);
+        }
+    }
+
+    @media (min-width: 1200px) {
+        &__content,
+        &__aside {
+            padding-top: toRem(40);
+        }
     }
 }

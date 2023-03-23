@@ -1,11 +1,11 @@
 <template lang="pug">
 
 .b-account-index-card
-    .__title {{ title }}
+    .__title.typo.typo--size-h5 {{ title }}
     .__description(
         v-html="description"
     )
-    router-link.__link(
+    router-link.__link.typo.typo--size-p4(
         :to="link.to"
     ) {{ link.text }}
 
