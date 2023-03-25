@@ -4,6 +4,7 @@
     c-button.__link(
         v-for="navigation in navigations"
         tag="router-link"
+        size="s"
         :to="navigation.to"
         :theme="isActive(navigation) ? 'brand' : 'secondary'"
         @click="push(navigation)"

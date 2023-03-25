@@ -2,13 +2,13 @@ import { RouteConfig } from 'vue-router'
 
 const children: RouteConfig[] = [
     {
-        path: '/account',
+        path: '',
         name: 'AccountIndex',
         component: () =>
             import('@/pages/Account/children/AccountIndex/AccountIndex.vue'),
     },
     {
-        path: '/account/delivery',
+        path: 'delivery',
         name: 'AccountDelivery',
         component: () =>
             import(

@@ -5,6 +5,7 @@
         .__content
             slot
         .__aside(
+            v-if="$slots.aside"
             :style="styles"
         )
             slot(

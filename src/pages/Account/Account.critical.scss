@@ -1,5 +1,10 @@
 .account {
-    //
+    &__navigation {
+        margin-bottom: toRem(12);
+    }
 }
 
 @import "./children/AccountIndex/AccountIndex.critical";
+@import "./children/AccountDiscount/AccountDiscount.critical";
+@import "./children/AccountBonus/AccountBonus.critical";
+@import "./children/AccountValueCard/AccountValueCard.critical";

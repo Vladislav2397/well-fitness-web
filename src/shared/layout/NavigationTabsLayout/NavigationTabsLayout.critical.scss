@@ -1,5 +1,12 @@
 .navigation-tabs-layout {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    overflow-y: hidden;
+
     &__link {
+        white-space: nowrap;
         & + & {
             margin-left: toRem(12);
         }

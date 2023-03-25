@@ -23,21 +23,20 @@
                 @click="setActive(navigate)"
             ) {{ navigate.text }}
     .__content
-        keep-alive
-            .__container.container(
-                v-if="!$device.size.desktop"
+        .__container.container(
+            v-if="!$device.size.desktop"
+        )
+            slot
+            slot(
+                :name="valueModel"
             )
-                slot
-                slot(
-                    :name="valueModel"
-                )
-            template(
-                v-else
+        template(
+            v-else
+        )
+            slot
+            slot(
+                :name="valueModel"
             )
-                slot
-                slot(
-                    :name="valueModel"
-                )
 
 </template>
 

@@ -1,0 +1,33 @@
+.account-value-card {
+    padding: toRem(16);
+    background-color: #fff;
+    border-radius: toRem(6);
+    box-sizing: border-box;
+
+    &__top {
+        margin-bottom: toRem(12);
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__title {
+        flex-shrink: 1;
+    }
+
+    &__value {
+        color: #F53B49;
+        flex-grow: 1;
+        margin-left: toRem(16);
+        white-space: nowrap;
+    }
+
+    @media (min-width: 650px) {
+        padding: toRem(32);
+
+        &__value {
+            //width: toRem(260);
+        }
+    }
+}

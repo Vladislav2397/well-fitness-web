@@ -1,6 +1,7 @@
 <template lang="pug">
 
 .b-account-feedback
+    h1 Account feedback
 
 </template>
 

@@ -7,15 +7,18 @@
     )
     aside-layout
         template(
-            #aside
+            #aside=""
+            v-if="isShowAside"
         )
-            c-side-viewer(
+            c-side-viewer.__viewer(
                 :viewer="viewer"
             )
-        navigation-tabs-layout(
+        template(
             v-if="isTabs"
-            :navigations="navigations"
         )
+            navigation-tabs-layout.__navigation(
+                :navigations="navigations"
+            )
             router-view
         template(
             v-else
@@ -25,11 +28,12 @@
 </template>
 
 <script lang="ts">
-import { Component, Vue } from 'vue-property-decorator'
+import { Component, Inject, Vue } from 'vue-property-decorator'
 import { PageBreadcrumbLayout } from '@/shared/layout/PageBreadcrumbLayout'
 import { AsideLayout } from '@/shared/layout/AsideLayout'
 import { SideViewer } from '@/entities/viewer/ui/SideViewer'
 import NavigationTabsLayout from '@/shared/layout/NavigationTabsLayout/NavigationTabsLayout.vue'
+import DeviceProvider from '@/shared/lib/providers/device'
 
 export type AccountProps = {
     //
@@ -37,13 +41,19 @@ export type AccountProps = {
 
 @Component({
     components: {
-        NavigationTabsLayout,
+        'navigation-tabs-layout': NavigationTabsLayout,
         'aside-layout': AsideLayout,
         'page-breadcrumb-layout': PageBreadcrumbLayout,
         'c-side-viewer': SideViewer,
     },
 })
 export default class Account extends Vue {
+    @Inject('$device') $device!: DeviceProvider['device']
+
+    get isShowAside() {
+        return this.$device.size.desktop || !this.isTabs
+    }
+
     get viewer() {
         return {
             id: 1,

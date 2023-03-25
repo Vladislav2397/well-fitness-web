@@ -1,6 +1,7 @@
 <template lang="pug">
 
 .b-account-instruction
+    h1 Account instructions
 
 </template>
 

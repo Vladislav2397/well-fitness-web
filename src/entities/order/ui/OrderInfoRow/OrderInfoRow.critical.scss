@@ -1,0 +1,25 @@
+.order-info-row {
+    display: flex;
+    flex-direction: column;
+
+    @media (min-width: 650px) {
+        flex-direction: row;
+        //justify-content: space-between;
+
+        &__date {
+            min-width: toRem(120);
+            margin-right: toRem(24);
+        }
+
+        &__number {
+            min-width: toRem(180);
+            margin-right: toRem(24);
+        }
+
+        &__status {
+            flex-grow: 1;
+            max-width: toRem(330);
+            margin-right: toRem(24);
+        }
+    }
+}

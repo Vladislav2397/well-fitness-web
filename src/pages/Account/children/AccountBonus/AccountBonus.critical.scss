@@ -1,4 +1,51 @@
-
 .account-bonus {
-    //
+    &__card {
+        max-width: toRem(500);
+        margin-bottom: toRem(24);
+    }
+
+    &__row {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        padding-top: toRem(8);
+        padding-bottom: toRem(8);
+        border-bottom: 1px solid #ccc;
+    }
+
+    &__item {
+        & + & {
+            margin-left: toRem(12);
+        }
+
+        &--wide {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+
+            @media (max-width: 649px) {
+                div + div {
+                    margin-top: toRem(8);
+                }
+            }
+        }
+    }
+
+    @media (min-width: 650px) {
+        &__card {
+            margin-bottom: toRem(32);
+        }
+
+        &__item {
+            &--wide {
+                flex-grow: 1;
+                display: flex;
+                flex-direction: row;
+
+                div + div {
+                    margin-left: toRem(32);
+                }
+            }
+        }
+    }
 }

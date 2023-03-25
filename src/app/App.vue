@@ -2,10 +2,8 @@
 
 #app
     header-widget
-    keep-alive
-        router-view(
-            :key="$route.name"
-        )
+    //keep-alive
+    router-view
     the-footer
 
 </template>
