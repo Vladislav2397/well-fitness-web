@@ -1,0 +1,18 @@
+.collapse {
+    border-bottom: 1px solid #ccc;
+
+    &__header {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__icon {
+        width: toRem(30);
+        height: toRem(30);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}

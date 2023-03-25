@@ -1,0 +1,21 @@
+.account-profile {
+    &__bio {
+        margin-bottom: toRem(16);
+    }
+
+    &__form {
+        padding-left: toRem(90 + 32);
+        max-width: toRem(688);
+        display: grid;
+        grid-template-areas: 'g1 g2' 'g3 g4' 'g5 .' 'g6 g6';
+        gap: toRem(20);
+    }
+
+    &__field {
+        @each $i in 6 {
+            &:nth-child(#{$i}) {
+                grid-area: g#{$i};
+            }
+        }
+    }
+}

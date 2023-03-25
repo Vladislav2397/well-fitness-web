@@ -1,0 +1,21 @@
+.viewer-bio {
+    display: flex;
+    flex-direction: row;
+
+    &__avatar {
+        width: toRem(90);
+        height: toRem(90);
+        border-radius: 50%;
+        background-color: #cccccc;
+        margin-right: toRem(32);
+    }
+
+    &__info {
+        padding: toRem(16);
+        border-radius: toRem(12);
+        border: 1px solid #ccc;
+        min-width: toRem(200);
+        max-width: toRem(300);
+        background-color: transparent;
+    }
+}

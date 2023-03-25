@@ -1,9 +1,14 @@
 <template lang="pug">
 
 .b-account-orders
-    order-info-row(
-        :order="orders[0]"
-    )
+    c-collapse
+        template(
+            #header
+        )
+            order-info-row(
+                :order="orders[0]"
+            )
+        p information about order
 
 </template>
 
@@ -11,6 +16,7 @@
 import { Component, Vue } from 'vue-property-decorator'
 import OrderInfoRow from '@/entities/order/ui/OrderInfoRow/OrderInfoRow.vue'
 import { OrderInfoRowProps } from '@/entities/order/ui/OrderInfoRow'
+import Collapse from '@/shared/ui/Collapse/Collapse.vue'
 
 export type AccountOrdersProps = {
     //
@@ -18,6 +24,7 @@ export type AccountOrdersProps = {
 
 @Component({
     components: {
+        'c-collapse': Collapse,
         'order-info-row': OrderInfoRow,
     },
 })

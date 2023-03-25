@@ -51,6 +51,14 @@ const children: RouteConfig[] = [
                 '@/pages/Account/children/AccountFeedback/AccountFeedback.vue'
             ),
     },
+    {
+        path: '/account/profile',
+        name: 'AccountProfile',
+        component: () =>
+            import(
+                '@/pages/Account/children/AccountProfile/AccountProfile.vue'
+            ),
+    },
 ]
 
 export default children

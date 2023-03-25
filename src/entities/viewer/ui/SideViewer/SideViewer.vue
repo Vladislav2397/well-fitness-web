@@ -7,7 +7,9 @@
         | {{ viewer.lastname }}
     .__email.typo.typo--size-p3 {{ viewer.email }}
     .__phone.typo.typo--size-p3 {{ viewer.phone }}
-    .__link.typo.typo--size-p3 Редактировать профиль
+    router-link.__link.typo.typo--size-p3(
+        to="/account/profile"
+    ) Редактировать профиль
     .__link.typo.typo--size-p3 Выйти
 
 </template>
