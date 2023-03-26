@@ -6,6 +6,11 @@
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
+        padding: toRem(12) 0;
+    }
+
+    &__title {
+        flex-grow: 1;
     }
 
     &__icon {
@@ -14,5 +19,13 @@
         display: flex;
         justify-content: center;
         align-items: center;
+        margin-left: toRem(16);
+
+        transform: rotate(-90deg);
+        transition: transform 0.3s ease;
+
+        &.is-active {
+            transform: rotate(0);
+        }
     }
 }

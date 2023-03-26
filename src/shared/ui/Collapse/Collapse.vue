@@ -4,10 +4,13 @@
     .__header(
         @click="onClick"
     )
-        slot(
-            name="header"
-        )
-        .__icon V
+        .__title
+            slot(
+                name="header"
+            )
+        .__icon(
+            :class="{ 'is-active': isOpen }"
+        ) V
     .__content(
         v-if="isOpen"
     )

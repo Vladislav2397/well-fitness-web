@@ -5,7 +5,7 @@
         :breadcrumbs="['В каталог']"
         title="Личный кабинет"
     )
-    aside-layout
+    aside-layout.__layout
         template(
             #aside=""
             v-if="isShowAside"

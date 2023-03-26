@@ -1,40 +1,38 @@
 <template lang="pug">
 
-    .b-input(
-        :class="classes"
-    )
-        ._label(
-            v-if="label"
+label.b-input(
+    :class="classes"
+)
+    .__label.typo.typo--size-p4(
+        v-if="label"
+    ) {{ label }}
+    .__field
+        .__prefix(
+            v-if="$slots.prefix"
         )
-        label._field
-            ._prefix(
-                v-if="$slots.prefix"
+            slot(
+                name="prefix"
             )
-                slot(
-                    name="prefix"
-                )
-            ._value
-                input(
-                    v-model.lazy="inputValue"
-                    :name="name"
-                    :disabled="disabled"
-                    v-on:input="onInput"
-                    v-on:focus="onFocus"
-                    v-on:blur="onBlur"
-                    autocomplete="false"
-                )
-                ._placeholder(
-                    v-if="!inputValue && !isFocus && placeholder"
-                ) {{ placeholder }}
-            ._postfix(
-                v-if="$slots.postfix"
+        .__value
+            input.typo.typo--size-p4(
+                v-model.lazy="inputValue"
+                :name="name"
+                :disabled="disabled"
+                :placeholder="placeholder"
+                v-on:input="onInput"
+                v-on:focus="onFocus"
+                v-on:blur="onBlur"
+                autocomplete="false"
             )
-                slot(
-                    name="postfix"
-                )
-        ._description(
-            v-if="errorSync && errorText"
-        ) {{ errorText }}
+        .__postfix(
+            v-if="$slots.postfix"
+        )
+            slot(
+                name="postfix"
+            )
+    .__description(
+        v-if="errorSync && errorText"
+    ) {{ errorText }}
 
 </template>
 

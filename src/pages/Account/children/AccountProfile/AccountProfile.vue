@@ -7,26 +7,38 @@ form.b-account-profile
     .__form
         c-input.__field(
             v-model="value.phone"
+            label="Телефон"
+            placeholder="+7 900 900-90-90"
             name="phone"
         )
         c-input.__field(
             v-model="value.email"
+            label="E-mail"
+            placeholder="Введите e-mail"
             name="email"
         )
         c-input.__field(
             v-model="value.birthday"
+            label="Дата рождения"
+            placeholder="Выберите дату рождения"
             name="birthday"
         )
         c-input.__field(
             v-model="value.gender"
+            label="Пол"
+            placeholder="Выберите пол"
             name="gender"
         )
         c-input.__field(
             v-model="value.city"
+            label="Город"
+            placeholder="Введите город"
             name="city"
         )
         c-input.__field(
             v-model="value.address"
+            label="Адрес"
+            placeholder="Введите адрес"
             name="address"
         )
 

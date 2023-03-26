@@ -21,5 +21,9 @@
             max-width: toRem(330);
             margin-right: toRem(24);
         }
+
+        &__price {
+            margin-left: auto;
+        }
     }
 }
