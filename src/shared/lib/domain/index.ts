@@ -35,3 +35,10 @@ export type Viewer = {
     email: string
     phone: string
 }
+
+export type BrandId = BrandedType<number, 'BrandId'>
+export type Brand = {
+    id: BrandId
+    name: string
+    logo: string
+}

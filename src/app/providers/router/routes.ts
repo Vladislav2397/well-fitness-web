@@ -24,6 +24,15 @@ const routes: Array<RouteConfig> = [
         component: () => import('@/pages/Article/Article.vue'),
     },
     {
+        path: '/brands',
+        name: 'Brands',
+        component: () => import('@/pages/Brands/Brands.vue'),
+        meta: {
+            breadcrumbs: ['Бренды'],
+            title: 'Бренды',
+        },
+    },
+    {
         path: '/services',
         name: 'Services',
         component: () => import('@/pages/Services/Services.vue'),

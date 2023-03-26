@@ -1,4 +1,4 @@
-import { createServer, Factory, Model } from 'miragejs'
+import { belongsTo, createServer, Factory, Model } from 'miragejs'
 import { faker } from '@faker-js/faker'
 
 const delay = (ms = 1000) =>
@@ -9,6 +9,9 @@ const delay = (ms = 1000) =>
         }, ms)
     })
 
+/**
+ * Return random number from {min} to {max} with not included
+ */
 const randint = (min: number, max: number) => {
     return Math.min(Math.floor(Math.random() * (max - min + 1) + min), max - 1)
 }
@@ -18,6 +21,16 @@ export const server = createServer({
     namespace: 'api',
     models: {
         article: Model.extend({
+            //
+        }),
+        equipment: Model.extend({
+            category: belongsTo(),
+            brand: belongsTo(),
+        }),
+        category: Model.extend({
+            //
+        }),
+        brand: Model.extend({
             //
         }),
     },
@@ -55,6 +68,26 @@ export const server = createServer({
             // @ts-ignore
             return schema.articles.find(id)
         })
+
+        this.get('brands', function (schema, request) {
+            const { category } = request.queryParams
+
+            // @ts-ignore
+            let { brands } = this.serialize(schema.brands.all()) as {
+                brands: any[]
+            }
+
+            if (category) {
+                brands = brands.filter(brand => {
+                    // @ts-ignore
+                    const equipment = schema.equpments.get(brand.equipmentId)
+
+                    return equipment.categoryId === category
+                })
+            }
+
+            return brands
+        })
     },
     factories: {
         article: Factory.extend({
@@ -74,8 +107,35 @@ export const server = createServer({
                 }
             },
         }),
+        brand: Factory.extend({
+            name() {
+                return faker.lorem.word({ length: { min: 5, max: 10 } })
+            },
+            logo() {
+                return faker.image.placeholder.imageUrl(320, 160)
+            },
+        }),
+        category: Factory.extend({
+            name() {
+                return faker.lorem.words(randint(1, 3))
+            },
+        }),
+        equipment: Factory.extend({
+            name() {
+                return faker.lorem.words(randint(1, 4))
+            },
+            brandId() {
+                return randint(1, 14)
+            },
+            categoryId() {
+                return randint(1, 9)
+            },
+        }),
     },
     seeds(server) {
         server.createList('article', 40)
+        server.createList('category', 10)
+        server.createList('brand', 14)
+        server.createList('equipment', 50)
     },
 })
