@@ -3,13 +3,15 @@
 .b-brands
     page-breadcrumb-layout.__breadcrumb
     .__container.container
+        //pre {{ brands }}
+        //pre {{ filters }}
         .__filters
             c-button.__filter(
-                v-for="(filter, index) in filters"
-                :key="index"
-                :theme="index === active ? 'brand' : 'secondary'"
+                v-for="filter in filters"
+                :key="filter.key"
+                :theme="filter.key === active ? 'brand' : 'secondary'"
                 size="s"
-                @click="updateActive(index)"
+                @click="updateActive(filter.key)"
             ) {{ filter.text }}
         .__list
             .__item(
@@ -31,14 +33,18 @@ export type BrandsProps = {
     //
 }
 
-const getBrands = async (category: number | null) => {
-    console.log('request brands', category)
-
+const getBrands = async (category: string | number | null) => {
     const response = await fetch(
         category
             ? `http://localhost:8000/api/brands?category=${category}`
             : 'http://localhost:8000/api/brands'
     )
+
+    return response.json()
+}
+
+const getFilters = async () => {
+    const response = await fetch('http://localhost:8000/api/categories')
 
     return response.json()
 }
@@ -50,65 +56,21 @@ const getBrands = async (category: number | null) => {
     },
 })
 export default class Brands extends Vue {
-    active: number | null = null
+    active: number | string | null = null
 
-    updateActive(index: number) {
-        this.active = index
+    updateActive(categoryId: string) {
+        this.active = categoryId
     }
 
     brands: { id: number; name: string; logo: string }[] = []
+    filters: { key: string; text: string }[] = []
 
     async updateBrands() {
-        this.brands = await getBrands(this.active)
+        this.brands = await getBrands(this.active ?? 1)
     }
 
-    get filters() {
-        return [
-            {
-                key: 'begovie-dorozhki',
-                text: 'Беговые дорожки',
-            },
-            {
-                key: 'elipticheskie',
-                text: 'Эллиптические',
-            },
-            {
-                key: 'elipticheskie',
-                text: 'Велотренажеры',
-            },
-            {
-                key: 'elipticheskie',
-                text: 'Cтепперы',
-            },
-            {
-                key: 'elipticheskie',
-                text: 'Горнолыжные',
-            },
-            {
-                key: 'elipticheskie',
-                text: 'Гребные тренажеры',
-            },
-            {
-                key: 'elipticheskie',
-                text: 'Гребные тренажеры',
-            },
-            {
-                key: 'elipticheskie',
-                text: 'Гребные тренажеры',
-            },
-            {
-                key: 'elipticheskie',
-                text: 'Гребные тренажеры',
-            },
-            {
-                key: 'elipticheskie',
-                text: 'Гребные тренажеры',
-            },
-            {
-                key: 'elipticheskie',
-                text: 'Гребные тренажеры',
-            },
-        ]
+    async created() {
+        this.filters = await getFilters()
     }
 
     @Watch('active', { immediate: true })
