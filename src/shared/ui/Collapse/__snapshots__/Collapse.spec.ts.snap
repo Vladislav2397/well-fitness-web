@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`test Collapse snapshot 1`] = `
+<div class="b-collapse">
+  <div class="__header">
+    <div class="__title"></div>
+    <div class="__icon">V</div>
+  </div>
+  <!---->
+</div>
+`;

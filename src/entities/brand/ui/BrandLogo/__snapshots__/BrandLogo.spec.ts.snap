@@ -1,0 +1,3 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`test BrandLogo snapshot 1`] = `<div class="b-brand-logo"></div>`;

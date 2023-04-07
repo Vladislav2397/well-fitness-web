@@ -1,4 +1,4 @@
 import Button from './Button.vue'
-import type { buttonThemeType } from './Button.vue'
+import type { ButtonThemeType } from './Button.vue'
 
-export { Button, buttonThemeType }
+export { Button, ButtonThemeType as buttonThemeType }

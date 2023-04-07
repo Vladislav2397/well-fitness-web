@@ -8,6 +8,8 @@ import {
     Serializer,
 } from 'miragejs'
 import { faker } from '@faker-js/faker'
+// import { utils } from '@/shared/lib'
+import { randint } from 'burno-utils/random'
 
 const delay = (ms = 1000) =>
     new Promise(resolve => {
@@ -17,15 +19,10 @@ const delay = (ms = 1000) =>
         }, ms)
     })
 
-/**
- * Return random number from {min} to {max}, not included max number
- */
-const randint = (min: number, max: number) => {
-    return Math.min(Math.floor(Math.random() * (max - min + 1) + min), max - 1)
-}
-
 const createEquipment = (server: any) => {
-    const brand = server.schema.findOrCreateBy('brand', { id: randint(1, 14) })
+    const brand = server.schema.findOrCreateBy('brand', {
+        id: randint(1, 14),
+    })
     const category = server.schema.findOrCreateBy('category', {
         id: randint(1, 6),
     })

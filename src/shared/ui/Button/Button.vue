@@ -3,18 +3,17 @@ import { CreateElement, VNode } from 'vue'
 import { Component, Emit, Prop, PropSync, Vue } from 'vue-property-decorator'
 
 export type ButtonProps = {
-    tag: 'button' | 'a' | 'div' | 'router-link'
-    iconSize: 's' | 'm' | 'l'
-    size: 's' | 'm'
-    theme: buttonThemeType
-    icon: string
-    href?: string
-    errorSync?: boolean
-    error?: boolean
+    tag?: Button['tag']
+    iconSize?: Button['iconSize']
+    size?: Button['size']
+    theme?: Button['theme']
+    icon: Button['icon']
+    href: Button['href']
+    error: Button['errorSync']
     iconLeft: boolean
 }
 
-export type buttonThemeType =
+export type ButtonThemeType =
     | 'brand'
     | 'ghost-brand'
     | 'ghost-light'
@@ -22,18 +21,18 @@ export type buttonThemeType =
     | 'secondary'
 
 @Component
-export default class Button extends Vue implements ButtonProps {
+export default class Button extends Vue {
     @Prop({ default: 'button' }) readonly tag!:
         | 'button'
         | 'a'
         | 'div'
         | 'router-link'
     @Prop({ default: 'm' }) readonly size!: 'm' | 's'
-    @Prop({ default: 'brand' }) readonly theme!: ButtonProps['theme']
-    @Prop() readonly icon!: string
-    @Prop({ default: 'm' }) readonly iconSize!: ButtonProps['iconSize']
-    @Prop() readonly href!: string
-    @Prop() readonly iconLeft!: boolean
+    @Prop({ default: 'brand' }) readonly theme!: ButtonThemeType
+    @Prop() readonly icon?: string
+    @Prop({ default: 'm' }) readonly iconSize!: 's' | 'm' | 'l'
+    @Prop() readonly href?: string
+    @Prop({ type: Boolean, default: false }) readonly iconLeft!: boolean
 
     @PropSync('error') errorSync!: boolean
 
@@ -78,7 +77,7 @@ export default class Button extends Vue implements ButtonProps {
         }
 
         return h(
-            'button',
+            this.tag,
             {
                 class: this.classes,
                 ...(this.tag === 'a' && {
