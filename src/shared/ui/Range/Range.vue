@@ -26,7 +26,7 @@
 <script lang="ts">
 import { Component, Prop, Vue } from 'vue-property-decorator'
 
-import { Input } from '@/shared/ui/Input'
+import { Input } from '@/shared/ui/fields'
 // import VueSlider from 'vue-slider-component'
 
 @Component({

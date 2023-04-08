@@ -46,8 +46,8 @@ form.b-account-profile
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator'
-import ViewerBio from '@/entities/viewer/ui/ViewerBio/ViewerBio.vue'
-import Input from '@/shared/ui/Input/Input.vue'
+import { ViewerBio } from '@/entities/viewer'
+import { Input } from '@/shared/ui/fields'
 
 export type AccountProfileProps = {
     //

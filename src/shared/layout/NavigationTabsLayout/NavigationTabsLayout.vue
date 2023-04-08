@@ -3,6 +3,7 @@
 .b-navigation-tabs-layout
     c-button.__link(
         v-for="navigation in navigations"
+        :key="navigation.text"
         tag="router-link"
         size="s"
         :to="navigation.to"

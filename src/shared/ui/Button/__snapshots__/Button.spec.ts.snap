@@ -11,3 +11,11 @@ exports[`Button all tags 4`] = `<router-link-stub class="button button--theme-br
 exports[`Button as link 1`] = `<a href="https://google.com" target="_blank" rel="noopener noreferrer" class="button button--theme-brand button--size-m"></a>`;
 
 exports[`Button default snapshot 1`] = `<button class="button button--theme-brand button--size-m"></button>`;
+
+exports[`Button with tag 1`] = `<button class="button button--theme-brand button--size-m">Button</button>`;
+
+exports[`Button with tag 2`] = `<div class="button button--theme-brand button--size-m">Button</div>`;
+
+exports[`Button with tag 3`] = `<a href="https://google.com" target="_blank" rel="noopener noreferrer" class="button button--theme-brand button--size-m">Button</a>`;
+
+exports[`Button with tag 4`] = `<router-link-stub class="button button--theme-brand button--size-m" to="/">Button</router-link-stub>`;

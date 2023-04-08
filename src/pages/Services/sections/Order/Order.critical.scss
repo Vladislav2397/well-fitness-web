@@ -1,4 +1,55 @@
-
 .order {
-    //
+    max-width: toRem(690);
+
+    &__describe {
+        margin-bottom: toRem(24);
+    }
+
+    // &__form {
+    //     max-width: toRem(690);
+    // }
+
+    &__row {
+        display: flex;
+        flex-direction: column;
+
+        & + & {
+            margin-top: toRem(16);
+        }
+    }
+
+    &__divider {
+        height: 1px;
+        width: 100%;
+        background-color: #ccc;
+        margin-top: toRem(16);
+        margin-bottom: toRem(16);
+    }
+
+    &__field {
+        flex: 1;
+
+        &--limited {
+            flex-grow: initial;
+            min-width: toRem(260);
+        }
+
+        @media (max-width: 649px) {
+            & + & {
+                margin-top: toRem(16);
+            }
+        }
+
+        @media (min-width: 650px) {
+            & + & {
+                margin-left: toRem(16);
+            }
+        }
+    }
+
+    @media (min-width: 650px) {
+        &__row {
+            flex-direction: row;
+        }
+    }
 }

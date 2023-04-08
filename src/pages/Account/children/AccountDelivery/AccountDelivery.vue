@@ -3,7 +3,7 @@
 .b-account-delivery
     c-collapse(
         v-for="(order, index) in orders"
-        :key=""
+        :key="index"
     )
         template(
             #header
