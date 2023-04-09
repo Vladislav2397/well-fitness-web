@@ -4,12 +4,15 @@
     p.__describe.typo.typo--size-p3 Заполните заявку на сервис онлайн, и мы подберем наиболее удобный для вас вариант обслуживания. Наши специалисты свяжутся с вами в кратчайшие сроки!
     form.__form
         .__row
-            input-component.__field(
+            c-brand-select.__field(
+                v-model="form.brand"
                 label="Бренд"
                 placeholder="Бренд"
                 name="brand"
+                @input="onInput"
             )
-            input-component.__field(
+            c-model-select.__field(
+                v-model="form.model"
                 label="Модель"
                 placeholder="Модель"
                 name="model"
@@ -87,7 +90,9 @@
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator'
-import { Input } from '@/shared/ui'
+import { Input, Select } from '@/shared/ui'
+import { BrandSelect } from '@/entities/brand'
+import ModelSelect from './ModelSelect'
 
 export type OrderProps = {
     //
@@ -96,10 +101,32 @@ export type OrderProps = {
 @Component({
     components: {
         'input-component': Input,
+        'c-select': Select,
+        'c-brand-select': BrandSelect,
+        'c-model-select': ModelSelect,
     },
 })
 export default class Order extends Vue {
-    //
+    form = {
+        brand: null,
+        model: null,
+        serialNumber: '',
+        brandNumber: '',
+        date: '',
+        description: '',
+        city: '',
+        street: '',
+        house: '',
+        build: '',
+        room: '',
+        name: '',
+        phone: '',
+        email: '',
+    }
+
+    onInput(value: string) {
+        console.log('onInput', value)
+    }
 }
 </script>
 

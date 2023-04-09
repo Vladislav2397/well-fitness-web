@@ -1,0 +1,31 @@
+$border-default: #909cb5;
+$border-error: #f00;
+
+.field-base {
+    position: relative;
+    border: 1px solid $border-default;
+    border-radius: toRem(6);
+    padding: toRem(12) toRem(10);
+    background-color: #fff;
+    color: #909cb5;
+
+    &--error {
+        border-color: $border-error;
+    }
+
+    &--disabled {
+        border-color: $border-default;
+        opacity: 0.6;
+    }
+
+    input {
+        @include fontSize(p3);
+        background-color: transparent;
+        padding: 0;
+        margin: 0;
+    }
+
+    input::placeholder {
+        color: #909cb5;
+    }
+}

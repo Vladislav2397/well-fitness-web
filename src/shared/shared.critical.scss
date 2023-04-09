@@ -6,7 +6,12 @@
 @import './ui/Counter/Counter.critical';
 //@import './ui/DropdownWrapper/DropdownWrapper.critical';
 @import './ui/Icon/Icon.critical';
+
 @import './ui/fields/Input/Input.critical';
+@import './ui/fields/Select/Select.critical';
+@import './ui/fields/FieldDecoration/FieldDecoration.critical.scss';
+@import './ui/fields/FieldBase/FieldBase.critical.scss';
+
 @import './ui/Link/Link.critical';
 @import './ui/Logo/Logo.critical';
 @import './ui/Pagination/Pagination.critical';
