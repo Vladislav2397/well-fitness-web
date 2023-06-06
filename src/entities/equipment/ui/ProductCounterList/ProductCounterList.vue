@@ -15,12 +15,12 @@
 <script lang="ts">
 import { Component, Prop, Vue } from 'vue-property-decorator'
 
-export type productCounterListType = [text: string, count: number][]
+export type ProductCounterListType = [text: string, count: number][]
 
 @Component
 export default class ProductCounterList extends Vue {
     @Prop() readonly title!: string
-    @Prop() readonly list!: productCounterListType
+    @Prop() readonly list!: ProductCounterListType
 }
 </script>
 

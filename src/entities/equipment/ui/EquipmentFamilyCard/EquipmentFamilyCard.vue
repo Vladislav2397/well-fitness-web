@@ -1,13 +1,13 @@
 <template lang="pug">
 
 c-card-product.b-equipment-family-card(
-    :imageSrc="imageUrl(content.image)"
-    imageAlt="equipmentFamily.image.alt"
-    :to="`${$route.params.group}/${id}`"
+    :imageSrc="equipmentFamily.image.src"
+    :imageAlt="equipmentFamily.image.alt"
+    :to="`${$route.params.type}/${equipmentFamily.id}`"
 )
     c-product-counter-list(
-        :title="content.name"
-        :list="list"
+        :title="equipmentFamily.name"
+        :list="equipmentFamily.categories"
     )
 
 </template>
@@ -16,13 +16,21 @@ c-card-product.b-equipment-family-card(
 import { Component, Prop, Vue } from 'vue-property-decorator'
 
 import { CardProduct } from '../CardProduct'
-import { ProductCounterList } from '../ProductCounterList'
-// import {Model} from "@/shared/config/decorators"
-// import {EquipmentFamily} from "@/entities/equipment"
-// import {Repository} from "@vuex-orm/core"
-// import {MEDIA_HOST} from "@/shared/config/env"
+import {
+    ProductCounterList,
+    type ProductCounterListType,
+} from '../ProductCounterList'
+
+// FIXME: Change url into template (to argument) on correctly
 
 const imageUrl = (image: string) => `${'MEDIA_HOST'}/${image}`
+
+type EquipmentFamily = {
+    id: number
+    image: ImageView
+    name: string
+    categories: ProductCounterListType[]
+}
 
 @Component({
     components: {
@@ -31,27 +39,18 @@ const imageUrl = (image: string) => `${'MEDIA_HOST'}/${image}`
     },
 })
 export default class EquipmentFamilyCard extends Vue {
-    @Prop() readonly id!: number | string
-
-    // @Model(EquipmentFamily) EquipmentFamily!: Repository<EquipmentFamily>
+    @Prop() readonly equipmentFamily!: EquipmentFamily
 
     imageUrl = imageUrl
 
     get content() {
-        return {} /* this.EquipmentFamily
-            .query()
-            .with('categories')
-            .find(`${this.id}`) */
+        return {}
     }
 
     get list() {
-        // @ts-ignore
-        return this.content.categories.map(category => [
-            category.name,
-            category.count,
-        ])
+        return []
     }
 }
 </script>
 
-<style lang="scss" src="./equipment-family-card--critical.scss" />
+<!-- <style lang="scss" src="./EquipmentFamilyCard.critical.scss" /> -->

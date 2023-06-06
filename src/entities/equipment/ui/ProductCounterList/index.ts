@@ -1,3 +1,5 @@
-import ProductCounterList from './ProductCounterList.vue'
+import ProductCounterList, {
+    type ProductCounterListType,
+} from './ProductCounterList.vue'
 
-export { ProductCounterList }
+export { ProductCounterList, ProductCounterListType }

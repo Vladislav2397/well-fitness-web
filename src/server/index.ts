@@ -6,6 +6,7 @@ import {
     Model,
     RestSerializer,
     Serializer,
+    type Server,
 } from 'miragejs'
 import { faker } from '@faker-js/faker'
 // import { utils } from '@/shared/lib'
@@ -18,6 +19,11 @@ const delay = (ms = 1000) =>
             resolve(null)
         }, ms)
     })
+
+const brand = Model.extend({
+    equipment: hasMany('equipment'),
+    category: hasMany({ inverse: 'category' }),
+})
 
 const createEquipment = (server: any) => {
     const brand = server.schema.findOrCreateBy('brand', {
@@ -42,14 +48,20 @@ export const server = createServer({
         equipment: Model.extend({
             category: belongsTo({ inverse: 'category' }),
             brand: belongsTo({ inverse: 'brand' }),
+            type: belongsTo('equipmentType'),
+        }),
+        equipmentType: Model.extend({
+            // Зал, Домашняя
         }),
         category: Model.extend({
             brand: hasMany(),
+            group: hasMany('categoryGroup'),
         }),
-        brand: Model.extend({
-            equipment: hasMany(),
-            category: hasMany({ inverse: 'category' }),
+        categoryGroup: Model.extend({
+            category: hasMany(),
+            // Кардиотренажеры, Силовые
         }),
+        brand,
     },
     routes() {
         this.get('articles', async function (schema, request) {
@@ -148,8 +160,6 @@ export const server = createServer({
                 return faker.lorem.words(randint(1, 4))
             },
             brandId() {
-                // console.log('brandId schema', JSON.stringify(this))
-
                 return randint(1, 14)
             },
             categoryId() {
@@ -166,6 +176,7 @@ export const server = createServer({
             { name: 'Горнолыжные' },
             { name: 'Гребные тренажеры' },
         ],
+        equipmentTypes: [{ name: 'Для дома' }, { name: 'Для фитнес клуба' }],
     },
     seeds(server) {
         server.loadFixtures()

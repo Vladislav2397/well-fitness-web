@@ -10,6 +10,17 @@ const routes: Array<RouteConfig> = [
         component: () => import('@/pages/Main/Index.vue'),
     },
     {
+        path: '/equipment-categories/:type(gym|home)',
+        name: 'EquipmentCategories',
+        component: () =>
+            import('@/pages/EquipmentCategories/EquipmentCategories.vue'),
+    },
+    {
+        path: '/equipments/:type',
+        name: 'Equipments',
+        component: () => import('@/pages/Equipments/Equipments.vue'),
+    },
+    {
         path: '/articles',
         name: 'Articles',
         component: () => import('@/pages/Articles/Articles.vue'),

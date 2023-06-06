@@ -1,0 +1,115 @@
+<template lang="pug">
+
+.b-equipments
+    page-breadcrumb-layout.__breadcrumb(
+        :breadcrumbs="breadcrumbs"
+        :title="title"
+    )
+    .__container.container
+        .__grid
+            equipment-family-card.__item(
+                v-for="equipment in equipments"
+                :key="equipment.id"
+                :equipmentFamily="equipment"
+            )
+
+</template>
+
+<script lang="ts">
+import { Component, Vue } from 'vue-property-decorator'
+
+import { PageBreadcrumbLayout } from '@/shared/layout/PageBreadcrumbLayout'
+
+import { EquipmentFamilyCard } from '@/entities/equipment'
+
+export type EquipmentsProps = {
+    //
+}
+
+const titleMap = new Map([
+    ['home', 'Для дома'],
+    ['gym', 'Для фитнес клуба'],
+])
+
+@Component({
+    components: {
+        'page-breadcrumb-layout': PageBreadcrumbLayout,
+        'equipment-family-card': EquipmentFamilyCard,
+    },
+})
+export default class Equipments extends Vue {
+    equipments = [
+        {
+            id: 1,
+            name: 'Кардио',
+            image: {
+                src: 'some/path/to/image',
+                alt: 'some/path/to/image',
+            },
+            categories: [
+                ['Runners', 12],
+                ['Jumpers', 24],
+            ],
+        },
+        {
+            id: 2,
+            name: 'Силовые',
+            image: {
+                src: 'some/path/to/image',
+                alt: 'some/path/to/image',
+            },
+            categories: [
+                ['Griph', 12],
+                ['Stronghold', 24],
+            ],
+        },
+        {
+            id: 3,
+            name: 'Кардио',
+            image: {
+                src: 'some/path/to/image',
+                alt: 'some/path/to/image',
+            },
+            categories: [
+                ['Runners', 12],
+                ['Jumpers', 24],
+            ],
+        },
+        {
+            id: 4,
+            name: 'Силовые',
+            image: {
+                src: 'some/path/to/image',
+                alt: 'some/path/to/image',
+            },
+            categories: [
+                ['Griph', 12],
+                ['Stronghold', 24],
+            ],
+        },
+        {
+            id: 5,
+            name: 'Силовые',
+            image: {
+                src: 'some/path/to/image',
+                alt: 'some/path/to/image',
+            },
+            categories: [
+                ['Griph', 12],
+                ['Stronghold', 24],
+            ],
+        },
+    ]
+
+    get breadcrumbs() {
+        return [this.title]
+    }
+
+    get title() {
+        return titleMap.get(this.$route.params.type)
+    }
+}
+</script>
+
+<!-- <style lang="scss" src="./Equipments.critical.scss"> -->
+<!-- <style lang="scss" src="./Equipments.main.scss"> -->

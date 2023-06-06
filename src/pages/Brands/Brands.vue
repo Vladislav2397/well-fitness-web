@@ -3,8 +3,6 @@
 .b-brands
     page-breadcrumb-layout.__breadcrumb
     .__container.container
-        //pre {{ brands }}
-        //pre {{ filters }}
         .__filters
             c-button.__filter(
                 v-for="filter in filters"
@@ -66,7 +64,7 @@ export default class Brands extends Vue {
     filters: { key: string; text: string }[] = []
 
     async updateBrands() {
-        this.brands = await getBrands(this.active ?? 1)
+        this.brands = await getBrands(this.active ?? null)
     }
 
     async created() {
