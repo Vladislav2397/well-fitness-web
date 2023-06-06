@@ -35,6 +35,8 @@ import DeviceProvider from '@/shared/lib/providers/device'
 import { domain } from '@/shared/lib'
 
 export type EquipmentCardProps = Pick<EquipmentCard, 'equipment'>
+export type EquipmentType = CardProductStats['equipment'] &
+    Pick<domain.Equipment, 'image'>
 
 @Component({
     components: {
@@ -48,8 +50,7 @@ export default class EquipmentCard extends Vue {
     // @Prop() readonly id!: number
 
     @Prop({ required: true })
-    readonly equipment!: CardProductStats['equipment'] &
-        Pick<domain.Equipment, 'image'>
+    readonly equipment!: EquipmentType
 
     @Inject('$device') device!: DeviceProvider['device']
 

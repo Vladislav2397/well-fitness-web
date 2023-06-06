@@ -21,6 +21,11 @@ const routes: Array<RouteConfig> = [
         component: () => import('@/pages/Equipments/Equipments.vue'),
     },
     {
+        path: '/equipments/:type/:family',
+        name: 'EquipmentFamily',
+        component: () => import('@/pages/EquipmentList/EquipmentList.vue'),
+    },
+    {
         path: '/articles',
         name: 'Articles',
         component: () => import('@/pages/Articles/Articles.vue'),

@@ -50,6 +50,7 @@ import { domain } from '@/shared/lib'
 
 import { Quantity } from '@/shared/ui/Quantity'
 import { Rating } from '@/shared/ui/Rating'
+import { Link } from '@/shared/ui/Link'
 
 export type CardProductStatsProps = Pick<
     CardProductStats,
@@ -60,6 +61,7 @@ export type CardProductStatsProps = Pick<
     components: {
         'rating-component': Rating,
         'quantity-component': Quantity,
+        'link-component': Link,
     },
 })
 export default class CardProductStats extends Vue {
