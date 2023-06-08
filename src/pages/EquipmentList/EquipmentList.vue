@@ -20,7 +20,7 @@
             template(
                 #aside
             )
-                //- equipment-filters
+                equipment-filters
 
 </template>
 
@@ -31,6 +31,7 @@ import { PageBreadcrumbLayout } from '@/shared/layout/PageBreadcrumbLayout'
 import { AsideLayout } from '@/shared/layout/AsideLayout'
 import { EquipmentCard } from '@/entities/equipment'
 import { type EquipmentType } from '@/entities/equipment/ui/EquipmentCard/EquipmentCard.vue'
+import { EquipmentFilters } from '@/widgets/equipment'
 
 // TODO: Create GridLayout with list props and setup by slot
 
@@ -43,6 +44,7 @@ export type EquipmentListProps = {
         'page-breadcrumb-layout': PageBreadcrumbLayout,
         'aside-layout': AsideLayout,
         'equipment-card': EquipmentCard,
+        'equipment-filters': EquipmentFilters,
     },
 })
 export default class EquipmentList extends Vue {

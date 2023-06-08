@@ -1,0 +1,21 @@
+.equipment-filters {
+    &__checkbox {
+        width: 16px;
+        height: 16px;
+        margin: 0;
+    }
+
+    &__condition {
+        display: flex;
+        align-items: center;
+
+        & + & {
+            margin-top: 12px;
+        }
+
+        span {
+            flex-grow: 1;
+            margin-left: 8px;
+        }
+    }
+}
