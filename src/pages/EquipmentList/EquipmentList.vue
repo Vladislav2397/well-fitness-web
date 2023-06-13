@@ -12,11 +12,17 @@
             template(
                 #default
             )
-                equipment-card(
-                    v-for="equipment in equipments"
-                    :key="equipment.id"
-                    :equipment="equipment"
+                grid-layout(
+                    :layout="[3, '1fr']"
+                    :list="equipments"
                 )
+                    template(
+                        #default="{ item }"
+                    )
+                        equipment-card(
+                            :key="item.id"
+                            :equipment="item"
+                        )
             template(
                 #aside
             )
@@ -32,8 +38,7 @@ import { AsideLayout } from '@/shared/layout/AsideLayout'
 import { EquipmentCard } from '@/entities/equipment'
 import { type EquipmentType } from '@/entities/equipment/ui/EquipmentCard/EquipmentCard.vue'
 import { EquipmentFilters } from '@/widgets/equipment'
-
-// TODO: Create GridLayout with list props and setup by slot
+import { GridLayout } from '@/shared/layout/GridLayout'
 
 export type EquipmentListProps = {
     //
@@ -41,6 +46,7 @@ export type EquipmentListProps = {
 
 @Component({
     components: {
+        'grid-layout': GridLayout,
         'page-breadcrumb-layout': PageBreadcrumbLayout,
         'aside-layout': AsideLayout,
         'equipment-card': EquipmentCard,

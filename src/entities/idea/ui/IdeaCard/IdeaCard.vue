@@ -16,7 +16,11 @@ export type IdeaCardProps = Pick<IdeaCard, 'idea'> &
 
 @Component
 export default class IdeaCard extends Vue {
-    @Prop() readonly idea!: { image: { src: string; alt: string } }
+    // FIXME: Remove optional operator for link
+    @Prop() readonly idea!: {
+        image: { src: string; alt: string }
+        link?: string
+    }
     @Prop({ default: 'vertical' }) readonly orientation!:
         | 'vertical'
         | 'horizontal'

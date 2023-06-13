@@ -6,12 +6,18 @@
         :title="title"
     )
     .__container.container
-        .__grid
-            equipment-family-card.__item(
-                v-for="equipment in equipments"
-                :key="equipment.id"
-                :equipmentFamily="equipment"
+        grid-layout(
+            :layout="[4, '1fr']"
+            :list="equipments"
+        )
+            template(
+                #default="{ item }"
             )
+                equipment-family-card.__item(
+                    :key="item.id"
+                    :equipmentFamily="item"
+                )
+    idea-promo-section
 
 </template>
 
@@ -21,6 +27,8 @@ import { Component, Vue } from 'vue-property-decorator'
 import { PageBreadcrumbLayout } from '@/shared/layout/PageBreadcrumbLayout'
 
 import { EquipmentFamilyCard } from '@/entities/equipment'
+import { GridLayout } from '@/shared/layout/GridLayout'
+import { IdeaPromoSection } from '@/widgets/idea'
 
 export type EquipmentsProps = {
     //
@@ -33,11 +41,14 @@ const titleMap = new Map([
 
 @Component({
     components: {
+        'idea-promo-section': IdeaPromoSection,
+        'grid-layout': GridLayout,
         'page-breadcrumb-layout': PageBreadcrumbLayout,
         'equipment-family-card': EquipmentFamilyCard,
     },
 })
 export default class Equipments extends Vue {
+    // FIXME: Add types
     equipments = [
         {
             id: 1,
