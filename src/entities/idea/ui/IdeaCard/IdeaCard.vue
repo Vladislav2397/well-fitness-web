@@ -1,6 +1,8 @@
 <template lang="pug">
 
-.b-idea-card
+.b-idea-card(
+    :class="classes"
+)
     img(
         :src="idea.image.src"
         :alt="idea.image.alt"
@@ -24,6 +26,10 @@ export default class IdeaCard extends Vue {
     @Prop({ default: 'vertical' }) readonly orientation!:
         | 'vertical'
         | 'horizontal'
+
+    get classes() {
+        return [`idea-card--${this.orientation}`]
+    }
 }
 </script>
 

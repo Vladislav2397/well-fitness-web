@@ -1,3 +1,26 @@
 .idea-card {
-    //
+    min-width: 300px;
+    min-height: 160px;
+    aspect-ratio: 300 / 160;
+
+    background-color: #ccc;
+
+    $container: 1200 - 20 - 20;
+    $count: 4;
+
+    @media (min-width: $tablet) {
+        min-height: 400px;
+
+        &--vertical {
+            min-width: 275px;
+            flex-basis: 275px;
+            aspect-ratio: 275 / 400;
+        }
+
+        &--horizontal {
+            min-width: 575px;
+            flex-basis: 575px;
+            aspect-ratio: 575 / 400;
+        }
+    }
 }
