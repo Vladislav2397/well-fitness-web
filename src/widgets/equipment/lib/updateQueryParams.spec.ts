@@ -23,3 +23,17 @@ describe('updateQueryParams spec', () => {
         }
     )
 })
+
+/**
+ * const [parseQueryParams, updateQueryParam] = createQueryParamUpdater({
+ *  creators: 'array',
+ *  categories: 'array',
+ *  price: 'string',
+ * })
+ *
+ * const parsedQuery = parseQueryParams(params) // { creators: [], categories: [], price: '' }
+ *
+ * const query = updateQueryParam(parsedQuery, {
+ *  creators: '1',
+ * })
+ */

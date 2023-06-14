@@ -1,4 +1,4 @@
-declare type BrandedType<T, U> = T & { __tag?: U }
+declare type BrandedType<T, U = 'BrandedType'> = T & { __tag?: U }
 declare type RequiredBrandedType<T, U> = T & { __tag: U }
 
 declare type DateTimeStamp = BrandedType<number, 'DateTimeStamp'>
