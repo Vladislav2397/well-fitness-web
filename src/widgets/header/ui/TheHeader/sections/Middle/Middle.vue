@@ -28,6 +28,7 @@
             c-icon.__action(
                 size="m"
                 name="cart"
+                @click="onClick('cart')"
             )
 
 </template>
@@ -46,7 +47,11 @@ import { Navigation } from '../../../Navigation'
     },
 })
 export default class Middle extends Vue {
-    //
+    onClick(type: 'cart') {
+        if (type === 'cart') {
+            return this.$router.push('/cart')
+        }
+    }
 }
 </script>
 

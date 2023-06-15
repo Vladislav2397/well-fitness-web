@@ -1,0 +1,18 @@
+.cart {
+    &__breadcrumb {
+        margin-bottom: 24px;
+    }
+
+    &__item {
+        width: 100%;
+        background-color: #fff;
+        min-height: 300px;
+        display: flex;
+        align-items: flex-end;
+        justify-content: flex-end;
+
+        & + & {
+            margin-top: 12px;
+        }
+    }
+}

@@ -49,6 +49,14 @@ const routes: Array<RouteConfig> = [
         },
     },
     {
+        path: '/cart',
+        name: 'Cart',
+        component: () => import('@/pages/Cart/Cart.vue'),
+        meta: {
+            title: 'Моя корзина',
+        },
+    },
+    {
         path: '/services',
         name: 'Services',
         component: () => import('@/pages/Services/Services.vue'),

@@ -35,6 +35,8 @@ import { SideViewer } from '@/entities/viewer/ui/SideViewer'
 import NavigationTabsLayout from '@/shared/layout/NavigationTabsLayout/NavigationTabsLayout.vue'
 import DeviceProvider from '@/shared/lib/providers/device'
 
+// FIXME: Throwing error into any navigation item
+
 export type AccountProps = {
     //
 }
