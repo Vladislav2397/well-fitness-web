@@ -1,0 +1,26 @@
+.equipment-promo-section {
+    padding-top: 60px;
+    padding-bottom: 60px;
+    overflow: hidden;
+
+    &__tabs {
+        margin-bottom: 30px;
+    }
+
+    &__button {
+        margin-top: 30px;
+    }
+
+    &__list {
+        white-space: nowrap;
+        overflow-x: scroll;
+    }
+
+    &__item {
+        width: 280px;
+
+        & + & {
+            margin-left: 16px;
+        }
+    }
+}

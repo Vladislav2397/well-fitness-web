@@ -1,4 +1,6 @@
 .equipment-card {
+    max-width: 500px;
+
     &__content {
         padding: toRem(16);
     }

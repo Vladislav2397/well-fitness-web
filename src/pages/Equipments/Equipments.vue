@@ -18,6 +18,7 @@
                     :equipmentFamily="item"
                 )
     idea-promo-section
+    equipment-promo-section
 
 </template>
 
@@ -29,6 +30,7 @@ import { PageBreadcrumbLayout } from '@/shared/layout/PageBreadcrumbLayout'
 import { EquipmentFamilyCard } from '@/entities/equipment'
 import { GridLayout } from '@/shared/layout/GridLayout'
 import { IdeaPromoSection } from '@/widgets/idea'
+import { EquipmentPromoSection } from '@/widgets/equipment/ui/EquipmentPromoSection'
 
 export type EquipmentsProps = {
     //
@@ -42,6 +44,7 @@ const titleMap = new Map([
 @Component({
     components: {
         'idea-promo-section': IdeaPromoSection,
+        'equipment-promo-section': EquipmentPromoSection,
         'grid-layout': GridLayout,
         'page-breadcrumb-layout': PageBreadcrumbLayout,
         'equipment-family-card': EquipmentFamilyCard,

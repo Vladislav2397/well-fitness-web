@@ -1,3 +1,6 @@
-import EquipmentCard, { type EquipmentCardProps } from './EquipmentCard.vue'
+import EquipmentCard, {
+    type EquipmentCardProps,
+    type EquipmentType,
+} from './EquipmentCard.vue'
 
-export { EquipmentCard, EquipmentCardProps }
+export { EquipmentCard, EquipmentCardProps, EquipmentType }

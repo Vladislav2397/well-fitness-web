@@ -26,3 +26,5 @@ export {
     EquipmentInformationCard,
     Characteristics,
 }
+
+export * from './ui/EquipmentCard'
