@@ -28,3 +28,4 @@ export {
 }
 
 export * from './ui/EquipmentCard'
+export * from './ui/EquipmentCartRow'

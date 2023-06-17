@@ -16,5 +16,6 @@ export default new Vuex.Store({
         idea: ideaModel.ideaModule,
         brand: brandModel.brandModule,
         equipment: equipmentModel.equipmentModule,
+        cart: equipmentModel.cartModule,
     },
 })
