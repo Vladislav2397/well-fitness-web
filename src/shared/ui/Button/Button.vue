@@ -33,6 +33,7 @@ export default class Button extends Vue {
     @Prop({ default: 'm' }) readonly iconSize!: 's' | 'm' | 'l'
     @Prop() readonly href?: string
     @Prop({ type: Boolean, default: false }) readonly iconLeft!: boolean
+    @Prop({ type: Boolean, default: false }) readonly isDisable!: boolean
 
     @PropSync('error') errorSync!: boolean
 
@@ -45,6 +46,10 @@ export default class Button extends Vue {
 
         classes.push(`button--theme-${this.theme}`)
         classes.push(`button--size-${this.size}`)
+
+        if (this.isDisable) {
+            classes.push(`button--disabled`)
+        }
 
         if (this.icon) {
             if (this.iconLeft) {
@@ -93,7 +98,11 @@ export default class Button extends Vue {
                     },
                 }),
                 on: {
-                    click: this.clickEmit,
+                    click: () => {
+                        if (this.isDisable) return
+
+                        this.clickEmit()
+                    },
                 },
             },
             children

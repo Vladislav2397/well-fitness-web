@@ -1,48 +1,64 @@
-<template lang="pug">
+<!--<script lang="tsx">-->
+<!--import { Component, Prop, Vue } from 'vue-property-decorator'-->
+<!--import { CreateElement, RenderContext } from 'vue'-->
 
-.b-quantity(
-    :class="`quantity--${state.class}`"
-)
-    | {{ state.label }}
-    .__list
-        .__dot(
-            v-for="i in 3"
-            :key="i"
-            :class="{ 'quantity__dot--fill' : i <= count }"
-        )
+<!--export type QuantityProps = {-->
+<!--    count: QuantityType-->
+<!--}-->
 
-</template>
+<!--type QuantityType = 0 | 1 | 2 | 3-->
 
-<script lang="ts">
-import { Component, Prop, Vue } from 'vue-property-decorator'
+<!--const getState = (count: QuantityType) => {-->
+<!--    switch (count) {-->
+<!--        case 0:-->
+<!--            return {-->
+<!--                label: 'Нет в наличии',-->
+<!--                class: 'error',-->
+<!--            }-->
+<!--        case 1:-->
+<!--            return {-->
+<!--                label: 'Осталось мало',-->
+<!--                class: 'warning',-->
+<!--            }-->
+<!--        default:-->
+<!--            return {-->
+<!--                label: 'В наличии',-->
+<!--                class: 'success',-->
+<!--            }-->
+<!--    }-->
+<!--}-->
 
-export type QuantityProps = Pick<Quantity, 'count'>
+<!--@Component({-->
+<!--    // @ts-ignore-->
+<!--    functional: true,-->
+<!--})-->
+<!--export default class Quantity extends Vue {-->
+<!--    @Prop() readonly count!: QuantityType-->
 
-@Component
-export default class Quantity extends Vue {
-    @Prop() readonly count!: 0 | 1 | 2 | 3
+<!--    render(-->
+<!--        h: CreateElement,-->
+<!--        { props: { count } }: RenderContext<QuantityProps>-->
+<!--    ) {-->
+<!--        const state = getState(count)-->
 
-    get state(): { label: string; class: string } {
-        switch (this.count) {
-            case 0:
-                return {
-                    label: 'Нет в наличии',
-                    class: 'error',
-                }
-            case 1:
-                return {
-                    label: 'Осталось мало',
-                    class: 'warning',
-                }
-            default:
-                return {
-                    label: 'В наличии',
-                    class: 'success',
-                }
-        }
-    }
-}
-</script>
+<!--        return (-->
+<!--            <div class={['quantity', `quantity&#45;&#45;${state.class}`]}>-->
+<!--                {state.label}-->
+<!--                <div class="quantity__list">-->
+<!--                    {[1, 2, 3].map(i => (-->
+<!--                        <div-->
+<!--                            class={[-->
+<!--                                'quantity__dot',-->
+<!--                                { 'quantity__dot&#45;&#45;fill': i <= count },-->
+<!--                            ]}-->
+<!--                            key={i}></div>-->
+<!--                    ))}-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        )-->
+<!--    }-->
+<!--}-->
+<!--</script>-->
 
 <!--<style lang="scss" src="./Quantity.critical.scss"/>-->
 <!--<style lang="scss" src="./Quantity.main.scss"/>-->

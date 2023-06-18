@@ -28,12 +28,14 @@ export type RatingProps = {
 } & Partial<Pick<Rating, 'count' | 'hasLabel'>> &
     Pick<Rating, 'isBold'>
 
+export type RatingType = 0 | 1 | 2 | 3 | 4 | 5
+
+// FIXME: Rewrite to functional component and tsx
+
 @Component
 export default class Rating extends Vue {
-    @Prop({ default: 0 }) readonly count!: 0 | 1 | 2 | 3 | 4 | 5
-
+    @Prop({ default: 0 }) readonly count!: RatingType
     @Prop({ default: true, type: Boolean }) readonly hasLabel!: boolean
-
     @Prop({ type: Boolean }) readonly isBold!: boolean
 }
 </script>

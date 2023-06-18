@@ -38,6 +38,8 @@
         }
 
         &__action {
+            display: inline-block;
+
             & + & {
                 margin-left: toRem(20);
             }

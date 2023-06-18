@@ -25,11 +25,7 @@
                 size="m"
                 name="heart"
             )
-            c-icon.__action(
-                size="m"
-                name="cart"
-                @click="onClick('cart')"
-            )
+            cart-header-icon.__action
 
 </template>
 
@@ -38,19 +34,19 @@ import { Component, Vue } from 'vue-property-decorator'
 import { Button } from '@/shared/ui/Button'
 import { Icon } from '@/shared/ui/Icon'
 import { Navigation } from '../../../Navigation'
+import { CartHeaderIcon } from '@/widgets/cart'
 
 @Component({
     components: {
+        'cart-header-icon': CartHeaderIcon,
         'button-component': Button,
         'c-icon': Icon,
         'c-navigation': Navigation,
     },
 })
 export default class Middle extends Vue {
-    onClick(type: 'cart') {
-        if (type === 'cart') {
-            return this.$router.push('/cart')
-        }
+    toRoute(route: string) {
+        this.$router.push(route)
     }
 }
 </script>

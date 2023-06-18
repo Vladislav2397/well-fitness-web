@@ -1,9 +1,10 @@
 import { Component, Prop, Vue } from 'vue-property-decorator'
 import { Button } from '@/shared/ui'
+import type { Equipment } from '@/shared-kernel'
 
 @Component
 export default class AddToFavorite extends Vue {
-    @Prop() equipment!: unknown
+    @Prop() equipment!: Equipment
 
     toFavorite() {
         console.log('add equipment to favorite', this.equipment)

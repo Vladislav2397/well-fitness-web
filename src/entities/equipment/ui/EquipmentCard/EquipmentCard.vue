@@ -10,16 +10,20 @@ card-product-component.b-equipment-card(
         :isRatingLabel="!device.size.mobile"
         :isPriceRow="device.size.tablet"
     )
-        c-button(
-            icon="cart"
-            size="m"
-            @click="addToCart"
-        ) В корзину
-        c-button(
-            icon="heart"
-            size="m"
-            @click="addToFavorite"
-        ) В избранное
+        template(
+            #action
+        )
+            slot
+        //c-button(
+        //    icon="cart"
+        //    size="m"
+        //    @click="addToCart"
+        //) В корзину
+        //c-button(
+        //    icon="heart"
+        //    size="m"
+        //    @click="addToFavorite"
+        //) В избранное
 
 </template>
 

@@ -3,6 +3,7 @@ module.exports = {
     testMatch: [
         // '**/src/(shared|entities)**/*.(spec|test).[jt]s?(x)'
         // '**/src/shared/ui/Button/**/*.(spec|test).[jt]s?(x)',
-        '**/src/widgets/equipment/lib/**/*.(spec|test).[jt]s?(x)',
+        '**/src/entities/equipment/**/*.(spec|test).[jt]s?(x)',
+        // '**/src/widgets/equipment/lib/**/*.(spec|test).[jt]s?(x)',
     ],
 }

@@ -1,0 +1,20 @@
+.cart-header-icon {
+    position: relative;
+
+    $badgeSize: 16px;
+
+    &__badge {
+        position: absolute;
+        top: -($badgeSize / 2);
+        right: -($badgeSize / 2);
+        width: $badgeSize;
+        height: $badgeSize;
+        border-radius: 50%;
+        background-color: #f00;
+        color: #ffffff;
+        font-size: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}

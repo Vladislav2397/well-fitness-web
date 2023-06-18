@@ -67,5 +67,8 @@ export const equipmentModule: Module<
         getById(state) {
             return (id: number) => state.pool[id]
         },
+        list(state) {
+            return Object.values(state.pool)
+        },
     },
 }

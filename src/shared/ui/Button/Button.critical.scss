@@ -6,6 +6,11 @@
     border: 1px solid transparent;
     vertical-align: middle;
 
+    &--disabled {
+        pointer-events: none;
+        opacity: 0.5;
+    }
+
     i {
         vertical-align: middle;
     }

@@ -1,31 +1,53 @@
 import type { Module } from 'vuex'
-import type { Equipment, EquipmentId } from '@/shared-kernel'
+import type { Equipment } from '@/shared-kernel'
+
+import {
+    type Cart,
+    addToCart,
+    removeFromCart,
+    getCartEquipments,
+    getCartLength,
+    hasEquipment,
+    hasInStock,
+} from './domain'
 
 type CartState = {
-    equipments: EquipmentId[]
-}
-
-const array = {
-    push<T>(array: T[], item: T): T[] {
-        return [...array, item]
-    },
+    cart: Cart
 }
 
 export const cartModule: Module<CartState, any> = {
     namespaced: true,
     state: () => ({
-        equipments: ['1'],
+        cart: {
+            equipments: [],
+        },
     }),
     mutations: {
-        addEquipmentToCart(state, equipment: Equipment) {
-            state.equipments = array.push(state.equipments, equipment.id)
+        addToCart(state, equipment: Equipment) {
+            const { cart } = state
+
+            state.cart = addToCart(cart, equipment)
+        },
+        removeFromCart(state, equipment: Equipment) {
+            const { cart } = state
+
+            state.cart = removeFromCart(cart, equipment)
         },
     },
     getters: {
-        list({ equipments }, getters, rootState, rootGetters) {
+        list({ cart }, _, __, rootGetters) {
             const getById = rootGetters['equipment/getById']
 
-            return equipments.map(id => getById(id))
+            return getCartEquipments(cart, getById)
+        },
+        length({ cart }) {
+            return getCartLength(cart)
+        },
+        hasEquipment({ cart }) {
+            return (equipment: Equipment) => hasEquipment(cart, equipment)
+        },
+        hasInStock({ cart }) {
+            return (equipment: Equipment) => hasInStock(cart, equipment)
         },
     },
 }

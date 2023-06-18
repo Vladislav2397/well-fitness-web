@@ -8,7 +8,7 @@ export type Equipment = {
     }
     hasShowRoom: boolean
     price: EquipmentPrice
-    quantity: EquipmentQuantity
-    rating: EquipmentRating
+    quantity: 0 | 1 | 2 | 3
+    rating: 0 | 1 | 2 | 3 | 4 | 5
     info: EquipmentInfo
 }

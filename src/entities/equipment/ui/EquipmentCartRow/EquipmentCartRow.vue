@@ -37,7 +37,9 @@
 
 <script lang="ts">
 import { Component, Prop, Vue } from 'vue-property-decorator'
+
 import { type Equipment } from '@/shared-kernel'
+
 import { Rating } from '@/shared/ui/Rating'
 import { Quantity } from '@/shared/ui/Quantity'
 

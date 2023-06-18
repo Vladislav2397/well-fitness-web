@@ -1,12 +1,13 @@
 import { Component, Prop, Vue } from 'vue-property-decorator'
 import { Button } from '@/shared/ui'
+import type { Equipment } from '@/shared-kernel'
 
 @Component
 export default class AddToFavorite extends Vue {
-    @Prop() equipment!: unknown
+    @Prop() equipment!: Equipment
 
     remove() {
-        console.log('remove equipment from cart', this.equipment)
+        this.$store.commit('cart/removeFromCart', this.equipment)
     }
 
     render() {
