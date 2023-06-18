@@ -2,6 +2,7 @@ import { RouteConfig } from 'vue-router'
 import officeChildren from '@/pages/Office/children'
 import servicesChildren from '@/pages/Services/sections'
 import accountChildren from '@/pages/Account/children'
+import { children as aboutChildren } from '@/pages/About/sections'
 
 const routes: Array<RouteConfig> = [
     {
@@ -43,6 +44,13 @@ const routes: Array<RouteConfig> = [
         path: '/articles/:id',
         name: 'Article',
         component: () => import('@/pages/Article/Article.vue'),
+    },
+    {
+        path: '/about',
+        name: 'About',
+        component: () => import('@/pages/About/About.vue'),
+        children: aboutChildren,
+        redirect: '/about/us',
     },
     {
         path: '/brands',
