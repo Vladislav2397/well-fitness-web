@@ -14,7 +14,7 @@
     slot(
         name="button"
     )
-        button-component.__button(
+        c-button.__button(
             v-if="buttonText"
             tag="a"
             :theme="buttonTheme"
@@ -31,16 +31,13 @@ import { Button } from '@/shared/ui/Button'
 
 @Component({
     components: {
-        'button-component': Button,
+        'c-button': Button,
     },
 })
 export default class SectionWrapper extends Vue {
     @Prop() readonly title!: string
-
     @Prop({ default: 'light' }) readonly theme!: 'dark' | 'light'
-
     @Prop() readonly buttonText!: string
-
     @Prop({
         default: 'ghost-brand',
     })

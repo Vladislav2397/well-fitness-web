@@ -1,3 +1,6 @@
+$dark: #2e2e2e;
+$white: #ffffff;
+
 .section-wrapper {
     &--theme {
         &-light {
@@ -18,7 +21,8 @@
     }
 
     &__button {
-        margin-top: toRem(20);
+        display: inline-block;
+        margin-top: 20px;
     }
 
     @media (min-width: 768px) {

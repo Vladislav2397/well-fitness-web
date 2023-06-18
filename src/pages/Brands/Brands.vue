@@ -24,6 +24,7 @@
 
 <script lang="ts">
 import { Component, Vue, Watch } from 'vue-property-decorator'
+
 import { PageBreadcrumbLayout } from '@/shared/layout/PageBreadcrumbLayout'
 import { Button } from '@/shared/ui/Button'
 
