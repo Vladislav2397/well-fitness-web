@@ -46,11 +46,10 @@
 <script lang="ts">
 import { Component, Prop, Vue } from 'vue-property-decorator'
 
-import { domain } from '@/shared/lib'
-
 import { Quantity } from '@/shared/ui/Quantity'
 import { Rating } from '@/shared/ui/Rating'
 import { Link } from '@/shared/ui/Link'
+import type { Equipment } from '@/shared-kernel'
 
 export type CardProductStatsProps = Pick<
     CardProductStats,
@@ -66,16 +65,9 @@ export type CardProductStatsProps = Pick<
 })
 export default class CardProductStats extends Vue {
     @Prop() readonly equipment!: Pick<
-        domain.Equipment,
+        Equipment,
         'name' | 'hasShowRoom' | 'price' | 'quantity' | 'rating' | 'info'
     >
-
-    // @Prop() readonly quantity!: string | number
-    // @Prop() readonly hasShowRoom!: boolean // ProductCardType['hasShowRoom']
-    // @Prop() readonly info!: [key: string, value: string][]
-    // @Prop() readonly title!: string // ProductCardType['title']
-    // @Prop() readonly rating!: number // ProductCardType['rating']
-    // @Prop() readonly price!: string[] // ProductCardType['price']
 
     @Prop({ default: false }) readonly isTitleBold!: boolean
     @Prop({ default: true }) readonly isRatingLabel!: boolean

@@ -24,6 +24,7 @@ const Template: Story<EquipmentCardProps> = (args: any, { argTypes }: any) => ({
 export const Default = Template.bind({})
 Default.args = {
     equipment: {
+        id: '1',
         name: 'equipment name',
         info: [['key', 'value']],
         image: {

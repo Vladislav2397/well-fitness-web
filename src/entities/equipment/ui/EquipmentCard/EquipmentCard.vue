@@ -3,6 +3,7 @@
 card-product-component.b-equipment-card(
     :image-src="equipment.image.src"
     :image-alt="equipment.image.alt"
+    @click="toEquipment"
 )
     card-product-stats-component.__content(
         :equipment="equipment"
@@ -14,16 +15,6 @@ card-product-component.b-equipment-card(
             #action
         )
             slot
-        //c-button(
-        //    icon="cart"
-        //    size="m"
-        //    @click="addToCart"
-        //) В корзину
-        //c-button(
-        //    icon="heart"
-        //    size="m"
-        //    @click="addToFavorite"
-        //) В избранное
 
 </template>
 
@@ -36,11 +27,9 @@ import { CardProductStats } from '../CardProductStats'
 import { Button } from '@/shared/ui/Button'
 import DeviceProvider from '@/shared/lib/providers/device'
 
-import { domain } from '@/shared/lib'
+import { Equipment } from '@/shared-kernel'
 
 export type EquipmentCardProps = Pick<EquipmentCard, 'equipment'>
-export type EquipmentType = CardProductStats['equipment'] &
-    Pick<domain.Equipment, 'image'>
 
 @Component({
     components: {
@@ -50,26 +39,13 @@ export type EquipmentType = CardProductStats['equipment'] &
     },
 })
 export default class EquipmentCard extends Vue {
-    // @Prop() readonly equipmentCard!: domain.Equipment
-    // @Prop() readonly id!: number
-
     @Prop({ required: true })
-    readonly equipment!: EquipmentType
+    readonly equipment!: Equipment
 
     @Inject('$device') device!: DeviceProvider['device']
 
-    addToCart(): void {
-        if (this.equipment) {
-            console.log('add to cart', this.equipment)
-            // CartService.add(this.equipment)
-        }
-    }
-
-    addToFavorite(): void {
-        if (this.equipment) {
-            console.log('add to favorite', this.equipment)
-            // FavoriteService.add(this.equipment)
-        }
+    toEquipment() {
+        return this.$router.push(`/equipments/${this.equipment.id}`)
     }
 }
 </script>

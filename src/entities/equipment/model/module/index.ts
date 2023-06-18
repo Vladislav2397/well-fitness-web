@@ -21,7 +21,7 @@ const getPool = (): Record<EquipmentId, Equipment> => ({
         image,
         price: [10000, 15000],
         hasShowRoom: false,
-        rating: 4,
+        rating: 5,
         info: [['key', 'value']],
         quantity: 3,
     },

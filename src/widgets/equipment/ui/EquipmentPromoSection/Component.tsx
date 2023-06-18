@@ -1,11 +1,12 @@
 import { Component, Vue } from 'vue-property-decorator'
 
-import { EquipmentCard, type EquipmentType } from '@/entities/equipment'
+import { EquipmentCard } from '@/entities/equipment'
 
 import { Button } from '@/shared/ui'
 import { TabList } from '@/shared/ui/TabList'
 import { TabListProps } from '@/shared/ui/TabList/TabList.vue'
 import { AddToCart } from '@/features/cart'
+import { Equipment } from '@/shared-kernel'
 
 export type EquipmentPromoSectionProps = {
     //
@@ -13,9 +14,9 @@ export type EquipmentPromoSectionProps = {
 
 @Component
 export default class EquipmentPromoSection extends Vue {
-    equipments: (EquipmentType & { id: number })[] = [
+    equipments: Equipment[] = [
         {
-            id: 1,
+            id: '1',
             image: {
                 alt: 'alt',
                 src: 'src',
@@ -28,7 +29,7 @@ export default class EquipmentPromoSection extends Vue {
             rating: 5,
         },
         {
-            id: 2,
+            id: '2',
             image: {
                 alt: 'alt',
                 src: 'src',
@@ -41,7 +42,7 @@ export default class EquipmentPromoSection extends Vue {
             rating: 5,
         },
         {
-            id: 3,
+            id: '3',
             image: {
                 alt: 'alt',
                 src: 'src',
@@ -54,7 +55,7 @@ export default class EquipmentPromoSection extends Vue {
             rating: 5,
         },
         {
-            id: 4,
+            id: '4',
             image: {
                 alt: 'alt',
                 src: 'src',
@@ -67,7 +68,7 @@ export default class EquipmentPromoSection extends Vue {
             rating: 5,
         },
         {
-            id: 5,
+            id: '5',
             image: {
                 alt: 'alt',
                 src: 'src',
@@ -80,7 +81,7 @@ export default class EquipmentPromoSection extends Vue {
             rating: 5,
         },
         {
-            id: 6,
+            id: '6',
             image: {
                 alt: 'alt',
                 src: 'src',
