@@ -3,7 +3,9 @@
 .b-cart
     page-breadcrumb-layout.__breadcrumb
     .__container.container
-        cart-equipment-list.__list
+        .__content
+            cart-equipment-list.__list
+            cart-total-info.__total
         .__guarantee
         .__addition
 
@@ -16,7 +18,7 @@ import { PageBreadcrumbLayout } from '@/shared/layout/PageBreadcrumbLayout'
 
 import { AddToFavorite, RemoveFromCart } from '@/features/cart'
 
-import { CartEquipmentList } from '@/widgets/cart'
+import { CartEquipmentList, CartTotalInfo } from '@/widgets/cart'
 
 export type CartProps = {
     //
@@ -24,6 +26,7 @@ export type CartProps = {
 
 @Component({
     components: {
+        'cart-total-info': CartTotalInfo,
         'cart-equipment-list': CartEquipmentList,
         'page-breadcrumb-layout': PageBreadcrumbLayout,
         'add-to-favorite-button': AddToFavorite,

@@ -26,10 +26,9 @@ export function removeFromCart(cart: Cart, equipment: Equipment): Cart {
     }
 }
 
-export function getCartEquipments(
-    cart: Cart,
-    getById: (id: EquipmentId) => Equipment
-) {
+type GetEquipmentById = (id: EquipmentId) => Equipment
+
+export function getCartEquipments(cart: Cart, getById: GetEquipmentById) {
     return cart.equipments.map(getById)
 }
 
@@ -47,4 +46,38 @@ export function hasEquipment(cart: Cart, equipment: Equipment): boolean {
 
 export function hasInStock(cart: Cart, equipment: Equipment): boolean {
     return equipment.quantity > 0
+}
+
+function getEquipmentPrice(equipment: Equipment) {
+    const [current, old] = equipment.price
+
+    return { current, old }
+}
+
+function getEquipmentStock(equipment: Equipment) {
+    const [current, old] = equipment.price
+
+    return old - current
+}
+
+export function getTotalPrice(cart: Cart, getById: GetEquipmentById) {
+    const { equipments } = cart
+
+    return equipments.map(getById).reduce(
+        ({ price, stock, total }, equipment) => {
+            const { current, old } = getEquipmentPrice(equipment)
+            const newStock = getEquipmentStock(equipment)
+
+            return {
+                price: price + old,
+                stock: stock + newStock,
+                total: total + current,
+            }
+        },
+        {
+            price: 0,
+            stock: 0,
+            total: 0,
+        }
+    )
 }

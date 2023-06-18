@@ -6,7 +6,7 @@ import type { Equipment } from '@/shared-kernel'
 export default class AddToCart extends Vue {
     @Prop() equipment!: Equipment
 
-    get hasIntoCart() {
+    get isContainsInCart() {
         return this.$store.getters['cart/hasEquipment'](this.equipment)
     }
 
@@ -15,7 +15,7 @@ export default class AddToCart extends Vue {
     }
 
     toCart() {
-        if (this.hasIntoCart) return
+        if (this.isContainsInCart) return
 
         this.$store.commit('cart/addToCart', this.equipment)
     }
@@ -24,9 +24,9 @@ export default class AddToCart extends Vue {
         return (
             <Button
                 isDisable={!this.hasInStock}
-                theme={this.hasIntoCart ? 'secondary' : 'brand'}
+                theme={this.isContainsInCart ? 'secondary' : 'brand'}
                 vOn:click={this.toCart}>
-                {this.hasIntoCart ? 'В корзине' : 'В корзину'}
+                {this.isContainsInCart ? 'В корзине' : 'В корзину'}
             </Button>
         )
     }

@@ -1,7 +1,7 @@
 <template lang="pug">
 
 .b-cart-equipment-list
-    equipment-cart-row(
+    equipment-cart-row.__item(
         v-for="equipment in list"
         :equipment="equipment"
     )

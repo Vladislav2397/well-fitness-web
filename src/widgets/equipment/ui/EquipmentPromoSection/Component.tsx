@@ -5,6 +5,7 @@ import { EquipmentCard, type EquipmentType } from '@/entities/equipment'
 import { Button } from '@/shared/ui'
 import { TabList } from '@/shared/ui/TabList'
 import { TabListProps } from '@/shared/ui/TabList/TabList.vue'
+import { AddToCart } from '@/features/cart'
 
 export type EquipmentPromoSectionProps = {
     //
@@ -111,8 +112,9 @@ export default class EquipmentPromoSection extends Vue {
                             <EquipmentCard
                                 class="equipment-promo-section__item"
                                 key={equipment.id}
-                                equipment={equipment}
-                            />
+                                equipment={equipment}>
+                                <AddToCart equipment={equipment} />
+                            </EquipmentCard>
                         ))}
                     </div>
                     <Button

@@ -1,3 +1,7 @@
 .cart-equipment-list {
-    //
+    &__item {
+        & + & {
+            margin-top: 16px;
+        }
+    }
 }

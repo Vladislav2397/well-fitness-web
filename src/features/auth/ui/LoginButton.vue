@@ -19,6 +19,7 @@ import { Avatar } from '@/shared/ui/Avatar'
 })
 export default class LoginButton extends Vue {
     openModal(): void {
+        this.$router.push('/account')
         // this.$store?.dispatch('modals/openModal', 'login')
     }
 }

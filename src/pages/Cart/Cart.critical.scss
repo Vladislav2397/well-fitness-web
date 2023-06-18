@@ -3,9 +3,18 @@
         margin-bottom: 24px;
     }
 
-    &__item {
-        & + & {
-            margin-top: 12px;
-        }
+    &__content {
+        display: flex;
+        align-items: flex-start;
+    }
+
+    &__total {
+        max-width: 450px;
+        margin-left: 32px;
+        box-sizing: border-box;
+    }
+
+    &__list {
+        flex-grow: 1;
     }
 }

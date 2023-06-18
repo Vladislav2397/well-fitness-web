@@ -52,7 +52,7 @@ export default class EquipmentCartRow extends Vue {
     @Prop({ required: true }) readonly equipment!: Equipment
 
     get prices() {
-        const [old = '12000', current = '10000'] = this.equipment.price ?? []
+        const [current, old] = this.equipment.price ?? []
 
         return { old, current }
     }

@@ -9,6 +9,7 @@ import {
     getCartLength,
     hasEquipment,
     hasInStock,
+    getTotalPrice,
 } from './domain'
 
 type CartState = {
@@ -48,6 +49,19 @@ export const cartModule: Module<CartState, any> = {
         },
         hasInStock({ cart }) {
             return (equipment: Equipment) => hasInStock(cart, equipment)
+        },
+        info({ cart }, getters, __, rootGetters) {
+            const getById = rootGetters['equipment/getById']
+            const count = getters.length
+
+            const { price, stock, total } = getTotalPrice(cart, getById)
+
+            return {
+                totalPrice: total,
+                count,
+                countPrice: price,
+                stock: stock,
+            }
         },
     },
 }
