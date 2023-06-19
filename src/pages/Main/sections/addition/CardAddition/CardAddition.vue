@@ -1,17 +1,26 @@
 <template lang="pug">
 
-.b-card-addition
+.b-card-addition(
+    :class="{ 'card-addition--active': isActive }"
+)
+    .__logo(
+        v-if="isActive"
+    )
+        img(
+            src="src"
+            alt="alt"
+        )
     .__image
         img(
-            :src="imageSrc"
-            :alt="imageAlt"
+            :src="image.src"
+            :alt="image.alt"
         )
     .__title {{ title }}
     .__description {{ description }}
     link-component.__link(
         :href="linkHref"
         tag="router-link"
-        theme="primary"
+        :theme="isActive ? 'white' : 'primary'"
         icon="arrow"
         iconSize="s"
     ) {{ linkText }}
@@ -28,12 +37,12 @@ import { Link } from '@/shared/ui/Link'
     },
 })
 export default class CardAddition extends Vue {
-    @Prop() readonly imageSrc!: string
-    @Prop() readonly imageAlt!: string
+    @Prop() readonly image!: ImageView
     @Prop() readonly title!: string
     @Prop() readonly description!: string
     @Prop() readonly linkText!: string
     @Prop() readonly linkHref!: string
+    @Prop(Boolean) isActive!: boolean
 }
 </script>
 

@@ -5,12 +5,68 @@
             box-sizing: border-box;
             width: 50%;
             vertical-align: middle;
+            flex-basis: calc(50% - 1px);
         }
     }
 
     @media (min-width: 1200px) {
         &__card {
             width: 25%;
+            flex-basis: calc(25% - 1px);
+        }
+    }
+
+    &__cards {
+        border-radius: 6px;
+        border: 1px solid #ccc;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1px;
+        background-color: #cccccc;
+    }
+
+    &__card {
+        //margin-right: 1px;
+        //margin-bottom: 1px;
+        width: 100%;
+
+        &:nth-child(1) {
+            border-radius: 6px 6px 0 0;
+        }
+
+        &:nth-child(4) {
+            border-radius: 0 0 6px 6px;
+        }
+
+        @media (min-width: 768px) and (max-width: $maxTablet) {
+            &:nth-child(1) {
+                border-radius: 6px 0 0 0;
+            }
+            &:nth-child(2) {
+                border-radius: 0 6px 0 0;
+            }
+            &:nth-child(3) {
+                border-radius: 0 0 0 6px;
+            }
+            &:nth-child(4) {
+                border-radius: 0 0 6px 0;
+            }
+        }
+
+        @media (min-width: $desktop) {
+            &:nth-child(1) {
+                border-radius: 6px 0 0 6px;
+            }
+            &:nth-child(4) {
+                border-radius: 0 6px 6px 0;
+            }
+        }
+
+        @media (min-width: $desktop) {
+            &--active {
+                margin-top: toRem(-25);
+                border-radius: 6px 6px 0 0;
+            }
         }
     }
 }

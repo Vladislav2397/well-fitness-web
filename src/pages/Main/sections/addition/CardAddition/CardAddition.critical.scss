@@ -2,7 +2,33 @@
     background-color: #fff;
     text-align: center;
     padding: toRem(20);
-    min-height: toRem(280);
+    position: relative;
+
+    &--active {
+        text-align: left;
+        padding-right: toRem(120);
+        background-color: #f53b49;
+        color: #fff;
+    }
+
+    &__logo {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        width: toRem(100);
+        height: toRem(150);
+        background-color: #cccccc;
+
+        @media (min-width: $tablet) {
+            width: toRem(150);
+            height: toRem(200);
+        }
+
+        @media (min-width: $desktop) {
+            width: toRem(100);
+            height: toRem(150);
+        }
+    }
 
     &__image {
         display: inline-block;
@@ -35,10 +61,23 @@
 
     @media (min-width: $tablet) {
         padding: toRem(30) toRem(20) toRem(40);
+
+        &--active {
+            padding-left: toRem(40);
+            padding-right: toRem(170);
+        }
     }
 
     @media (min-width: $desktop) {
         padding-left: toRem(40);
         padding-right: toRem(40);
+        min-height: toRem(280);
+
+        &--active {
+            padding-top: toRem(20);
+            padding-bottom: toRem(20);
+            padding-left: toRem(36);
+            padding-right: toRem(120);
+        }
     }
 }

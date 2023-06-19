@@ -6,8 +6,9 @@ section.b-addition
             card-addition-component.__card(
                 v-for="(card, index) in cards"
                 :key="index"
-                :imageSrc="card.image.src"
-                :imageAlt="card.image.alt"
+                :class="{ 'addition__card--active': index === 2}"
+                :is-active="index === 2"
+                :image="card.image"
                 :title="card.title"
                 :description="card.description"
                 :linkText="card.link.text"
