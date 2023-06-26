@@ -5,6 +5,16 @@
         margin: 0;
     }
 
+    &__group {
+        & + & {
+            margin-top: 12px;
+        }
+    }
+
+    &__title {
+        margin-bottom: 8px;
+    }
+
     &__condition {
         display: flex;
         align-items: center;

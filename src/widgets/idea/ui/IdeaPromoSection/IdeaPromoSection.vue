@@ -3,9 +3,9 @@ import { Vue, Component } from 'vue-property-decorator'
 import { IdeaCard } from '@/entities/idea'
 
 @Component({
-    components: {
-        'idea-card': IdeaCard,
-    },
+    // components: {
+    //     'idea-card': IdeaCard,
+    // },
 })
 export default class IdeaPromoSection extends Vue {
     get list(): { image: ImageView; link: string }[] {
@@ -31,7 +31,11 @@ export default class IdeaPromoSection extends Vue {
                 <div class="idea-promo-section__container container">
                     <h3>Подборки</h3>
                     {this.list.map(idea => (
-                        <idea-card key={idea.image.alt} idea={idea} />
+                        <IdeaCard
+                            key={idea.image.alt}
+                            orientation={'vertical'}
+                            idea={idea}
+                        />
                     ))}
                 </div>
             </div>

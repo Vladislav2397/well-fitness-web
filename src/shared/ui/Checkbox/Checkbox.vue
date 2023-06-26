@@ -1,13 +1,10 @@
 <template lang="pug">
 
-label.b-checkbox(
-    :for="id"
-)
+label.b-checkbox
     input.__box(
-        v-model="isActive"
-        :id="id"
         type="checkbox"
         :checked="isActive"
+        @input="isActive = $event"
     )
     slot
 

@@ -11,7 +11,7 @@
             label.__condition(
                 v-for="([ name, value ]) in group.conditions"
             )
-                input.__checkbox(
+                c-checkbox.__checkbox(
                     type="checkbox"
                     :checked="getCheckboxValue(group, value)"
                     @input.prevent="addFilter(group.type, group.name, value)"
@@ -24,6 +24,9 @@
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator'
 import { Dictionary } from 'vue-router/types/router'
+
+import { Checkbox } from '@/shared/ui/Checkbox'
+
 import { updateQueryParams } from '../../lib'
 
 export type EquipmentFiltersProps = {
@@ -50,7 +53,11 @@ const typesMap = new Map<FilterGroup['type'], 'array' | 'primitive'>([
     ['slider', 'primitive'],
 ])
 
-@Component
+@Component({
+    components: {
+        'c-checkbox': Checkbox,
+    },
+})
 export default class EquipmentFilters extends Vue {
     get filters() {
         return this.$route.query

@@ -1,3 +1,8 @@
 .checkbox {
-    //
+    display: flex;
+
+    &__box {
+        appearance: auto;
+        width: min-content;
+    }
 }
