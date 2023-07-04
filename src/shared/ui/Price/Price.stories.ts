@@ -1,4 +1,4 @@
-import Price, { type PriceProps } from './Price.vue'
+import { Price, type PriceProps } from './Price'
 import { Story } from '@storybook/vue'
 
 export default {

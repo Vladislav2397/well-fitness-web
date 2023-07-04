@@ -1,3 +1,3 @@
-import Price from './Price.vue'
+import { Price, type PriceProps } from './Price'
 
-export { Price }
+export { Price, PriceProps }
