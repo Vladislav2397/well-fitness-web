@@ -34,6 +34,23 @@ module.exports = {
         }
 
         config.module.rules.push({
+            test: /\.tsx$/,
+            use: [
+                {
+                    loader: 'babel-loader',
+                },
+                {
+                    loader: 'ts-loader',
+                    options: {
+                        transpileOnly: true,
+                        happyPackMode: false,
+                        appendTsxSuffixTo: ['\\.vue$'],
+                    },
+                },
+            ],
+        })
+
+        config.module.rules.push({
             test: /\.pug$/,
             use: [
                 {

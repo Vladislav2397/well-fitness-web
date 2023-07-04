@@ -1,3 +1,3 @@
-import TabList from './TabList.vue'
+import TabList, { TabListProps } from './TabList.vue'
 
-export { TabList }
+export { TabList, TabListProps }

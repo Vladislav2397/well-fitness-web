@@ -1,6 +1,5 @@
 import { Story } from '@storybook/vue'
-// @ts-ignore
-import Quantity, { type QuantityProps } from './Quantity.vue'
+import Quantity, { type QuantityProps } from './Quantity'
 
 export default {
     title: 'shared/Quantity',

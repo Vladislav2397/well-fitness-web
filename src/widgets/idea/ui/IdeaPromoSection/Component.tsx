@@ -8,17 +8,17 @@ export default class IdeaPromoSection extends Vue {
         return [
             {
                 size: 'wide',
-                image: { src: 'path/to/idea', alt: 'idea-1' },
+                image: { src: '/img/logo.png', alt: 'idea-1' },
                 link: 'link/to/idea',
             },
             {
                 size: 'default',
-                image: { src: 'path/to/idea', alt: 'idea-2' },
+                image: { src: '/img/logo.png', alt: 'idea-2' },
                 link: 'link/to/idea',
             },
             {
                 size: 'default',
-                image: { src: 'path/to/idea', alt: 'idea-3' },
+                image: { src: '/img/logo.png', alt: 'idea-3' },
                 link: 'link/to/idea',
             },
         ]

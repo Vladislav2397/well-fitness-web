@@ -1,4 +1,4 @@
-import Rating, { type RatingProps } from './Rating.vue'
+import { Rating, type RatingProps } from './Rating'
 import { Story } from '@storybook/vue'
 
 export default {
@@ -16,5 +16,7 @@ const Template: Story<RatingProps> = (args, { argTypes }) => ({
 
 export const Default = Template.bind({})
 Default.args = {
-    //
+    count: 0,
+    hasLabel: false,
+    isBold: false,
 }

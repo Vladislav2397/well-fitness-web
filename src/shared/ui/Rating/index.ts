@@ -1,3 +1,3 @@
-import Rating from './Rating.vue'
+import { Rating, type RatingProps } from './Rating'
 
-export { Rating }
+export { Rating, RatingProps }

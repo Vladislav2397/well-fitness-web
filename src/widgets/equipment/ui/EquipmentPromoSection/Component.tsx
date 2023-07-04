@@ -3,8 +3,7 @@ import { Component, Vue } from 'vue-property-decorator'
 import { EquipmentCard } from '@/entities/equipment'
 
 import { Button } from '@/shared/ui'
-import { TabList } from '@/shared/ui/TabList'
-import { TabListProps } from '@/shared/ui/TabList/TabList.vue'
+import { TabList, TabListProps } from '@/shared/ui/TabList'
 import { AddToCart } from '@/features/cart'
 import { Equipment } from '@/shared-kernel'
 
@@ -19,7 +18,7 @@ export default class EquipmentPromoSection extends Vue {
             id: '1',
             image: {
                 alt: 'alt',
-                src: 'src',
+                src: '/img/logo.png',
             },
             hasShowRoom: false,
             info: [['soem', 'osdm']],
@@ -32,7 +31,7 @@ export default class EquipmentPromoSection extends Vue {
             id: '2',
             image: {
                 alt: 'alt',
-                src: 'src',
+                src: '/img/logo.png',
             },
             hasShowRoom: false,
             info: [['soem', 'osdm']],
@@ -45,7 +44,7 @@ export default class EquipmentPromoSection extends Vue {
             id: '3',
             image: {
                 alt: 'alt',
-                src: 'src',
+                src: '/img/logo.png',
             },
             hasShowRoom: false,
             info: [['soem', 'osdm']],
@@ -58,7 +57,7 @@ export default class EquipmentPromoSection extends Vue {
             id: '4',
             image: {
                 alt: 'alt',
-                src: 'src',
+                src: '/img/logo.png',
             },
             hasShowRoom: false,
             info: [['soem', 'osdm']],
@@ -71,7 +70,7 @@ export default class EquipmentPromoSection extends Vue {
             id: '5',
             image: {
                 alt: 'alt',
-                src: 'src',
+                src: '/img/logo.png',
             },
             hasShowRoom: false,
             info: [['soem', 'osdm']],
@@ -84,7 +83,7 @@ export default class EquipmentPromoSection extends Vue {
             id: '6',
             image: {
                 alt: 'alt',
-                src: 'src',
+                src: '/img/logo.png',
             },
             hasShowRoom: false,
             info: [['soem', 'osdm']],

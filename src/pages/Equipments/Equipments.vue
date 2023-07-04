@@ -57,8 +57,8 @@ export default class Equipments extends Vue {
             id: 1,
             name: 'Кардио',
             image: {
-                src: 'some/path/to/image',
-                alt: 'some/path/to/image',
+                src: '/img/logo.png',
+                alt: 'alt',
             },
             categories: [
                 ['Runners', 12],
@@ -69,8 +69,8 @@ export default class Equipments extends Vue {
             id: 2,
             name: 'Силовые',
             image: {
-                src: 'some/path/to/image',
-                alt: 'some/path/to/image',
+                src: '/img/logo.png',
+                alt: 'alt',
             },
             categories: [
                 ['Griph', 12],
@@ -81,8 +81,8 @@ export default class Equipments extends Vue {
             id: 3,
             name: 'Кардио',
             image: {
-                src: 'some/path/to/image',
-                alt: 'some/path/to/image',
+                src: '/img/logo.png',
+                alt: 'alt',
             },
             categories: [
                 ['Runners', 12],
@@ -93,8 +93,8 @@ export default class Equipments extends Vue {
             id: 4,
             name: 'Силовые',
             image: {
-                src: 'some/path/to/image',
-                alt: 'some/path/to/image',
+                src: '/img/logo.png',
+                alt: 'alt',
             },
             categories: [
                 ['Griph', 12],
@@ -105,8 +105,8 @@ export default class Equipments extends Vue {
             id: 5,
             name: 'Силовые',
             image: {
-                src: 'some/path/to/image',
-                alt: 'some/path/to/image',
+                src: '/img/logo.png',
+                alt: 'alt',
             },
             categories: [
                 ['Griph', 12],
