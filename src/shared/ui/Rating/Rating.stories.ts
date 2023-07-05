@@ -1,13 +1,34 @@
 import { Rating, type RatingProps } from './Rating'
-import { Story } from '@storybook/vue'
+import { StoryFn } from '@storybook/vue'
 
 export default {
     title: 'shared/Rating',
     component: Rating,
-    argTypes: {},
+    parameters: {
+        layout: 'centered',
+    },
+    argTypes: {
+        count: {
+            control: {
+                type: 'number',
+                min: 0,
+                max: 5,
+            },
+            description: 'Уровень рейтинга',
+            name: 'count*',
+        },
+        hasLabel: {
+            control: 'boolean',
+            description: 'Показать лейбл',
+        },
+        isBold: {
+            control: 'boolean',
+            description: 'Сделать лейбл жирным',
+        },
+    },
 }
 
-const Template: Story<RatingProps> = (args, { argTypes }) => ({
+const Template: StoryFn<RatingProps> = (args, { argTypes }) => ({
     props: Object.keys(argTypes),
     components: { Rating },
     methods: {},
