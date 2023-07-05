@@ -1,3 +1,3 @@
-import Avatar, { type AvatarProps } from './Avatar.vue'
+import { Avatar, type AvatarProps } from './Avatar'
 
 export { Avatar, AvatarProps }

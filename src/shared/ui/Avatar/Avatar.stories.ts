@@ -1,12 +1,15 @@
-import Avatar, { type AvatarProps } from './Avatar.vue'
-import { Story } from '@storybook/vue'
+import { Avatar, type AvatarProps } from './Avatar'
+import { StoryFn } from '@storybook/vue'
 
 export default {
     title: 'shared/Avatar',
+    parameters: {
+        layout: 'centered',
+    },
     component: Avatar,
 }
 
-const Template: Story<AvatarProps> = (args, { argTypes }) => ({
+const Template: StoryFn<AvatarProps> = (args, { argTypes }) => ({
     props: Object.keys(argTypes),
     components: { Avatar },
     template: `<Avatar v-bind="$props" />`,
@@ -14,6 +17,8 @@ const Template: Story<AvatarProps> = (args, { argTypes }) => ({
 
 export const Default = Template.bind({})
 Default.args = {
-    src: 'path/to/image',
-    alt: 'image',
+    image: {
+        src: '',
+        alt: 'image',
+    },
 }
