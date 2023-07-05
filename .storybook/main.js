@@ -1,5 +1,11 @@
 const path = require('path')
 
+const generateByShared = folderNames => {
+    return folderNames.map(
+        name => `../src/shared/ui/${name}/**/*.stories.(js|jsx|ts|tsx)`
+    )
+}
+
 const generateByEquipment = folderNames => {
     return folderNames.map(
         name =>
@@ -9,17 +15,18 @@ const generateByEquipment = folderNames => {
 
 module.exports = {
     stories: [
-        '../src/shared/**/*.stories.(js|jsx|ts|tsx)',
-        ...generateByEquipment([
-            'EquipmentPreview',
-            'EquipmentCard',
-            'CardProduct',
-            'CardProductStats',
-        ]),
-        '../src/entities/article/**/*.stories.(js|jsx|ts|tsx)',
-        '../src/entities/brand/**/*.stories.(js|jsx|ts|tsx)',
-        '../src/entities/work/**/*.stories.(js|jsx|ts|tsx)',
-        '../src/entities/idea/**/*.stories.(js|jsx|ts|tsx)',
+        ...generateByShared(['Price', 'Quantity', 'Rating']),
+        // '../src/shared/**/*.stories.(js|jsx|ts|tsx)',
+        // ...generateByEquipment([
+        //     'EquipmentPreview',
+        //     'EquipmentCard',
+        //     'CardProduct',
+        //     'CardProductStats',
+        // ]),
+        // '../src/entities/article/**/*.stories.(js|jsx|ts|tsx)',
+        // '../src/entities/brand/**/*.stories.(js|jsx|ts|tsx)',
+        // '../src/entities/work/**/*.stories.(js|jsx|ts|tsx)',
+        // '../src/entities/idea/**/*.stories.(js|jsx|ts|tsx)',
     ],
     addons: [
         '@storybook/addon-links',
