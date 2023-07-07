@@ -8,6 +8,8 @@ module.exports = {
         // '**/src/(shared|entities)**/*.(spec|test).[jt]s?(x)'
         // '**/src/shared/ui/Button/**/*.(spec|test).[jt]s?(x)',
         '**/src/shared/ui/Quantity/**/*.(spec|test).[jt]s?(x)',
+        '**/src/shared/ui/Rating/**/*.(spec|test).[jt]s?(x)',
+        '**/src/entities/equipment/ui/EquipmentParameters/**/*.(spec|test).[jt]s?(x)',
         // '**/src/entities/equipment/**/*.(spec|test).[jt]s?(x)',
         // '**/src/widgets/equipment/lib/**/*.(spec|test).[jt]s?(x)',
     ],

@@ -44,6 +44,7 @@
         "@storybook/testing-library": "0.2.0",
         "@storybook/vue": "^7.0.25",
         "@storybook/vue-webpack5": "^7.0.25",
+        "@testing-library/vue": "^5.9.0",
         "@types/jest": "^27.0.1",
         "@typescript-eslint/eslint-plugin": "^5.4.0",
         "@typescript-eslint/parser": "^5.4.0",

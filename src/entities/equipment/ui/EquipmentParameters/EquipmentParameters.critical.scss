@@ -1,0 +1,19 @@
+.equipment-parameters-row {
+    display: flex;
+
+    p {
+        color: #ccc;
+    }
+
+    p + p {
+        color: #000;
+    }
+}
+
+.equipment-parameters {
+    &__item {
+        & + & {
+            margin-top: 12px;
+        }
+    }
+}

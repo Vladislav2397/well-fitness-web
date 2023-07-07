@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`EquipmentParameters component.spec Snapshot 1`] = `
+<div class="equipment-parameters">
+  <div class="equipment-parameters-row equipment-parameters__item">
+    <p>label 1:&nbsp;</p>
+    <p>value 1</p>
+  </div>
+  <div class="equipment-parameters-row equipment-parameters__item">
+    <p>label 2:&nbsp;</p>
+    <p>value 2</p>
+  </div>
+  <div class="equipment-parameters-row equipment-parameters__item">
+    <p>label 3:&nbsp;</p>
+    <p>value 3</p>
+  </div>
+</div>
+`;

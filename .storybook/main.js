@@ -13,6 +13,7 @@ const generateByEquipment = folderNames => {
 module.exports = {
     stories: [
         ...generateByShared(['Avatar', 'Price', 'Quantity', 'Rating']),
+        ...generateByEquipment(['EquipmentParameters']),
         // '../src/shared/**/*.stories.(js|jsx|ts|tsx)',
         // ...generateByEquipment([
         //     'EquipmentPreview',

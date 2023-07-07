@@ -1,0 +1,73 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Rating component.spec Snapshots for count=0 1`] = `
+<div class="rating">
+  <div class="rating__list">
+    <div class="rating__star"></div>
+    <div class="rating__star"></div>
+    <div class="rating__star"></div>
+    <div class="rating__star"></div>
+    <div class="rating__star"></div>
+  </div>
+</div>
+`;
+
+exports[`Rating component.spec Snapshots for count=1 1`] = `
+<div class="rating">
+  <div class="rating__list">
+    <div class="rating__star rating__star--fill"></div>
+    <div class="rating__star"></div>
+    <div class="rating__star"></div>
+    <div class="rating__star"></div>
+    <div class="rating__star"></div>
+  </div>
+</div>
+`;
+
+exports[`Rating component.spec Snapshots for count=2 1`] = `
+<div class="rating">
+  <div class="rating__list">
+    <div class="rating__star rating__star--fill"></div>
+    <div class="rating__star rating__star--fill"></div>
+    <div class="rating__star"></div>
+    <div class="rating__star"></div>
+    <div class="rating__star"></div>
+  </div>
+</div>
+`;
+
+exports[`Rating component.spec Snapshots for count=3 1`] = `
+<div class="rating">
+  <div class="rating__list">
+    <div class="rating__star rating__star--fill"></div>
+    <div class="rating__star rating__star--fill"></div>
+    <div class="rating__star rating__star--fill"></div>
+    <div class="rating__star"></div>
+    <div class="rating__star"></div>
+  </div>
+</div>
+`;
+
+exports[`Rating component.spec Snapshots for count=4 1`] = `
+<div class="rating">
+  <div class="rating__list">
+    <div class="rating__star rating__star--fill"></div>
+    <div class="rating__star rating__star--fill"></div>
+    <div class="rating__star rating__star--fill"></div>
+    <div class="rating__star rating__star--fill"></div>
+    <div class="rating__star"></div>
+  </div>
+</div>
+`;
+
+exports[`Rating component.spec Snapshots for count=5 1`] = `
+<div class="rating">
+  <div class="rating__list">
+    <div class="rating__star rating__star--fill"></div>
+    <div class="rating__star rating__star--fill"></div>
+    <div class="rating__star rating__star--fill"></div>
+    <div class="rating__star rating__star--fill"></div>
+    <div class="rating__star rating__star--fill"></div>
+  </div>
+</div>
+`;
