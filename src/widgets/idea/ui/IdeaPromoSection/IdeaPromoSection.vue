@@ -2,11 +2,7 @@
 import { Vue, Component } from 'vue-property-decorator'
 import { IdeaCard } from '@/entities/idea'
 
-@Component({
-    // components: {
-    //     'idea-card': IdeaCard,
-    // },
-})
+@Component
 export default class IdeaPromoSection extends Vue {
     get list(): { image: ImageView; link: string }[] {
         return [
@@ -33,6 +29,11 @@ export default class IdeaPromoSection extends Vue {
                     {this.list.map(idea => (
                         <IdeaCard
                             key={idea.image.alt}
+                            // FIXME
+                            //  Maybe incorrect type by vue-tsx-support
+                            //  and babel preset
+
+                            // @ts-ignore
                             orientation={'vertical'}
                             idea={idea}
                         />

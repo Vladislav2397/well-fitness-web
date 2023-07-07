@@ -1,4 +1,6 @@
-import { RenderContext } from 'vue'
+import { RenderContext, VNode } from 'vue'
+import * as tsx from 'vue-tsx-support'
+import { RecordPropsDefinition } from 'vue/types/options'
 
 export type QuantityProps = {
     count: QuantityType
@@ -26,7 +28,37 @@ const getState = (count: QuantityType) => {
     }
 }
 
-export default ({ props: { count } }: RenderContext<QuantityProps>) => {
+const QuantityVue = tsx.component<
+    QuantityProps,
+    RecordPropsDefinition<QuantityProps>
+>({
+    functional: true,
+    name: 'Quantity',
+    render(h, { props: { count } }) {
+        const state = getState(count)
+
+        return (
+            <div class={['quantity', `quantity--${state.class}`]}>
+                {state.label}
+                <div class="quantity__list">
+                    {[1, 2, 3].map(i => (
+                        <div
+                            class={[
+                                'quantity__dot',
+                                { 'quantity__dot--fill': i <= count },
+                            ]}
+                            key={i}
+                        />
+                    ))}
+                </div>
+            </div>
+        )
+    },
+})
+
+const Quantity = ({
+    props: { count },
+}: RenderContext<QuantityProps>): VNode | VNode[] => {
     const state = getState(count)
 
     return (
@@ -39,9 +71,12 @@ export default ({ props: { count } }: RenderContext<QuantityProps>) => {
                             'quantity__dot',
                             { 'quantity__dot--fill': i <= count },
                         ]}
-                        key={i}></div>
+                        key={i}
+                    />
                 ))}
             </div>
         </div>
     )
 }
+
+export default tsx.ofType<QuantityProps, unknown>().convert(Quantity as any)

@@ -4,6 +4,7 @@
         "module": "esnext",
         "strict": true,
         "jsx": "preserve",
+        "jsxFactory": "VueTsxSupport",
         "moduleResolution": "node",
         "experimentalDecorators": true,
         "skipLibCheck": true,
@@ -19,16 +20,13 @@
         },
         "lib": ["esnext", "dom", "dom.iterable", "scripthost"]
     },
-    "vueCompilerOptions": {
-        "target": 2.7
-        // "target": 2, // For Vue version <= 2.6.14
-    },
     "include": [
+        "node_modules/vue-tsx-support/enable-check.d.ts",
         "src/**/*.ts",
         "src/**/*.tsx",
         "src/**/*.vue",
         "tests/**/*.ts",
         "tests/**/*.tsx"
-    ],
-    "exclude": ["node_modules"]
+    ]
+    // "exclude": ["node_modules"]
 }

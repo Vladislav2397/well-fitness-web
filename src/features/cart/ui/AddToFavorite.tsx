@@ -12,6 +12,7 @@ export default class AddToFavorite extends Vue {
 
     render() {
         return (
+            // @ts-ignore
             <Button theme="secondary" vOn:click={this.toFavorite}>
                 В избранное
             </Button>

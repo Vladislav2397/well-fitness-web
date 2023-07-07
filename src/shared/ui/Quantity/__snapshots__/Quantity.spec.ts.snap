@@ -1,0 +1,73 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Quantity component.spec Snapshots for count 0 1`] = `
+<div class="quantity quantity--error">Нет в наличии<div class="quantity__list">
+    <div class="quantity__dot"></div>
+    <div class="quantity__dot"></div>
+    <div class="quantity__dot"></div>
+  </div>
+</div>
+`;
+
+exports[`Quantity component.spec Snapshots for count 1 1`] = `
+<div class="quantity quantity--warning">Осталось мало<div class="quantity__list">
+    <div class="quantity__dot quantity__dot--fill"></div>
+    <div class="quantity__dot"></div>
+    <div class="quantity__dot"></div>
+  </div>
+</div>
+`;
+
+exports[`Quantity component.spec Snapshots for count 2 1`] = `
+<div class="quantity quantity--success">В наличии<div class="quantity__list">
+    <div class="quantity__dot quantity__dot--fill"></div>
+    <div class="quantity__dot quantity__dot--fill"></div>
+    <div class="quantity__dot"></div>
+  </div>
+</div>
+`;
+
+exports[`Quantity component.spec Snapshots for count 3 1`] = `
+<div class="quantity quantity--success">В наличии<div class="quantity__list">
+    <div class="quantity__dot quantity__dot--fill"></div>
+    <div class="quantity__dot quantity__dot--fill"></div>
+    <div class="quantity__dot quantity__dot--fill"></div>
+  </div>
+</div>
+`;
+
+exports[`Quantity component.spec Snapshots for count=0 1`] = `
+<div class="quantity quantity--error">Нет в наличии<div class="quantity__list">
+    <div class="quantity__dot"></div>
+    <div class="quantity__dot"></div>
+    <div class="quantity__dot"></div>
+  </div>
+</div>
+`;
+
+exports[`Quantity component.spec Snapshots for count=1 1`] = `
+<div class="quantity quantity--warning">Осталось мало<div class="quantity__list">
+    <div class="quantity__dot quantity__dot--fill"></div>
+    <div class="quantity__dot"></div>
+    <div class="quantity__dot"></div>
+  </div>
+</div>
+`;
+
+exports[`Quantity component.spec Snapshots for count=2 1`] = `
+<div class="quantity quantity--success">В наличии<div class="quantity__list">
+    <div class="quantity__dot quantity__dot--fill"></div>
+    <div class="quantity__dot quantity__dot--fill"></div>
+    <div class="quantity__dot"></div>
+  </div>
+</div>
+`;
+
+exports[`Quantity component.spec Snapshots for count=3 1`] = `
+<div class="quantity quantity--success">В наличии<div class="quantity__list">
+    <div class="quantity__dot quantity__dot--fill"></div>
+    <div class="quantity__dot quantity__dot--fill"></div>
+    <div class="quantity__dot quantity__dot--fill"></div>
+  </div>
+</div>
+`;

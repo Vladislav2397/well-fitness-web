@@ -1,15 +1,5 @@
 <script lang="tsx">
 import { Component, Prop, Vue } from 'vue-property-decorator'
-import { RenderContext } from 'vue'
-
-type Optional<T> = T | undefined
-type Maybe<T> = T | null
-
-type TsxComponent<Props> = (
-    args: Partial<RenderContext<Props>> & {
-        [k in keyof Props]: Optional<Maybe<Props[k]>>
-    }
-) => JSX.Element // or whatever you're using for JSX/TSX
 
 export type IdeaCardProps = Pick<IdeaCard, 'idea'> &
     Partial<Pick<IdeaCard, 'orientation'>>

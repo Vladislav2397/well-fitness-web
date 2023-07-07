@@ -23,6 +23,7 @@ export default class AddToCart extends Vue {
     render() {
         return (
             <Button
+                // @ts-ignore
                 isDisable={!this.hasInStock}
                 theme={this.isContainsInCart ? 'secondary' : 'brand'}
                 vOn:click={this.toCart}>
