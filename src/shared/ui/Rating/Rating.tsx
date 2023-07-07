@@ -1,4 +1,5 @@
 import { RenderContext } from 'vue'
+import * as tsx from 'vue-tsx-support'
 
 export type RatingProps = {
     isBold?: boolean
@@ -6,7 +7,29 @@ export type RatingProps = {
     count?: 0 | 1 | 2 | 3 | 4 | 5
 }
 
-export const Rating = ({
+type RatingStarProps = {
+    isFill?: boolean
+}
+
+const RatingStarComponent = ({
+    props: { isFill = false },
+}: RenderContext<RatingStarProps>) => {
+    return (
+        <div
+            class={[
+                'rating__star',
+                {
+                    'rating__star--fill': isFill,
+                },
+            ]}
+        />
+    )
+}
+const RatingStar = tsx
+    .ofType<RatingStarProps>()
+    .convert(RatingStarComponent as any)
+
+export const RatingComponent = ({
     slots,
     props: { isBold = false, hasLabel = false, count = 0 },
 }: RenderContext<RatingProps>) => {
@@ -25,17 +48,11 @@ export const Rating = ({
             )}
             <div class="rating__list">
                 {[1, 2, 3, 4, 5].map(i => (
-                    <div
-                        key={i}
-                        class={[
-                            'rating__star',
-                            {
-                                'rating__star--fill': i <= count,
-                            },
-                        ]}
-                    />
+                    <RatingStar key={i} isFill={i <= count} />
                 ))}
             </div>
         </div>
     )
 }
+
+export const Rating = tsx.ofType<RatingProps>().convert(RatingComponent as any)

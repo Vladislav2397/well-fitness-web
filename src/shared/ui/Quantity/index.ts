@@ -1,3 +1,3 @@
-import Quantity, { type QuantityProps } from './Quantity'
+import { Quantity, type QuantityProps } from './Quantity'
 
 export { Quantity, QuantityProps }

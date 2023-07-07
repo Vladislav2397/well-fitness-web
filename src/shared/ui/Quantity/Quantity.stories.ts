@@ -1,5 +1,5 @@
 import { StoryFn } from '@storybook/vue'
-import Quantity, { type QuantityProps } from './Quantity'
+import { Quantity, type QuantityProps } from './Quantity'
 
 export default {
     title: 'shared/Quantity',
@@ -14,12 +14,13 @@ export default {
                 min: 0,
                 max: 3,
             },
+            name: 'count*',
             description: 'Уровень количества товара на складе',
         },
     },
 }
 
-const Template: StoryFn<QuantityProps> = (args, { argTypes }) => ({
+const Template: StoryFn<QuantityProps> = (_, { argTypes }) => ({
     props: Object.keys(argTypes),
     components: { Quantity },
     methods: {},
@@ -31,7 +32,7 @@ Default.args = {
     count: 3,
 }
 
-const TemplateAll: StoryFn<QuantityProps> = (args, { argTypes }) => ({
+const TemplateAll: StoryFn<QuantityProps> = () => ({
     components: { Quantity },
     methods: {},
     template: `<div><Quantity v-for="i in 4" :count="i - 1"/></div>`,
